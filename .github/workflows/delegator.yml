@@ -23,7 +23,7 @@ jobs:
     name: Discover BC Versions and Dispatch Analyzers
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Discover versions and dispatch workflows
         shell: pwsh

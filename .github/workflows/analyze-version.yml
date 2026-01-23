@@ -18,7 +18,7 @@ jobs:
     outputs:
       bc-tools-path: ${{ steps.install-tools.outputs.tools-path }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Setup .NET 8.0
         uses: actions/setup-dotnet@v5
@@ -60,7 +60,7 @@ jobs:
               "/p:BcDevToolsVersion=$BcDevToolsVersion"
 
       - name: Upload Analyzer Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: transferfieldsanalyzer
           path: src/bin/Release/net8.0/
@@ -120,7 +120,7 @@ jobs:
       fail-fast: true  # Individual failures fail entire version analysis
       matrix: ${{ fromJson(needs.create-matrix.outputs.matrix) }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Install BC Development Tools
         id: install-tools
@@ -136,7 +136,7 @@ jobs:
           Install-Module BcContainerHelper -Force -AllowClobber
 
       - name: Download TransferFields Analyzer
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: transferfieldsanalyzer
           path: ${{ runner.temp }}/ALCops
@@ -179,7 +179,7 @@ jobs:
 
       - name: Upload per-app TransferFieldsRelations.json
         if: steps.analyze.outputs.has-output == 'true'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: transferfields-${{ matrix.version }}-${{ matrix.country }}-per-app
           path: ${{ steps.analyze.outputs.per-app-folder }}/*.json
@@ -188,7 +188,7 @@ jobs:
 
       - name: Upload Results
         if: steps.analyze.outputs.has-output == 'true'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: transferfields-${{ matrix.version }}-${{ matrix.country }}-aggregated
           path: ${{ steps.analyze.outputs.output-file }}
@@ -202,10 +202,10 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Download All Results
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           pattern: |
             transferfields-${{ inputs.version }}-*-aggregated
@@ -225,7 +225,7 @@ jobs:
               -OutputPath $outputFile
 
       - name: Upload Aggregated Results
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: transferfields-${{ inputs.version }}-aggregated
           path: ${{ runner.temp }}/TransferFieldsRelations-${{ inputs.version }}.json
