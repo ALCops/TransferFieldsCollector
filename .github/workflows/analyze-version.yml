@@ -190,7 +190,7 @@ jobs:
         if: steps.analyze.outputs.has-output == 'true'
         uses: actions/upload-artifact@v4
         with:
-          name: transferfields-${{ matrix.version }}-${{ matrix.country }}
+          name: transferfields-${{ matrix.version }}-${{ matrix.country }}-aggregated
           path: ${{ steps.analyze.outputs.output-file }}
           retention-days: 90
 
@@ -208,8 +208,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           pattern: |
-            transferfields-${{ inputs.version }}-*
-            !transferfields-${{ inputs.version }}-*-per-app
+            transferfields-${{ inputs.version }}-*-aggregated
           path: ${{ runner.temp }}/results
           merge-multiple: false
 
