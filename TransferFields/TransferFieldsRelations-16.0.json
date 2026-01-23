@@ -1,0 +1,12 @@
+{
+  "generatedAt": "2026-01-23T08:21:08Z",
+  "version": "16.0",
+  "relations": {
+    "source": null,
+    "sourceNamespace": null,
+    "target": null,
+    "targetNamespace": null,
+    "foundInExtensions": []
+  },
+  "totalRelations": 1
+}

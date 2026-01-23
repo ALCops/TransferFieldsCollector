@@ -1,0 +1,158 @@
+name: 'Analyze BC Apps for TransferFields'
+description: 'Analyzes BC app files to extract TransferFields relations'
+
+inputs:
+  artifact-path:
+    description: 'Path to the BC artifact folder containing .app files'
+    required: true
+  platform-path:
+    description: 'Path to the BC platform artifacts (for package cache)'
+    required: true
+  analyzer-path:
+    description: 'Path to the folder containing the analyzer DLL'
+    required: true
+  version:
+    description: 'BC version being analyzed'
+    required: true
+  country:
+    description: 'Country/localization code'
+    required: true
+  output-path:
+    description: 'Path for the final output JSON file'
+    required: true
+
+outputs:
+  has-output:
+    description: 'Whether any TransferFields relations were found'
+    value: ${{ steps.finalize.outputs.has-output }}
+  output-file:
+    description: 'Path to the output JSON file (if has-output is true)'
+    value: ${{ steps.finalize.outputs.output-file }}
+  per-app-folder:
+    description: 'Folder containing per-app JSON files'
+    value: ${{ steps.setup.outputs.collected-folder }}
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup collection folders
+      id: setup
+      shell: pwsh
+      run: |
+        $collectedFolder = Join-Path "${{ inputs.analyzer-path }}" "TransferFields"
+        if (Test-Path $collectedFolder) {
+            Remove-Item $collectedFolder -Recurse -Force
+        }
+        New-Item -ItemType Directory -Path $collectedFolder -Force | Out-Null
+        Write-Host "Collection folder: $collectedFolder"
+        "collected-folder=$collectedFolder" >> $env:GITHUB_OUTPUT
+
+    - name: Analyze all app files
+      id: analyze
+      shell: pwsh
+      env:
+        SCRIPTS_PATH: ${{ github.action_path }}/../../scripts
+      run: |
+        Import-Module BcContainerHelper -Force -DisableNameChecking
+        
+        $scriptsPath = $env:SCRIPTS_PATH
+        $artifactPath = "${{ inputs.artifact-path }}"
+        $platformPath = "${{ inputs.platform-path }}"
+        $analyzerPath = "${{ inputs.analyzer-path }}"
+        $collectedFolder = "${{ steps.setup.outputs.collected-folder }}"
+        
+        $analyzerDll = Join-Path $analyzerPath "ALCops.TransferFieldsCollector.dll"
+        Write-Host "Analyzer DLL: $analyzerDll"
+        
+        # Look for an "Extensions" subfolder and prefer it; fall back to artifact root if missing
+        $extensionsFolder = Join-Path $artifactPath "Extensions"
+        if (-not (Test-Path $extensionsFolder)) {
+            Write-Host "Extensions folder not found at $extensionsFolder - falling back to artifact root"
+            $searchPath = $artifactPath
+        }
+        else {
+            $searchPath = $extensionsFolder
+        }
+
+        # Collect .app files but exclude packages that start with Microsoft_Tests-
+        $appFiles = Get-ChildItem -Path $searchPath -Filter "*.app" -Recurse -File
+        Write-Host "Processing $($appFiles.Count) app files..."
+        
+        $jsonCounter = 0
+        
+        foreach ($appFile in $appFiles) {
+            # Run single app analysis
+            $result = & "$scriptsPath/Invoke-SingleAppAnalysis.ps1" `
+                -AppFile $appFile.FullName `
+                -AnalyzerDll $analyzerDll `
+                -PlatformPath $platformPath
+            
+            if ($result.JsonlRoot) {
+                # Convert JSONL to JSON
+                $perAppJson = Join-Path $collectedFolder "TransferFieldsRelations-temp.json"
+                $convertResult = & "$scriptsPath/ConvertFrom-RelationsJsonl.ps1" `
+                    -JsonlRoot $result.JsonlRoot `
+                    -OutputPath $perAppJson
+                
+                if ($convertResult.Success) {
+                    $jsonCounter++
+                    $targetFile = Join-Path $collectedFolder "TransferFieldsRelations-$jsonCounter.json"
+                    Move-Item -Path $perAppJson -Destination $targetFile -Force
+                    Write-Host "  Saved to: $targetFile"
+                }
+                
+                # Cleanup JSONL root
+                Remove-Item -Path $result.JsonlRoot -Recurse -Force -ErrorAction SilentlyContinue
+            }
+        }
+        
+        Write-Host "`nProcessed $($appFiles.Count) apps, generated $jsonCounter JSON files"
+        "json-count=$jsonCounter" >> $env:GITHUB_OUTPUT
+
+    - name: Merge and finalize results
+      id: finalize
+      shell: pwsh
+      env:
+        SCRIPTS_PATH: ${{ github.action_path }}/../../scripts
+      run: |
+        $scriptsPath = $env:SCRIPTS_PATH
+        $collectedFolder = "${{ steps.setup.outputs.collected-folder }}"
+        $version = "${{ inputs.version }}"
+        $country = "${{ inputs.country }}"
+        $outputPath = "${{ inputs.output-path }}"
+        
+        $jsonCount = [int]"${{ steps.analyze.outputs.json-count }}"
+        
+        if ($jsonCount -eq 0) {
+            Write-Host "No TransferFieldsRelations.json files were generated"
+            "has-output=false" >> $env:GITHUB_OUTPUT
+            return
+        }
+        
+        # Merge all per-app JSONs
+        $mergedFile = Join-Path $collectedFolder "merged-relations.json"
+        $mergeResult = & "$scriptsPath/Merge-TransferFieldsRelations.ps1" `
+            -InputFolder $collectedFolder `
+            -OutputPath $mergedFile
+        
+        if (-not $mergeResult.Success) {
+            Write-Host "Merge failed"
+            "has-output=false" >> $env:GITHUB_OUTPUT
+            return
+        }
+        
+        # Add metadata wrapper
+        $finalResult = & "$scriptsPath/New-AnalysisResult.ps1" `
+            -RelationsFile $mergedFile `
+            -Version $version `
+            -Country $country `
+            -OutputPath $outputPath
+        
+        if ($finalResult.Success) {
+            Write-Host "Output written to: $outputPath"
+            "has-output=true" >> $env:GITHUB_OUTPUT
+            "output-file=$outputPath" >> $env:GITHUB_OUTPUT
+        }
+        else {
+            "has-output=false" >> $env:GITHUB_OUTPUT
+        }

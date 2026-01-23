@@ -1,0 +1,288 @@
+name: Analyze BC Version
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'BC Version to analyze (e.g., 27.2)'
+        required: true
+        type: string
+
+env:
+  LOCALIZATIONS: '["at","au","be","ca","ch","cz","de","dk","ee","es","fi","fr","gb","hk","hr","is","it","jp","kr","lt","lv","mx","nl","no","nz","pl","pt","rs","se","si","th","tw","us","w1","co","hu","pe","ph","vn","sk","tr","br","ie","in","gr","ro","bg","ua"]'
+
+jobs:
+  build-analyzer:
+    name: Build TransferFields Collector
+    runs-on: ubuntu-latest
+    outputs:
+      bc-tools-path: ${{ steps.install-tools.outputs.tools-path }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET 8.0
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Install BC Development Tools
+        id: install-tools
+        shell: pwsh
+        run: |
+          Write-Host "Installing Microsoft.Dynamics.BusinessCentral.Development.Tools (global dotnet tool)"
+          dotnet tool install --global Microsoft.Dynamics.BusinessCentral.Development.Tools
+
+          Write-Host ""
+          Write-Host "Resolving installed version of Microsoft.Dynamics.BusinessCentral.Development.Tools..."
+
+          $toolLine = dotnet tool list --global |
+              Where-Object { $_ -match '^microsoft\.dynamics\.businesscentral\.development\.tools\s+' }
+
+          if (-not $toolLine) {
+              Write-Error "BC Dev Tools not found after installation"
+              exit 1
+          }
+
+          $parts = $toolLine -split '\s+'
+          $BcDevToolsVersion = $parts[1]
+
+          Write-Host "Resolved BC Dev Tools version: $BcDevToolsVersion"
+          "devtool-version=$BcDevToolsVersion" >> $env:GITHUB_OUTPUT
+
+      - name: Build TransferFields Collector
+        shell: pwsh
+        run: |
+          $BcDevToolsVersion = "${{ steps.install-tools.outputs.devtool-version }}"
+          Write-Host "Building with BcDevToolsVersion: $BcDevToolsVersion"
+          
+          dotnet build src/ALCops.TransferFieldsCollector.csproj `
+              --configuration Release `
+              "/p:BcDevToolsVersion=$BcDevToolsVersion"
+
+      - name: Upload Analyzer Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: transferfieldsanalyzer
+          path: src/bin/Release/net8.0/
+
+  create-matrix:
+    name: Create Matrix for localizations
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.create-matrix.outputs.matrix }}
+    steps:
+      - name: Create Matrix
+        id: create-matrix
+        shell: pwsh
+        run: |
+          Install-Module BcContainerHelper -Force -AllowClobber
+          Import-Module BcContainerHelper -Force -DisableNameChecking
+          
+          $version = "${{ inputs.version }}"
+          $localizations = '${{ env.LOCALIZATIONS }}' | ConvertFrom-Json
+          
+          Write-Host "Creating matrix for version $version with $($localizations.Count) localizations..."
+          
+          $matrixItems = @()
+          
+          foreach ($country in $localizations) {
+              Write-Host "Checking $country..."
+              try {
+                  $url = Get-BCArtifactUrl -Type Sandbox -Country $country -Version $version -Select Latest -ErrorAction SilentlyContinue
+                  if ($url) {
+                      Write-Host "  Found: $url"
+                      $matrixItems += @{
+                          country = $country
+                          version = $version
+                          url = $url
+                      }
+                  }
+                  else {
+                      Write-Host "  No artifact found"
+                  }
+              }
+              catch {
+                  Write-Host "  Error: $_"
+              }
+          }
+          
+          $matrix = @{ include = $matrixItems }
+          $matrixJson = $matrix | ConvertTo-Json -Compress -Depth 10
+          
+          Write-Host "Matrix JSON: $matrixJson"
+          "matrix=$matrixJson" >> $env:GITHUB_OUTPUT
+
+  analyze-apps:
+    name: Analyze v${{ matrix.version }} - ${{ matrix.country }} 
+    runs-on: ubuntu-latest
+    needs: [build-analyzer, create-matrix]
+    strategy:
+      fail-fast: true  # Individual failures fail entire version analysis
+      matrix: ${{ fromJson(needs.create-matrix.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install BC Development Tools
+        id: install-tools
+        shell: pwsh
+        run: |
+          Write-Host "Installing Microsoft.Dynamics.BusinessCentral.Development.Tools.Linux..."
+          dotnet tool install --global Microsoft.Dynamics.BusinessCentral.Development.Tools.Linux
+
+      - name: Install BcContainerHelper
+        shell: pwsh
+        run: |
+          Write-Host "Installing BcContainerHelper..."
+          Install-Module BcContainerHelper -Force -AllowClobber
+
+      - name: Download TransferFields Analyzer
+        uses: actions/download-artifact@v4
+        with:
+          name: transferfieldsanalyzer
+          path: ${{ runner.temp }}/ALCops
+
+      - name: Download and Extract Artifacts
+        id: download-artifacts
+        shell: pwsh
+        env:
+          BC_ARTIFACT_URL: ${{ matrix.url }}
+          BC_VERSION: ${{ matrix.version }}
+          BC_COUNTRY: ${{ matrix.country }}
+        run: |
+          Import-Module BcContainerHelper -Force -DisableNameChecking
+          
+          $artifactUrl = $env:BC_ARTIFACT_URL
+          $version = $env:BC_VERSION
+          $country = $env:BC_COUNTRY
+          
+          Write-Host "Downloading artifacts for v$version $country from $artifactUrl"
+          $artifactPaths = Download-Artifacts -artifactUrl $artifactUrl -includePlatform
+
+          $artifactPath = $artifactPaths[0]
+          Write-Host "Artifact folder: $artifactPath"
+          "artifact-path=$artifactPath" >> $env:GITHUB_OUTPUT
+
+          $platformArtifactPath = $artifactPaths[1]
+          Write-Host "Platform Artifact folder: $platformArtifactPath"
+          "platform-artifact-path=$platformArtifactPath" >> $env:GITHUB_OUTPUT
+
+      - name: Analyze App Files
+        id: analyze
+        uses: ./.github/actions/analyze-bc-apps
+        with:
+          artifact-path: ${{ steps.download-artifacts.outputs.artifact-path }}
+          platform-path: ${{ steps.download-artifacts.outputs.platform-artifact-path }}
+          analyzer-path: ${{ runner.temp }}/ALCops
+          version: ${{ matrix.version }}
+          country: ${{ matrix.country }}
+          output-path: ${{ runner.temp }}/TransferFieldsRelations-${{ matrix.version }}-${{ matrix.country }}.json
+
+      - name: Upload per-app TransferFieldsRelations.json
+        if: steps.analyze.outputs.has-output == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: transferfields-${{ matrix.version }}-${{ matrix.country }}-per-app
+          path: ${{ steps.analyze.outputs.per-app-folder }}/*.json
+          if-no-files-found: ignore
+          retention-days: 90
+
+      - name: Upload Results
+        if: steps.analyze.outputs.has-output == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: transferfields-${{ matrix.version }}-${{ matrix.country }}
+          path: ${{ steps.analyze.outputs.output-file }}
+          retention-days: 90
+
+  aggregate-results:
+    name: Aggregate Results
+    runs-on: ubuntu-latest
+    needs: analyze-apps
+    if: always() && needs.analyze-apps.result == 'success'
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download All Results
+        uses: actions/download-artifact@v4
+        with:
+          pattern: |
+            transferfields-${{ inputs.version }}-*
+            !transferfields-${{ inputs.version }}-*-per-app
+          path: ${{ runner.temp }}/results
+          merge-multiple: false
+
+      - name: Merge Results
+        shell: pwsh
+        run: |
+          $version = "${{ inputs.version }}"
+          $resultsPath = Join-Path $env:RUNNER_TEMP "results"
+          $outputFile = Join-Path $env:RUNNER_TEMP "TransferFieldsRelations-$version.json"
+          
+          & ./.github/scripts/Merge-CountryResults.ps1 `
+              -InputFolder $resultsPath `
+              -Version $version `
+              -OutputPath $outputFile
+
+      - name: Upload Aggregated Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: transferfields-${{ inputs.version }}-aggregated
+          path: ${{ runner.temp }}/TransferFieldsRelations-${{ inputs.version }}.json
+          retention-days: 90
+
+      - name: Commit Results to Repository
+        shell: pwsh
+        run: |
+          $version = "${{ inputs.version }}"
+          $sourceFile = Join-Path $env:RUNNER_TEMP "TransferFieldsRelations-$version.json"
+          $targetDir = "TransferFields"
+          $targetFile = Join-Path $targetDir "TransferFieldsRelations-$version.json"
+
+          # Configure git
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Create target directory if it doesn't exist
+          if (-not (Test-Path $targetDir)) {
+              New-Item -ItemType Directory -Path $targetDir -Force | Out-Null
+          }
+
+          # Copy file to repository
+          Copy-Item -Path $sourceFile -Destination $targetFile -Force
+
+          # Stage and commit
+          git add $targetFile
+
+          # Check if there are changes to commit
+          $changes = git status --porcelain
+          if ($changes) {
+              git commit -m "Update TransferFieldsRelations for BC version $version [skip ci]"
+              
+              # Retry push with pull-rebase on conflict
+              $maxRetries = 3
+              for ($i = 1; $i -le $maxRetries; $i++) {
+                  git push --force-with-lease
+                  if ($LASTEXITCODE -eq 0) {
+                      Write-Host "Successfully committed and pushed TransferFieldsRelations-$version.json"
+                      break
+                  }
+                  
+                  if ($i -lt $maxRetries) {
+                      Write-Host "Push failed (attempt $i/$maxRetries), pulling latest changes and retrying..."
+                      git pull --rebase
+                      if ($LASTEXITCODE -ne 0) {
+                          Write-Error "Failed to pull latest changes"
+                          exit 1
+                      }
+                  }
+                  else {
+                      Write-Error "Failed to push after $maxRetries attempts"
+                      exit 1
+                  }
+              }
+          }
+          else {
+              Write-Host "No changes to commit - file content is identical"
+          }

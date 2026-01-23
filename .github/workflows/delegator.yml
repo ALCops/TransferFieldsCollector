@@ -1,0 +1,110 @@
+name: BC Artifact Analysis Delegator
+
+permissions:
+  actions: write
+
+on:
+  schedule:
+    - cron: '0 2 7 * *'
+    - cron: '0 2 14 * *'
+  workflow_dispatch:
+    inputs:
+      start_major:
+        description: 'Starting major version (e.g., 27)'
+        required: false
+        default: '27'
+      start_minor:
+        description: 'Starting minor version (e.g., 0)'
+        required: false
+        default: '0'
+
+jobs:
+  discover-and-dispatch:
+    name: Discover BC Versions and Dispatch Analyzers
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Discover versions and dispatch workflows
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          Install-Module BcContainerHelper -Force -AllowClobber
+          Import-Module BcContainerHelper -Force -DisableNameChecking
+          
+          $startMajor = [int]"${{ github.event.inputs.start_major || '27' }}"
+          $startMinor = [int]"${{ github.event.inputs.start_minor || '0' }}"
+          
+          $currentMajor = $startMajor
+          $currentMinor = $startMinor
+          $consecutiveMajorFailures = 0
+          $dispatchDelay = 15  # seconds between subsequent dispatches
+          
+          Write-Host "Starting version discovery from $currentMajor.$currentMinor"
+
+          $type = 'Sandbox'
+          $country = 'W1'
+          $select = 'Latest'
+
+          while ($true) {
+              $version = "$currentMajor.$currentMinor"
+              Write-Host "Checking version $version..."
+              
+              try {
+                  $url = Get-BCArtifactUrl -Type $type -Country $country -Version $version -Select $select -ErrorAction SilentlyContinue
+              }
+              catch {
+                  $url = $null
+              }
+              
+              if ($url) {
+                  Write-Host "  Found: $url"
+                  Write-Host "  Dispatching workflow for version $version..."
+                  
+                  # Dispatch the analyze-version workflow
+                  gh workflow run analyze-version.yml `
+                      --field version=$version `
+                      --repo ${{ github.repository }}
+
+                  Write-Host "  Waiting $dispatchDelay seconds before next dispatch..."
+                  Start-Sleep -Seconds $dispatchDelay
+
+                  # Reset consecutive major failures since we found a valid version
+                  $consecutiveMajorFailures = 0
+              }
+              else {
+                  Write-Host "  No artifact found for version $version"
+              }
+              
+              # Move to next version
+              if ($currentMinor -lt 9) {
+                  $currentMinor++
+              }
+              else {
+                  # Jump to next major
+                  $currentMajor++
+                  $currentMinor = 0
+                  
+                  # Check if the new major version exists
+                  $newMajorVersion = "$currentMajor.0"
+                  Write-Host "Checking new major version $newMajorVersion..."
+                  
+                  try {
+                      $majorUrl = Get-BCArtifactUrl -Type $type -Country $country -Version $newMajorVersion -Select $select -ErrorAction SilentlyContinue
+                  }
+                  catch {
+                      $majorUrl = $null
+                  }
+                  
+                  if (-not $majorUrl) {
+                      Write-Host "No artifact found for major version $newMajorVersion - stopping discovery"
+                      break
+                  }
+                  else {
+                      Write-Host "  Found major version: $majorUrl"
+                  }
+              }
+          }
+          
+          Write-Host "Version discovery complete!"
