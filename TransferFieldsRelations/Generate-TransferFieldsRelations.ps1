@@ -104,15 +104,9 @@ foreach ($jsonFile in $jsonFiles) {
         $key = "$source|$target"
 
         $versions = @()
-        if ($null -ne $relation.FoundInExtensions) {
-            foreach ($ext in $relation.FoundInExtensions) {
-                if ($null -ne $ext.Version) {
-                    $ver = Parse-Version $ext.Version
-                    if ($null -ne $ver) {
-                        $versions += $ver
-                    }
-                }
-            }
+        if ($null -ne $data.version) {
+            $ver = Parse-Version $data.version
+            if ($null -ne $ver) { $versions += $ver }
         }
 
         if ($relationsMap.ContainsKey($key)) {
