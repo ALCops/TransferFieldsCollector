@@ -139,14 +139,27 @@ foreach ($relationKey in $relationsMap.Keys) {
     $extensions = @()
     foreach ($extKey in $rel.ExtensionsMap.Keys) {
         $ext = $rel.ExtensionsMap[$extKey]
+
+        # Deduplicate and sort foundInObjects for consistent output
+        $uniqueFoundInObjects = @()
+        if ($ext.FoundInObjects) {
+            $uniqueFoundInObjects = $ext.FoundInObjects |
+            Group-Object -Property { "$($_.foundInObjectQualified)|$($_.foundInMethod)" } |
+            ForEach-Object { $_.Group[0] } |
+            Sort-Object -Property foundInObjectQualified, foundInMethod
+        }
+
         $extensions += [PSCustomObject]@{
             appId          = $ext.AppId
             name           = $ext.Name
             publisher      = $ext.Publisher
             countries      = ($ext.Countries | Sort-Object)
-            foundInObjects = $ext.FoundInObjects
+            foundInObjects = @($uniqueFoundInObjects)
         }
     }
+
+    # Sort extensions by appId for consistent output
+    $extensions = $extensions | Sort-Object -Property appId
 
     $mergedRelations += [PSCustomObject]@{
         source            = $rel.Source
