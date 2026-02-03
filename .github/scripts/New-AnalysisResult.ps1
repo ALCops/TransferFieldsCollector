@@ -57,10 +57,9 @@ $relationCount = $relations.Count
 
 # Create wrapper with metadata
 $result = [PSCustomObject]@{
-    version     = $Version
-    country     = $Country
-    generatedAt = (Get-Date -Format "yyyy-MM-ddTHH:mm:ssZ")
-    relations   = [array]$relations
+    version   = $Version
+    country   = $Country
+    relations = [array]$relations
 }
 
 # Ensure output directory exists
