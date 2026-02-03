@@ -1,4 +1,6 @@
 {
+  "version": "27.3",
+  "totalRelations": 390,
   "relations": [
     {
       "source": "Acc. Schedule Line",
@@ -23165,8 +23167,5 @@
         ]
       }
     }
-  ],
-  "totalRelations": 390,
-  "generatedAt": "2026-02-03T07:55:15Z",
-  "version": "27.3"
+  ]
 }
