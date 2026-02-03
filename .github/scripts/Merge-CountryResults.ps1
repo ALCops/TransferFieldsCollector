@@ -177,9 +177,9 @@ $mergedRelations = $mergedRelations | Sort-Object -Property Source, SourceNamesp
 $uniqueCountries = $allCountries | Sort-Object -Unique
 
 # Create aggregated result (no top-level countries array - country info is in extensions)
-$aggregated = @{
+# Use [ordered] to ensure consistent property order in JSON output
+$aggregated = [ordered]@{
     version        = $Version
-    generatedAt    = (Get-Date -Format "yyyy-MM-ddTHH:mm:ssZ")
     totalRelations = $mergedRelations.Count
     relations      = $mergedRelations
 }
