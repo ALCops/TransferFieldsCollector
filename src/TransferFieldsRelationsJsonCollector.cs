@@ -92,8 +92,10 @@ public sealed class TransferFieldsRelationsJsonCollector : DiagnosticAnalyzer
             Relation: new RelationRecord(
                 Source: sourceTable.Name,
                 SourceNamespace: GetQualifiedNamespace(sourceTable),
+                SourceObjectId: sourceTable.Id,
                 Target: targetTable.Name,
                 TargetNamespace: GetQualifiedNamespace(targetTable),
+                TargetObjectId: targetTable.Id,
                 FoundInObjectQualified: BuildQualifiedObjectName(
                     containingObject is null ? null : GetQualifiedNamespace(containingObject),
                     containingObject?.Name),
@@ -176,8 +178,10 @@ public sealed class TransferFieldsRelationsJsonCollector : DiagnosticAnalyzer
     private sealed record RelationRecord(
         string Source,
         string? SourceNamespace,
+        int SourceObjectId,
         string Target,
         string? TargetNamespace,
+        int TargetObjectId,
         string? FoundInObjectQualified,
         string? FoundInMethod);
 }

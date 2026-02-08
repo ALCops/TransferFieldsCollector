@@ -89,8 +89,10 @@ foreach ($jsonFile in $jsonFiles) {
             $relationsMap[$relationKey] = @{
                 source          = $relation.Source
                 sourceNamespace = $relation.SourceNamespace
+                sourceObjectId  = $relation.SourceObjectId
                 target          = $relation.Target
                 targetNamespace = $relation.TargetNamespace
+                targetObjectId  = $relation.TargetObjectId
                 extensionsMap   = @{} # Keyed by AppId
             }
         }
@@ -164,8 +166,10 @@ foreach ($relationKey in $relationsMap.Keys) {
     $mergedRelations += [PSCustomObject]@{
         source            = $rel.Source
         sourceNamespace   = $rel.SourceNamespace
+        sourceObjectId    = $rel.SourceObjectId
         target            = $rel.Target
         targetNamespace   = $rel.TargetNamespace
+        targetObjectId    = $rel.TargetObjectId
         foundInExtensions = $extensions
     }
 }

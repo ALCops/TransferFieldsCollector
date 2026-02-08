@@ -58,8 +58,10 @@ ForEach-Object {
     [PSCustomObject]@{
         source                 = $_.relation.source
         sourceNamespace        = $_.relation.sourceNamespace
+        sourceObjectId         = $_.relation.sourceObjectId
         target                 = $_.relation.target
         targetNamespace        = $_.relation.targetNamespace
+        targetObjectId         = $_.relation.targetObjectId
         foundInObjectQualified = $_.relation.foundInObjectQualified
         foundInMethod          = $_.relation.foundInMethod
         appId                  = $_.appId
@@ -89,8 +91,10 @@ ForEach-Object {
     [PSCustomObject]@{
         source           = $g[0].Source
         sourceNamespace  = $g[0].SourceNamespace
+        sourceObjectId   = $g[0].SourceObjectId
         target           = $g[0].Target
         targetNamespace  = $g[0].TargetNamespace
+        targetObjectId   = $g[0].TargetObjectId
         foundInExtension = $g |
         Group-Object AppId, ExtensionName, Publisher, Version |
         ForEach-Object {
