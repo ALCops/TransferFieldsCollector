@@ -5,8 +5,10 @@
     {
       "source": "Acc. Schedule Line",
       "sourceNamespace": "Microsoft.Finance.FinancialReports",
+      "sourceObjectId": 85,
       "target": "Acc. Schedule Result Line CZL",
       "targetNamespace": "Microsoft.Finance.FinancialReports",
+      "targetObjectId": 31111,
       "foundInExtensions": {
         "appId": "267b59d3-7302-44c5-ba77-c87000380514",
         "name": "Core Localization Pack for Czech",
@@ -23,8 +25,10 @@
     {
       "source": "Aggregate Permission Set",
       "sourceNamespace": "System.Security.AccessControl",
+      "sourceObjectId": 2000000167,
       "target": "Permission Set Buffer",
       "targetNamespace": "System.Security.AccessControl",
+      "targetObjectId": 9009,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -90,8 +94,10 @@
     {
       "source": "Analysis by Dim. Parameters",
       "sourceNamespace": "Microsoft.Finance.Analysis",
+      "sourceObjectId": 361,
       "target": "Analysis by Dim. User Param.",
       "targetNamespace": "Microsoft.Finance.Analysis",
+      "targetObjectId": 727,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -157,8 +163,10 @@
     {
       "source": "Analysis by Dim. User Param.",
       "sourceNamespace": "Microsoft.Finance.Analysis",
+      "sourceObjectId": 727,
       "target": "Analysis by Dim. Parameters",
       "targetNamespace": "Microsoft.Finance.Analysis",
+      "targetObjectId": 361,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -228,8 +236,10 @@
     {
       "source": "API Webhook Notification",
       "sourceNamespace": "System.Integration",
+      "sourceObjectId": 2000000096,
       "target": "API Webhook Notification Aggr",
       "targetNamespace": "System.Integration",
+      "targetObjectId": 2000000098,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -299,8 +309,10 @@
     {
       "source": "Applied Delivery Challan",
       "sourceNamespace": "Microsoft.Finance.GST.Subcontracting",
+      "sourceObjectId": 18466,
       "target": "Posted Applied DeliveryChallan",
       "targetNamespace": "Microsoft.Finance.GST.Subcontracting",
+      "targetObjectId": 18472,
       "foundInExtensions": {
         "appId": "db643212-b7fb-4dd4-b5a8-cb44ac714461",
         "name": "India GST",
@@ -317,8 +329,10 @@
     {
       "source": "Applied Payment Entry",
       "sourceNamespace": "Microsoft.Bank.Reconciliation",
+      "sourceObjectId": 1294,
       "target": "Payment Application Proposal",
       "targetNamespace": "Microsoft.Bank.Reconciliation",
+      "targetObjectId": 1293,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -396,8 +410,10 @@
     {
       "source": "Approval Comment Line",
       "sourceNamespace": "System.Automation",
+      "sourceObjectId": 455,
       "target": "Posted Approval Comment Line",
       "targetNamespace": "System.Automation",
+      "targetObjectId": 457,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -463,8 +479,10 @@
     {
       "source": "Approval Entry",
       "sourceNamespace": "System.Automation",
+      "sourceObjectId": 454,
       "target": "Posted Approval Entry",
       "targetNamespace": "System.Automation",
+      "targetObjectId": 456,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -530,8 +548,10 @@
     {
       "source": "Assembly Header",
       "sourceNamespace": "Microsoft.Assembly.Document",
+      "sourceObjectId": 900,
       "target": "Posted Assembly Header",
       "targetNamespace": "Microsoft.Assembly.History",
+      "targetObjectId": 910,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -597,8 +617,10 @@
     {
       "source": "Assembly Line",
       "sourceNamespace": "Microsoft.Assembly.Document",
+      "sourceObjectId": 901,
       "target": "Posted Assembly Line",
       "targetNamespace": "Microsoft.Assembly.History",
+      "targetObjectId": 911,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -664,8 +686,10 @@
     {
       "source": "Attachment Entity Buffer",
       "sourceNamespace": "Microsoft.Integration.Graph",
+      "sourceObjectId": 5509,
       "target": "Unlinked Attachment",
       "targetNamespace": "Microsoft.Integration.Graph",
+      "targetObjectId": 138,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -731,8 +755,10 @@
     {
       "source": "Bank Acc. Reconciliation",
       "sourceNamespace": "Microsoft.Bank.Reconciliation",
+      "sourceObjectId": 273,
       "target": "Bank Account Statement",
       "targetNamespace": "Microsoft.Bank.Statement",
+      "targetObjectId": 275,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -798,8 +824,10 @@
     {
       "source": "Bank Acc. Reconciliation",
       "sourceNamespace": "Microsoft.Bank.Reconciliation",
+      "sourceObjectId": 273,
       "target": "Posted Payment Recon. Hdr",
       "targetNamespace": "Microsoft.Bank.Reconciliation",
+      "targetObjectId": 1295,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -865,8 +893,10 @@
     {
       "source": "Bank Acc. Reconciliation Line",
       "sourceNamespace": "Microsoft.Bank.Reconciliation",
+      "sourceObjectId": 274,
       "target": "Bank Account Statement Line",
       "targetNamespace": "Microsoft.Bank.Statement",
+      "targetObjectId": 276,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -932,8 +962,10 @@
     {
       "source": "Bank Acc. Reconciliation Line",
       "sourceNamespace": "Microsoft.Bank.Reconciliation",
+      "sourceObjectId": 274,
       "target": "Posted Payment Recon. Line",
       "targetNamespace": "Microsoft.Bank.Reconciliation",
+      "targetObjectId": 1296,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -999,8 +1031,10 @@
     {
       "source": "Bank Account",
       "sourceNamespace": "Microsoft.Bank.BankAccount",
+      "sourceObjectId": 270,
       "target": "Contact",
       "targetNamespace": "Microsoft.CRM.Contact",
+      "targetObjectId": 5050,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -1074,8 +1108,10 @@
     {
       "source": "Bank Account Statement",
       "sourceNamespace": "Microsoft.Bank.Statement",
+      "sourceObjectId": 275,
       "target": "Bank Acc. Reconciliation",
       "targetNamespace": "Microsoft.Bank.Reconciliation",
+      "targetObjectId": 273,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -1141,8 +1177,10 @@
     {
       "source": "Bank Account Statement Line",
       "sourceNamespace": "Microsoft.Bank.Statement",
+      "sourceObjectId": 276,
       "target": "Bank Acc. Reconciliation Line",
       "targetNamespace": "Microsoft.Bank.Reconciliation",
+      "targetObjectId": 274,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -1208,8 +1246,10 @@
     {
       "source": "Bank Deposit Header",
       "sourceNamespace": "Microsoft.Bank.Deposit",
+      "sourceObjectId": 1690,
       "target": "Posted Bank Deposit Header",
       "targetNamespace": "Microsoft.Bank.Deposit",
+      "targetObjectId": 1691,
       "foundInExtensions": {
         "appId": "7a129d06-5fd6-4fb6-b82b-0bf539c779d0",
         "name": "_Exclude_Bank Deposits",
@@ -1275,8 +1315,10 @@
     {
       "source": "Bank Statement Header CZB",
       "sourceNamespace": "Microsoft.Bank.Documents",
+      "sourceObjectId": 31252,
       "target": "Iss. Bank Statement Header CZB",
       "targetNamespace": "Microsoft.Bank.Documents",
+      "targetObjectId": 31254,
       "foundInExtensions": {
         "appId": "8730dafb-13cd-42c9-987c-decb6354269d",
         "name": "Banking Documents Localization for Czech",
@@ -1293,8 +1335,10 @@
     {
       "source": "Bank Statement Line CZB",
       "sourceNamespace": "Microsoft.Bank.Documents",
+      "sourceObjectId": 31253,
       "target": "Iss. Bank Statement Line CZB",
       "targetNamespace": "Microsoft.Bank.Documents",
+      "targetObjectId": 31255,
       "foundInExtensions": {
         "appId": "8730dafb-13cd-42c9-987c-decb6354269d",
         "name": "Banking Documents Localization for Czech",
@@ -1315,8 +1359,10 @@
     {
       "source": "BAS XML Field ID",
       "sourceNamespace": "Microsoft.Finance.Consolidation",
+      "sourceObjectId": 11602,
       "target": "BAS XML Field ID Setup",
       "targetNamespace": "Microsoft.Finance.Consolidation",
+      "targetObjectId": 11608,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -1336,8 +1382,10 @@
     {
       "source": "BAS XML Field ID Setup",
       "sourceNamespace": "Microsoft.Finance.Consolidation",
+      "sourceObjectId": 11608,
       "target": "BAS XML Field ID",
       "targetNamespace": "Microsoft.Finance.Consolidation",
+      "targetObjectId": 11602,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -1357,8 +1405,10 @@
     {
       "source": "Bill Group",
       "sourceNamespace": "Microsoft.Sales.Receivables",
+      "sourceObjectId": 7000005,
       "target": "Posted Bill Group",
       "targetNamespace": "Microsoft.Sales.History",
+      "targetObjectId": 7000006,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -1375,8 +1425,10 @@
     {
       "source": "Billing Line",
       "sourceNamespace": "Microsoft.SubscriptionBilling",
+      "sourceObjectId": 8061,
       "target": "Billing Line Archive",
       "targetNamespace": "Microsoft.SubscriptionBilling",
+      "targetObjectId": 8064,
       "foundInExtensions": {
         "appId": "3099ffc7-4cf7-4df6-9b96-7e4bc2bb587c",
         "name": "Subscription Billing",
@@ -1446,8 +1498,10 @@
     {
       "source": "Billing Line Archive",
       "sourceNamespace": "Microsoft.SubscriptionBilling",
+      "sourceObjectId": 8064,
       "target": "Billing Line",
       "targetNamespace": "Microsoft.SubscriptionBilling",
+      "targetObjectId": 8061,
       "foundInExtensions": {
         "appId": "3099ffc7-4cf7-4df6-9b96-7e4bc2bb587c",
         "name": "Subscription Billing",
@@ -1513,8 +1567,10 @@
     {
       "source": "Cartera Doc.",
       "sourceNamespace": "Microsoft.Finance.ReceivablesPayables",
+      "sourceObjectId": 7000002,
       "target": "Closed Cartera Doc.",
       "targetNamespace": "Microsoft.Finance.ReceivablesPayables",
+      "targetObjectId": 7000004,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -1539,8 +1595,10 @@
     {
       "source": "Cartera Doc.",
       "sourceNamespace": "Microsoft.Finance.ReceivablesPayables",
+      "sourceObjectId": 7000002,
       "target": "Posted Cartera Doc.",
       "targetNamespace": "Microsoft.Finance.ReceivablesPayables",
+      "targetObjectId": 7000003,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -1565,8 +1623,10 @@
     {
       "source": "CDS Available Virtual Table",
       "sourceNamespace": "Microsoft.Integration.D365Sales",
+      "sourceObjectId": 5371,
       "target": "CDS Av. Virtual Table Buffer",
       "targetNamespace": "Microsoft.Integration.D365Sales",
+      "targetObjectId": 5372,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -1632,8 +1692,10 @@
     {
       "source": "Closed Cartera Doc.",
       "sourceNamespace": "Microsoft.Finance.ReceivablesPayables",
+      "sourceObjectId": 7000004,
       "target": "Cartera Doc.",
       "targetNamespace": "Microsoft.Finance.ReceivablesPayables",
+      "targetObjectId": 7000002,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -1654,8 +1716,10 @@
     {
       "source": "Column Layout",
       "sourceNamespace": "Microsoft.Finance.FinancialReports",
+      "sourceObjectId": 334,
       "target": "Acc. Schedule Result Col. CZL",
       "targetNamespace": "Microsoft.Finance.FinancialReports",
+      "targetObjectId": 31112,
       "foundInExtensions": {
         "appId": "267b59d3-7302-44c5-ba77-c87000380514",
         "name": "Core Localization Pack for Czech",
@@ -1672,8 +1736,10 @@
     {
       "source": "Comment Line",
       "sourceNamespace": "Microsoft.Foundation.Comment",
+      "sourceObjectId": 97,
       "target": "Comment Line Archive",
       "targetNamespace": "Microsoft.Foundation.Comment",
+      "targetObjectId": 5138,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -1739,8 +1805,10 @@
     {
       "source": "Comment Line Archive",
       "sourceNamespace": "Microsoft.Foundation.Comment",
+      "sourceObjectId": 5138,
       "target": "Comment Line",
       "targetNamespace": "Microsoft.Foundation.Comment",
+      "targetObjectId": 97,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -1806,8 +1874,10 @@
     {
       "source": "Company Information",
       "sourceNamespace": "Microsoft.Foundation.Company",
+      "sourceObjectId": 79,
       "target": "Config. Setup",
       "targetNamespace": "System.IO",
+      "targetObjectId": 8627,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -1873,8 +1943,10 @@
     {
       "source": "Compensation Header CZC",
       "sourceNamespace": "Microsoft.Finance.Compensations",
+      "sourceObjectId": 31272,
       "target": "Posted Compensation Header CZC",
       "targetNamespace": "Microsoft.Finance.Compensations",
+      "targetObjectId": 31274,
       "foundInExtensions": {
         "appId": "2078250c-40a0-40da-812a-8d635104dc80",
         "name": "Compensation Localization for Czech",
@@ -1891,8 +1963,10 @@
     {
       "source": "Compensation Line CZC",
       "sourceNamespace": "Microsoft.Finance.Compensations",
+      "sourceObjectId": 31273,
       "target": "Posted Compensation Line CZC",
       "targetNamespace": "Microsoft.Finance.Compensations",
+      "targetObjectId": 31275,
       "foundInExtensions": {
         "appId": "2078250c-40a0-40da-812a-8d635104dc80",
         "name": "Compensation Localization for Czech",
@@ -1909,8 +1983,10 @@
     {
       "source": "Config. Setup",
       "sourceNamespace": "System.IO",
+      "sourceObjectId": 8627,
       "target": "Company Information",
       "targetNamespace": "Microsoft.Foundation.Company",
+      "targetObjectId": 79,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -1976,8 +2052,10 @@
     {
       "source": "Contact",
       "sourceNamespace": "Microsoft.CRM.Contact",
+      "sourceObjectId": 5050,
       "target": "Bank Account",
       "targetNamespace": "Microsoft.Bank.BankAccount",
+      "targetObjectId": 270,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -2043,8 +2121,10 @@
     {
       "source": "Contact",
       "sourceNamespace": "Microsoft.CRM.Contact",
+      "sourceObjectId": 5050,
       "target": "Customer",
       "targetNamespace": "Microsoft.Sales.Customer",
+      "targetObjectId": 18,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -2110,8 +2190,10 @@
     {
       "source": "Contact",
       "sourceNamespace": "Microsoft.CRM.Contact",
+      "sourceObjectId": 5050,
       "target": "Vendor",
       "targetNamespace": "Microsoft.Purchases.Vendor",
+      "targetObjectId": 23,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -2177,8 +2259,10 @@
     {
       "source": "Contact Business Relation",
       "sourceNamespace": "Microsoft.CRM.BusinessRelation",
+      "sourceObjectId": 5054,
       "target": "Office Contact Details",
       "targetNamespace": "Microsoft.CRM.Outlook",
+      "targetObjectId": 1626,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -2244,8 +2328,10 @@
     {
       "source": "Contract/Service Discount",
       "sourceNamespace": "Microsoft.Service.Contract",
+      "sourceObjectId": 5972,
       "target": "Filed Contract/Serv. Discount",
       "targetNamespace": "Microsoft.Service.Contract",
+      "targetObjectId": 5976,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -2311,8 +2397,10 @@
     {
       "source": "Copy Item Buffer",
       "sourceNamespace": "Microsoft.Inventory.Item",
+      "sourceObjectId": 729,
       "target": "Copy Item Parameters",
       "targetNamespace": "Microsoft.Inventory.Item",
+      "targetObjectId": 728,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -2378,8 +2466,10 @@
     {
       "source": "Copy Item Parameters",
       "sourceNamespace": "Microsoft.Inventory.Item",
+      "sourceObjectId": 728,
       "target": "Copy Item Buffer",
       "targetNamespace": "Microsoft.Inventory.Item",
+      "targetObjectId": 729,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -2445,8 +2535,10 @@
     {
       "source": "Cust. Ledger Entry",
       "sourceNamespace": "Microsoft.Sales.Receivables",
+      "sourceObjectId": 21,
       "target": "CV Ledger Entry Buffer",
       "targetNamespace": "Microsoft.Finance.ReceivablesPayables",
+      "targetObjectId": 382,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -2520,8 +2612,10 @@
     {
       "source": "Custom Permission Set In Plan",
       "sourceNamespace": "System.Azure.Identity",
+      "sourceObjectId": 9018,
       "target": "Permission Set In Plan Buffer",
       "targetNamespace": "System.Azure.Identity",
+      "targetObjectId": 9016,
       "foundInExtensions": {
         "appId": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
         "name": "System Application",
@@ -2587,8 +2681,10 @@
     {
       "source": "Customer",
       "sourceNamespace": "Microsoft.Sales.Customer",
+      "sourceObjectId": 18,
       "target": "Contact",
       "targetNamespace": "Microsoft.CRM.Contact",
+      "targetObjectId": 5050,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -2662,8 +2758,10 @@
     {
       "source": "Customer",
       "sourceNamespace": "Microsoft.Sales.Customer",
+      "sourceObjectId": 18,
       "target": "Customer Templ.",
       "targetNamespace": "Microsoft.Sales.Customer",
+      "targetObjectId": 1381,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -2729,8 +2827,10 @@
     {
       "source": "Customer Bill Header",
       "sourceNamespace": "Microsoft.Bank.Payment",
+      "sourceObjectId": 12174,
       "target": "Issued Customer Bill Header",
       "targetNamespace": "Microsoft.Bank.Payment",
+      "targetObjectId": 12177,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -2747,8 +2847,10 @@
     {
       "source": "Customer Bill Line",
       "sourceNamespace": "Microsoft.Bank.Payment",
+      "sourceObjectId": 12175,
       "target": "Issued Customer Bill Line",
       "targetNamespace": "Microsoft.Bank.Payment",
+      "targetObjectId": 12178,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -2765,8 +2867,10 @@
     {
       "source": "Customer Subscription Contract",
       "sourceNamespace": "Microsoft.SubscriptionBilling",
+      "sourceObjectId": 8052,
       "target": "Sales Header",
       "targetNamespace": "Microsoft.Sales.Document",
+      "targetObjectId": 36,
       "foundInExtensions": {
         "appId": "3099ffc7-4cf7-4df6-9b96-7e4bc2bb587c",
         "name": "Subscription Billing",
@@ -2840,8 +2944,10 @@
     {
       "source": "CV Ledger Entry Buffer",
       "sourceNamespace": "Microsoft.Finance.ReceivablesPayables",
+      "sourceObjectId": 382,
       "target": "Cust. Ledger Entry",
       "targetNamespace": "Microsoft.Sales.Receivables",
+      "targetObjectId": 21,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -2907,8 +3013,10 @@
     {
       "source": "Data Migration Error",
       "sourceNamespace": "System.Integration",
+      "sourceObjectId": 1797,
       "target": "GP Migration Error Overview",
       "targetNamespace": null,
+      "targetObjectId": 40141,
       "foundInExtensions": {
         "appId": "feeb3504-556e-4790-b28d-a2b9ce302d81",
         "name": "Dynamics GP Intelligent Cloud",
@@ -2930,8 +3038,10 @@
     {
       "source": "Data Migration Error",
       "sourceNamespace": "System.Integration",
+      "sourceObjectId": 1797,
       "target": "SL Migration Error Overview",
       "targetNamespace": "Microsoft.DataMigration.SL",
+      "targetObjectId": 47063,
       "foundInExtensions": {
         "appId": "237981b4-9e3c-437c-9b92-988aae978e8f",
         "name": "Dynamics SL Migration",
@@ -2951,8 +3061,10 @@
     {
       "source": "Date",
       "sourceNamespace": "System.Utilities",
+      "sourceObjectId": 2000000007,
       "target": "Date Lookup Buffer",
       "targetNamespace": "System.DateTime",
+      "targetObjectId": 749,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -3018,8 +3130,10 @@
     {
       "source": "Default Permission Set In Plan",
       "sourceNamespace": "System.Azure.Identity",
+      "sourceObjectId": 9019,
       "target": "Custom Permission Set In Plan",
       "targetNamespace": "System.Azure.Identity",
+      "targetObjectId": 9018,
       "foundInExtensions": {
         "appId": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
         "name": "System Application",
@@ -3085,8 +3199,10 @@
     {
       "source": "Default Permission Set In Plan",
       "sourceNamespace": "System.Azure.Identity",
+      "sourceObjectId": 9019,
       "target": "Permission Set In Plan Buffer",
       "targetNamespace": "System.Azure.Identity",
+      "targetObjectId": 9016,
       "foundInExtensions": {
         "appId": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
         "name": "System Application",
@@ -3152,8 +3268,10 @@
     {
       "source": "Deferral Header",
       "sourceNamespace": "Microsoft.Finance.Deferral",
+      "sourceObjectId": 1701,
       "target": "Deferral Header Archive",
       "targetNamespace": "Microsoft.Finance.Deferral",
+      "targetObjectId": 5127,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -3219,8 +3337,10 @@
     {
       "source": "Deferral Header",
       "sourceNamespace": "Microsoft.Finance.Deferral",
+      "sourceObjectId": 1701,
       "target": "Posted Deferral Header",
       "targetNamespace": "Microsoft.Finance.Deferral",
+      "targetObjectId": 1704,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -3290,8 +3410,10 @@
     {
       "source": "Deferral Line",
       "sourceNamespace": "Microsoft.Finance.Deferral",
+      "sourceObjectId": 1702,
       "target": "Deferral Line Archive",
       "targetNamespace": "Microsoft.Finance.Deferral",
+      "targetObjectId": 5128,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -3357,8 +3479,10 @@
     {
       "source": "Deferral Line",
       "sourceNamespace": "Microsoft.Finance.Deferral",
+      "sourceObjectId": 1702,
       "target": "Posted Deferral Line",
       "targetNamespace": "Microsoft.Finance.Deferral",
+      "targetObjectId": 1705,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -3428,8 +3552,10 @@
     {
       "source": "Deferral Line Archive",
       "sourceNamespace": "Microsoft.Finance.Deferral",
+      "sourceObjectId": 5128,
       "target": "Deferral Line",
       "targetNamespace": "Microsoft.Finance.Deferral",
+      "targetObjectId": 1702,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -3495,8 +3621,10 @@
     {
       "source": "Delivery Challan Line",
       "sourceNamespace": "Microsoft.Finance.GST.Subcontracting",
+      "sourceObjectId": 18469,
       "target": "GST Liability Line",
       "targetNamespace": "Microsoft.Finance.GST.Subcontracting",
+      "targetObjectId": 18470,
       "foundInExtensions": {
         "appId": "db643212-b7fb-4dd4-b5a8-cb44ac714461",
         "name": "India GST",
@@ -3513,8 +3641,10 @@
     {
       "source": "Delivery Reminder Header",
       "sourceNamespace": "Microsoft.Purchases.Document",
+      "sourceObjectId": 5005270,
       "target": "Issued Deliv. Reminder Header",
       "targetNamespace": "Microsoft.Purchases.Document",
+      "targetObjectId": 5005272,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -3535,8 +3665,10 @@
     {
       "source": "Delivery Reminder Line",
       "sourceNamespace": "Microsoft.Purchases.Document",
+      "sourceObjectId": 5005271,
       "target": "Issued Deliv. Reminder Line",
       "targetNamespace": "Microsoft.Purchases.Document",
+      "targetObjectId": 5005273,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -3557,8 +3689,10 @@
     {
       "source": "Detailed Cust. Ledg. Entry",
       "sourceNamespace": "Microsoft.Sales.Receivables",
+      "sourceObjectId": 379,
       "target": "Detailed CV Ledg. Entry Buffer",
       "targetNamespace": "Microsoft.Finance.ReceivablesPayables",
+      "targetObjectId": 383,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -3628,8 +3762,10 @@
     {
       "source": "Detailed CV Ledg. Entry Buffer",
       "sourceNamespace": "Microsoft.Finance.ReceivablesPayables",
+      "sourceObjectId": 383,
       "target": "Detailed Cust. Ledg. Entry",
       "targetNamespace": "Microsoft.Sales.Receivables",
+      "targetObjectId": 379,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -3699,8 +3835,10 @@
     {
       "source": "Detailed CV Ledg. Entry Buffer",
       "sourceNamespace": "Microsoft.Finance.ReceivablesPayables",
+      "sourceObjectId": 383,
       "target": "Detailed Employee Ledger Entry",
       "targetNamespace": "Microsoft.HumanResources.Payables",
+      "targetObjectId": 5223,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -3766,8 +3904,10 @@
     {
       "source": "Detailed CV Ledg. Entry Buffer",
       "sourceNamespace": "Microsoft.Finance.ReceivablesPayables",
+      "sourceObjectId": 383,
       "target": "Detailed Vendor Ledg. Entry",
       "targetNamespace": "Microsoft.Purchases.Payables",
+      "targetObjectId": 380,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -3837,8 +3977,10 @@
     {
       "source": "Detailed Employee Ledger Entry",
       "sourceNamespace": "Microsoft.HumanResources.Payables",
+      "sourceObjectId": 5223,
       "target": "Detailed CV Ledg. Entry Buffer",
       "targetNamespace": "Microsoft.Finance.ReceivablesPayables",
+      "targetObjectId": 383,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -3904,8 +4046,10 @@
     {
       "source": "Detailed Vendor Ledg. Entry",
       "sourceNamespace": "Microsoft.Purchases.Payables",
+      "sourceObjectId": 380,
       "target": "Detailed CV Ledg. Entry Buffer",
       "targetNamespace": "Microsoft.Finance.ReceivablesPayables",
+      "targetObjectId": 383,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -3975,8 +4119,10 @@
     {
       "source": "Dimension Set Entry",
       "sourceNamespace": "Microsoft.Finance.Dimension",
+      "sourceObjectId": 480,
       "target": "Dimension Set Entry Buffer",
       "targetNamespace": "Microsoft.Finance.Dimension",
+      "targetObjectId": 5489,
       "foundInExtensions": [
         {
           "appId": "10cb69d9-bc8a-4d27-970a-9e110e9db2a5",
@@ -4105,8 +4251,10 @@
     {
       "source": "Dimension Set Entry Buffer",
       "sourceNamespace": "Microsoft.Finance.Dimension",
+      "sourceObjectId": 5489,
       "target": "Dimension Set Entry",
       "targetNamespace": "Microsoft.Finance.Dimension",
+      "targetObjectId": 480,
       "foundInExtensions": [
         {
           "appId": "10cb69d9-bc8a-4d27-970a-9e110e9db2a5",
@@ -4235,8 +4383,10 @@
     {
       "source": "Direct Debit Collection Entry",
       "sourceNamespace": "Microsoft.Bank.DirectDebit",
+      "sourceObjectId": 1208,
       "target": "Direct Debit Collection Buffer",
       "targetNamespace": "Microsoft.Bank.DirectDebit",
+      "targetObjectId": 1255,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -4302,8 +4452,10 @@
     {
       "source": "E-Commerce Merchant",
       "sourceNamespace": "Microsoft.Finance.GST.Base",
+      "sourceObjectId": 18015,
       "target": "E-Comm. Merchant",
       "targetNamespace": "Microsoft.Finance.GST.Base",
+      "targetObjectId": 18017,
       "foundInExtensions": {
         "appId": "db643212-b7fb-4dd4-b5a8-cb44ac714461",
         "name": "India GST",
@@ -4320,8 +4472,10 @@
     {
       "source": "EFT Export",
       "sourceNamespace": "Microsoft.Bank.ElectronicFundsTransfer",
+      "sourceObjectId": 10810,
       "target": "EFT Export Workset",
       "targetNamespace": "Microsoft.Bank.ElectronicFundsTransfer",
+      "targetObjectId": 10811,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -4342,8 +4496,10 @@
     {
       "source": "Email Outbox",
       "sourceNamespace": "System.Email",
+      "sourceObjectId": 8888,
       "target": "Sent Email",
       "targetNamespace": "System.Email",
+      "targetObjectId": 8889,
       "foundInExtensions": {
         "appId": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
         "name": "System Application",
@@ -4409,8 +4565,10 @@
     {
       "source": "Email Scenario Attachments",
       "sourceNamespace": "System.Email",
+      "sourceObjectId": 8911,
       "target": "Email Attachments",
       "targetNamespace": "System.Email",
+      "targetObjectId": 8913,
       "foundInExtensions": {
         "appId": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
         "name": "System Application",
@@ -4480,8 +4638,10 @@
     {
       "source": "Exp. Invt. Order Tracking",
       "sourceNamespace": "Microsoft.Inventory.Counting.Tracking",
+      "sourceObjectId": 6026,
       "target": "Pstd.Exp.Invt.Order.Tracking",
       "targetNamespace": "Microsoft.Inventory.Counting.Tracking",
+      "targetObjectId": 6027,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -4547,8 +4707,10 @@
     {
       "source": "FA Ledger Entry",
       "sourceNamespace": "Microsoft.FixedAssets.Ledger",
+      "sourceObjectId": 5601,
       "target": "FA Ledg. Entry w. Issue",
       "targetNamespace": "Microsoft.FixedAssets.Repair",
+      "targetObjectId": 6090,
       "foundInExtensions": {
         "appId": "7961e9dc-a8e5-49b1-839b-3a78803a4cb8",
         "name": "Troubleshoot FA Ledger Entries",
@@ -4614,8 +4776,10 @@
     {
       "source": "Finance Charge Memo Header",
       "sourceNamespace": "Microsoft.Sales.FinanceCharge",
+      "sourceObjectId": 302,
       "target": "Issued Fin. Charge Memo Header",
       "targetNamespace": "Microsoft.Sales.FinanceCharge",
+      "targetObjectId": 304,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -4685,8 +4849,10 @@
     {
       "source": "Finance Charge Memo Header",
       "sourceNamespace": "Microsoft.Sales.FinanceCharge",
+      "sourceObjectId": 302,
       "target": "Issued Reminder Header",
       "targetNamespace": "Microsoft.Sales.Reminder",
+      "targetObjectId": 297,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -4703,8 +4869,10 @@
     {
       "source": "Finance Charge Memo Line",
       "sourceNamespace": "Microsoft.Sales.FinanceCharge",
+      "sourceObjectId": 303,
       "target": "Issued Fin. Charge Memo Line",
       "targetNamespace": "Microsoft.Sales.FinanceCharge",
+      "targetObjectId": 305,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -4770,8 +4938,10 @@
     {
       "source": "Finance Charge Memo Line",
       "sourceNamespace": "Microsoft.Sales.FinanceCharge",
+      "sourceObjectId": 303,
       "target": "Issued Reminder Line",
       "targetNamespace": "Microsoft.Sales.Reminder",
+      "targetObjectId": 298,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -4788,8 +4958,10 @@
     {
       "source": "FS Connection Setup",
       "sourceNamespace": "Microsoft.Integration.FieldService",
+      "sourceObjectId": 6418,
       "target": "FS Connection Setup",
       "targetNamespace": "Microsoft.Integration.DynamicsFieldService",
+      "targetObjectId": 6623,
       "foundInExtensions": {
         "appId": "1ba1031e-eae9-4f20-b9d2-d19b6d1e3f29",
         "name": "Field Service Integration",
@@ -4855,8 +5027,10 @@
     {
       "source": "G/L Account",
       "sourceNamespace": "Microsoft.Finance.GeneralLedger.Account",
+      "sourceObjectId": 15,
       "target": "G/L Account (Analysis View)",
       "targetNamespace": "Microsoft.Finance.Analysis",
+      "targetObjectId": 376,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -4922,8 +5096,10 @@
     {
       "source": "G/L Entry",
       "sourceNamespace": "Microsoft.Finance.GeneralLedger.Ledger",
+      "sourceObjectId": 17,
       "target": "G/L Entry Application Buffer",
       "targetNamespace": "Microsoft.Finance.GeneralLedger.Review",
+      "targetObjectId": 11307,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -4940,8 +5116,10 @@
     {
       "source": "G/L Entry",
       "sourceNamespace": "Microsoft.Finance.GeneralLedger.Ledger",
+      "sourceObjectId": 17,
       "target": "G/L Entry Posting Preview",
       "targetNamespace": "Microsoft.Finance.GeneralLedger.Ledger",
+      "targetObjectId": 1570,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -5007,8 +5185,10 @@
     {
       "source": "Gate Entry Attachment",
       "sourceNamespace": "Microsoft.Warehouse.GateEntry",
+      "sourceObjectId": 18601,
       "target": "Posted Gate Entry Attachment",
       "targetNamespace": "Microsoft.Warehouse.GateEntry",
+      "targetObjectId": 18605,
       "foundInExtensions": {
         "appId": "2dc39818-e0f0-42b6-99eb-ba29dc5f4102",
         "name": "India Gate Entry",
@@ -5033,8 +5213,10 @@
     {
       "source": "Gate Entry Header",
       "sourceNamespace": "Microsoft.Warehouse.GateEntry",
+      "sourceObjectId": 18603,
       "target": "Posted Gate Entry Header",
       "targetNamespace": "Microsoft.Warehouse.GateEntry",
+      "targetObjectId": 18606,
       "foundInExtensions": {
         "appId": "2dc39818-e0f0-42b6-99eb-ba29dc5f4102",
         "name": "India Gate Entry",
@@ -5051,8 +5233,10 @@
     {
       "source": "Gate Entry Line",
       "sourceNamespace": "Microsoft.Warehouse.GateEntry",
+      "sourceObjectId": 18604,
       "target": "Posted Gate Entry Line",
       "targetNamespace": "Microsoft.Warehouse.GateEntry",
+      "targetObjectId": 18607,
       "foundInExtensions": {
         "appId": "2dc39818-e0f0-42b6-99eb-ba29dc5f4102",
         "name": "India Gate Entry",
@@ -5069,8 +5253,10 @@
     {
       "source": "Gen. Journal Batch",
       "sourceNamespace": "Microsoft.Finance.GeneralLedger.Journal",
+      "sourceObjectId": 232,
       "target": "Posted Gen. Journal Batch",
       "targetNamespace": "Microsoft.Finance.GeneralLedger.Journal",
+      "targetObjectId": 182,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -5136,8 +5322,10 @@
     {
       "source": "Gen. Journal Line",
       "sourceNamespace": "Microsoft.Finance.GeneralLedger.Journal",
+      "sourceObjectId": 81,
       "target": "Posted Gen. Journal Line",
       "targetNamespace": "Microsoft.Finance.GeneralLedger.Journal",
+      "targetObjectId": 181,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -5203,8 +5391,10 @@
     {
       "source": "Gen. Journal Line",
       "sourceNamespace": "Microsoft.Finance.GeneralLedger.Journal",
+      "sourceObjectId": 81,
       "target": "Standard General Journal Line",
       "targetNamespace": "Microsoft.Finance.GeneralLedger.Journal",
+      "targetObjectId": 751,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -5270,8 +5460,10 @@
     {
       "source": "Gen. Journal Line",
       "sourceNamespace": "Microsoft.Finance.GeneralLedger.Journal",
+      "sourceObjectId": 81,
       "target": "Waiting Journal",
       "targetNamespace": "Microsoft.Purchases.Payables",
+      "targetObjectId": 15000004,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -5288,8 +5480,10 @@
     {
       "source": "GST Distribution Header",
       "sourceNamespace": "Microsoft.Finance.GST.Distribution",
+      "sourceObjectId": 18203,
       "target": "Posted GST Distribution Header",
       "targetNamespace": "Microsoft.Finance.GST.Distribution",
+      "targetObjectId": 18207,
       "foundInExtensions": {
         "appId": "db643212-b7fb-4dd4-b5a8-cb44ac714461",
         "name": "India GST",
@@ -5306,8 +5500,10 @@
     {
       "source": "GST Distribution Line",
       "sourceNamespace": "Microsoft.Finance.GST.Distribution",
+      "sourceObjectId": 18204,
       "target": "Posted GST Distribution Line",
       "targetNamespace": "Microsoft.Finance.GST.Distribution",
+      "targetObjectId": 18208,
       "foundInExtensions": {
         "appId": "db643212-b7fb-4dd4-b5a8-cb44ac714461",
         "name": "India GST",
@@ -5324,8 +5520,10 @@
     {
       "source": "GST Liability Line",
       "sourceNamespace": "Microsoft.Finance.GST.Subcontracting",
+      "sourceObjectId": 18470,
       "target": "Posted GST Liability Line",
       "targetNamespace": "Microsoft.Finance.GST.Subcontracting",
+      "targetObjectId": 18473,
       "foundInExtensions": {
         "appId": "db643212-b7fb-4dd4-b5a8-cb44ac714461",
         "name": "India GST",
@@ -5342,8 +5540,10 @@
     {
       "source": "GST Payment Buffer",
       "sourceNamespace": "Microsoft.Finance.GST.Distribution",
+      "sourceObjectId": 18205,
       "target": "Posted Settlement Entries",
       "targetNamespace": "Microsoft.Finance.GST.Distribution",
+      "targetObjectId": 18209,
       "foundInExtensions": {
         "appId": "db643212-b7fb-4dd4-b5a8-cb44ac714461",
         "name": "India GST",
@@ -5360,8 +5560,10 @@
     {
       "source": "Handled IC Inbox Jnl. Line",
       "sourceNamespace": "Microsoft.Intercompany.Inbox",
+      "sourceObjectId": 421,
       "target": "IC Inbox Jnl. Line",
       "targetNamespace": "Microsoft.Intercompany.Inbox",
+      "targetObjectId": 419,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -5431,8 +5633,10 @@
     {
       "source": "Handled IC Inbox Purch. Header",
       "sourceNamespace": "Microsoft.Intercompany.Inbox",
+      "sourceObjectId": 440,
       "target": "IC Inbox Purchase Header",
       "targetNamespace": "Microsoft.Intercompany.Inbox",
+      "targetObjectId": 436,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -5502,8 +5706,10 @@
     {
       "source": "Handled IC Inbox Purch. Line",
       "sourceNamespace": "Microsoft.Intercompany.Inbox",
+      "sourceObjectId": 441,
       "target": "IC Inbox Purchase Line",
       "targetNamespace": "Microsoft.Intercompany.Inbox",
+      "targetObjectId": 437,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -5573,8 +5779,10 @@
     {
       "source": "Handled IC Inbox Sales Header",
       "sourceNamespace": "Microsoft.Intercompany.Inbox",
+      "sourceObjectId": 438,
       "target": "IC Inbox Sales Header",
       "targetNamespace": "Microsoft.Intercompany.Inbox",
+      "targetObjectId": 434,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -5644,8 +5852,10 @@
     {
       "source": "Handled IC Inbox Sales Line",
       "sourceNamespace": "Microsoft.Intercompany.Inbox",
+      "sourceObjectId": 439,
       "target": "IC Inbox Sales Line",
       "targetNamespace": "Microsoft.Intercompany.Inbox",
+      "targetObjectId": 435,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -5715,8 +5925,10 @@
     {
       "source": "Handled IC Inbox Trans.",
       "sourceNamespace": "Microsoft.Intercompany.Inbox",
+      "sourceObjectId": 420,
       "target": "IC Inbox Transaction",
       "targetNamespace": "Microsoft.Intercompany.Inbox",
+      "targetObjectId": 418,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -5782,8 +5994,10 @@
     {
       "source": "Handled IC Outbox Jnl. Line",
       "sourceNamespace": "Microsoft.Intercompany.Outbox",
+      "sourceObjectId": 417,
       "target": "IC Outbox Jnl. Line",
       "targetNamespace": "Microsoft.Intercompany.Outbox",
+      "targetObjectId": 415,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -5849,8 +6063,10 @@
     {
       "source": "Handled IC Outbox Purch. Hdr",
       "sourceNamespace": "Microsoft.Intercompany.Outbox",
+      "sourceObjectId": 432,
       "target": "IC Outbox Purchase Header",
       "targetNamespace": "Microsoft.Intercompany.Outbox",
+      "targetObjectId": 428,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -5916,8 +6132,10 @@
     {
       "source": "Handled IC Outbox Purch. Line",
       "sourceNamespace": "Microsoft.Intercompany.Outbox",
+      "sourceObjectId": 433,
       "target": "IC Outbox Purchase Line",
       "targetNamespace": "Microsoft.Intercompany.Outbox",
+      "targetObjectId": 429,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -5983,8 +6201,10 @@
     {
       "source": "Handled IC Outbox Sales Header",
       "sourceNamespace": "Microsoft.Intercompany.Outbox",
+      "sourceObjectId": 430,
       "target": "IC Outbox Sales Header",
       "targetNamespace": "Microsoft.Intercompany.Outbox",
+      "targetObjectId": 426,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -6050,8 +6270,10 @@
     {
       "source": "Handled IC Outbox Sales Line",
       "sourceNamespace": "Microsoft.Intercompany.Outbox",
+      "sourceObjectId": 431,
       "target": "IC Outbox Sales Line",
       "targetNamespace": "Microsoft.Intercompany.Outbox",
+      "targetObjectId": 427,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -6117,8 +6339,10 @@
     {
       "source": "IC Comment Line",
       "sourceNamespace": "Microsoft.Intercompany.Comment",
+      "sourceObjectId": 424,
       "target": "Buffer IC Comment Line",
       "targetNamespace": "Microsoft.Intercompany.DataExchange",
+      "targetObjectId": 603,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -6184,8 +6408,10 @@
     {
       "source": "IC Document Dimension",
       "sourceNamespace": "Microsoft.Intercompany.Dimension",
+      "sourceObjectId": 442,
       "target": "Buffer IC Document Dimension",
       "targetNamespace": "Microsoft.Intercompany.DataExchange",
+      "targetObjectId": 604,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -6251,8 +6477,10 @@
     {
       "source": "IC Inbox Jnl. Line",
       "sourceNamespace": "Microsoft.Intercompany.Inbox",
+      "sourceObjectId": 419,
       "target": "Buffer IC Inbox Jnl. Line",
       "targetNamespace": "Microsoft.Intercompany.DataExchange",
+      "targetObjectId": 605,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -6318,8 +6546,10 @@
     {
       "source": "IC Inbox Jnl. Line",
       "sourceNamespace": "Microsoft.Intercompany.Inbox",
+      "sourceObjectId": 419,
       "target": "Handled IC Inbox Jnl. Line",
       "targetNamespace": "Microsoft.Intercompany.Inbox",
+      "targetObjectId": 421,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -6393,8 +6623,10 @@
     {
       "source": "IC Inbox Jnl. Line",
       "sourceNamespace": "Microsoft.Intercompany.Inbox",
+      "sourceObjectId": 419,
       "target": "IC Outbox Jnl. Line",
       "targetNamespace": "Microsoft.Intercompany.Outbox",
+      "targetObjectId": 415,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -6460,8 +6692,10 @@
     {
       "source": "IC Inbox Purchase Header",
       "sourceNamespace": "Microsoft.Intercompany.Inbox",
+      "sourceObjectId": 436,
       "target": "Buffer IC Inbox Purch Header",
       "targetNamespace": "Microsoft.Intercompany.DataExchange",
+      "targetObjectId": 607,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -6527,8 +6761,10 @@
     {
       "source": "IC Inbox Purchase Header",
       "sourceNamespace": "Microsoft.Intercompany.Inbox",
+      "sourceObjectId": 436,
       "target": "Handled IC Inbox Purch. Header",
       "targetNamespace": "Microsoft.Intercompany.Inbox",
+      "targetObjectId": 440,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -6602,8 +6838,10 @@
     {
       "source": "IC Inbox Purchase Header",
       "sourceNamespace": "Microsoft.Intercompany.Inbox",
+      "sourceObjectId": 436,
       "target": "IC Outbox Purchase Header",
       "targetNamespace": "Microsoft.Intercompany.Outbox",
+      "targetObjectId": 428,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -6669,8 +6907,10 @@
     {
       "source": "IC Inbox Purchase Line",
       "sourceNamespace": "Microsoft.Intercompany.Inbox",
+      "sourceObjectId": 437,
       "target": "Buffer IC Inbox Purchase Line",
       "targetNamespace": "Microsoft.Intercompany.DataExchange",
+      "targetObjectId": 606,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -6736,8 +6976,10 @@
     {
       "source": "IC Inbox Purchase Line",
       "sourceNamespace": "Microsoft.Intercompany.Inbox",
+      "sourceObjectId": 437,
       "target": "Handled IC Inbox Purch. Line",
       "targetNamespace": "Microsoft.Intercompany.Inbox",
+      "targetObjectId": 441,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -6811,8 +7053,10 @@
     {
       "source": "IC Inbox Purchase Line",
       "sourceNamespace": "Microsoft.Intercompany.Inbox",
+      "sourceObjectId": 437,
       "target": "IC Outbox Purchase Line",
       "targetNamespace": "Microsoft.Intercompany.Outbox",
+      "targetObjectId": 429,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -6878,8 +7122,10 @@
     {
       "source": "IC Inbox Purchase Line",
       "sourceNamespace": "Microsoft.Intercompany.Inbox",
+      "sourceObjectId": 437,
       "target": "Purchase Line",
       "targetNamespace": "Microsoft.Purchases.Document",
+      "targetObjectId": 39,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -6945,8 +7191,10 @@
     {
       "source": "IC Inbox Sales Header",
       "sourceNamespace": "Microsoft.Intercompany.Inbox",
+      "sourceObjectId": 434,
       "target": "Buffer IC Inbox Sales Header",
       "targetNamespace": "Microsoft.Intercompany.DataExchange",
+      "targetObjectId": 608,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -7012,8 +7260,10 @@
     {
       "source": "IC Inbox Sales Header",
       "sourceNamespace": "Microsoft.Intercompany.Inbox",
+      "sourceObjectId": 434,
       "target": "Handled IC Inbox Sales Header",
       "targetNamespace": "Microsoft.Intercompany.Inbox",
+      "targetObjectId": 438,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -7087,8 +7337,10 @@
     {
       "source": "IC Inbox Sales Header",
       "sourceNamespace": "Microsoft.Intercompany.Inbox",
+      "sourceObjectId": 434,
       "target": "IC Outbox Sales Header",
       "targetNamespace": "Microsoft.Intercompany.Outbox",
+      "targetObjectId": 426,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -7154,8 +7406,10 @@
     {
       "source": "IC Inbox Sales Line",
       "sourceNamespace": "Microsoft.Intercompany.Inbox",
+      "sourceObjectId": 435,
       "target": "Buffer IC Inbox Sales Line",
       "targetNamespace": "Microsoft.Intercompany.DataExchange",
+      "targetObjectId": 609,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -7221,8 +7475,10 @@
     {
       "source": "IC Inbox Sales Line",
       "sourceNamespace": "Microsoft.Intercompany.Inbox",
+      "sourceObjectId": 435,
       "target": "Handled IC Inbox Sales Line",
       "targetNamespace": "Microsoft.Intercompany.Inbox",
+      "targetObjectId": 439,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -7296,8 +7552,10 @@
     {
       "source": "IC Inbox Sales Line",
       "sourceNamespace": "Microsoft.Intercompany.Inbox",
+      "sourceObjectId": 435,
       "target": "IC Outbox Sales Line",
       "targetNamespace": "Microsoft.Intercompany.Outbox",
+      "targetObjectId": 427,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -7363,8 +7621,10 @@
     {
       "source": "IC Inbox Sales Line",
       "sourceNamespace": "Microsoft.Intercompany.Inbox",
+      "sourceObjectId": 435,
       "target": "Sales Line",
       "targetNamespace": "Microsoft.Sales.Document",
+      "targetObjectId": 37,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -7430,8 +7690,10 @@
     {
       "source": "IC Inbox Transaction",
       "sourceNamespace": "Microsoft.Intercompany.Inbox",
+      "sourceObjectId": 418,
       "target": "Buffer IC Inbox Transaction",
       "targetNamespace": "Microsoft.Intercompany.DataExchange",
+      "targetObjectId": 610,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -7497,8 +7759,10 @@
     {
       "source": "IC Inbox Transaction",
       "sourceNamespace": "Microsoft.Intercompany.Inbox",
+      "sourceObjectId": 418,
       "target": "Handled IC Inbox Trans.",
       "targetNamespace": "Microsoft.Intercompany.Inbox",
+      "targetObjectId": 420,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -7564,8 +7828,10 @@
     {
       "source": "IC Inbox/Outbox Jnl. Line Dim.",
       "sourceNamespace": "Microsoft.Intercompany.Dimension",
+      "sourceObjectId": 423,
       "target": "Buffer IC InOut Jnl. Line Dim.",
       "targetNamespace": "Microsoft.Intercompany.DataExchange",
+      "targetObjectId": 611,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -7631,8 +7897,10 @@
     {
       "source": "IC Outbox Jnl. Line",
       "sourceNamespace": "Microsoft.Intercompany.Outbox",
+      "sourceObjectId": 415,
       "target": "Handled IC Outbox Jnl. Line",
       "targetNamespace": "Microsoft.Intercompany.Outbox",
+      "targetObjectId": 417,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -7698,8 +7966,10 @@
     {
       "source": "IC Outbox Purchase Header",
       "sourceNamespace": "Microsoft.Intercompany.Outbox",
+      "sourceObjectId": 428,
       "target": "Handled IC Outbox Purch. Hdr",
       "targetNamespace": "Microsoft.Intercompany.Outbox",
+      "targetObjectId": 432,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -7765,8 +8035,10 @@
     {
       "source": "IC Outbox Purchase Line",
       "sourceNamespace": "Microsoft.Intercompany.Outbox",
+      "sourceObjectId": 429,
       "target": "Handled IC Outbox Purch. Line",
       "targetNamespace": "Microsoft.Intercompany.Outbox",
+      "targetObjectId": 433,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -7832,8 +8104,10 @@
     {
       "source": "IC Outbox Sales Header",
       "sourceNamespace": "Microsoft.Intercompany.Outbox",
+      "sourceObjectId": 426,
       "target": "Handled IC Outbox Sales Header",
       "targetNamespace": "Microsoft.Intercompany.Outbox",
+      "targetObjectId": 430,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -7899,8 +8173,10 @@
     {
       "source": "IC Outbox Sales Line",
       "sourceNamespace": "Microsoft.Intercompany.Outbox",
+      "sourceObjectId": 427,
       "target": "Handled IC Outbox Sales Line",
       "targetNamespace": "Microsoft.Intercompany.Outbox",
+      "targetObjectId": 431,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -7966,8 +8242,10 @@
     {
       "source": "IC Outbox Transaction",
       "sourceNamespace": "Microsoft.Intercompany.Outbox",
+      "sourceObjectId": 414,
       "target": "Handled IC Outbox Trans.",
       "targetNamespace": "Microsoft.Intercompany.Outbox",
+      "targetObjectId": 416,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -8033,8 +8311,10 @@
     {
       "source": "Incoming Document Attachment",
       "sourceNamespace": "Microsoft.eServices.EDocument",
+      "sourceObjectId": 133,
       "target": "Attachment Entity Buffer",
       "targetNamespace": "Microsoft.Integration.Graph",
+      "targetObjectId": 5509,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -8100,8 +8380,10 @@
     {
       "source": "Incoming Document Attachment",
       "sourceNamespace": "Microsoft.eServices.EDocument",
+      "sourceObjectId": 133,
       "target": "Inc. Doc. Attachment Overview",
       "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetObjectId": 137,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -8167,8 +8449,10 @@
     {
       "source": "Intelligent Cloud Status",
       "sourceNamespace": "System.Integration",
+      "sourceObjectId": 2000000173,
       "target": "Cloud Migration Override Log",
       "targetNamespace": "Microsoft.DataMigration",
+      "targetObjectId": 40041,
       "foundInExtensions": {
         "appId": "58623bfa-0559-4bc2-ae1c-0979c29fd9e0",
         "name": "Intelligent Cloud Base",
@@ -8242,8 +8526,10 @@
     {
       "source": "Invt. Receipt Header",
       "sourceNamespace": "Microsoft.Inventory.History",
+      "sourceObjectId": 5852,
       "target": "Invt. Document Header",
       "targetNamespace": "Microsoft.Inventory.Document",
+      "targetObjectId": 5850,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -8317,8 +8603,10 @@
     {
       "source": "Invt. Receipt Line",
       "sourceNamespace": "Microsoft.Inventory.History",
+      "sourceObjectId": 5853,
       "target": "Invt. Document Line",
       "targetNamespace": "Microsoft.Inventory.Document",
+      "targetObjectId": 5851,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -8384,8 +8672,10 @@
     {
       "source": "Invt. Shipment Header",
       "sourceNamespace": "Microsoft.Inventory.History",
+      "sourceObjectId": 5854,
       "target": "Invt. Document Header",
       "targetNamespace": "Microsoft.Inventory.Document",
+      "targetObjectId": 5850,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -8459,8 +8749,10 @@
     {
       "source": "Invt. Shipment Line",
       "sourceNamespace": "Microsoft.Inventory.History",
+      "sourceObjectId": 5855,
       "target": "Invt. Document Line",
       "targetNamespace": "Microsoft.Inventory.Document",
+      "targetObjectId": 5851,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -8526,8 +8818,10 @@
     {
       "source": "Iss. Bank Statement Line CZB",
       "sourceNamespace": "Microsoft.Bank.Documents",
+      "sourceObjectId": 31255,
       "target": "Bank Statement Line CZB",
       "targetNamespace": "Microsoft.Bank.Documents",
+      "targetObjectId": 31253,
       "foundInExtensions": {
         "appId": "8730dafb-13cd-42c9-987c-decb6354269d",
         "name": "Banking Documents Localization for Czech",
@@ -8544,8 +8838,10 @@
     {
       "source": "Issued Fin. Charge Memo Header",
       "sourceNamespace": "Microsoft.Sales.FinanceCharge",
+      "sourceObjectId": 304,
       "target": "Issued Reminder Header",
       "targetNamespace": "Microsoft.Sales.Reminder",
+      "targetObjectId": 297,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -8562,8 +8858,10 @@
     {
       "source": "Issued Fin. Charge Memo Line",
       "sourceNamespace": "Microsoft.Sales.FinanceCharge",
+      "sourceObjectId": 305,
       "target": "Issued Reminder Line",
       "targetNamespace": "Microsoft.Sales.Reminder",
+      "targetObjectId": 298,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -8580,8 +8878,10 @@
     {
       "source": "Item",
       "sourceNamespace": "Microsoft.Inventory.Item",
+      "sourceObjectId": 27,
       "target": "Item Templ.",
       "targetNamespace": "Microsoft.Inventory.Item",
+      "targetObjectId": 1382,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -8647,8 +8947,10 @@
     {
       "source": "Item Application Entry",
       "sourceNamespace": "Microsoft.Inventory.Ledger",
+      "sourceObjectId": 339,
       "target": "Item Application Entry History",
       "targetNamespace": "Microsoft.Inventory.Ledger",
+      "targetObjectId": 343,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -8714,8 +9016,10 @@
     {
       "source": "Item Entry Relation",
       "sourceNamespace": "Microsoft.Inventory.Item",
+      "sourceObjectId": 6507,
       "target": "Whse. Item Entry Relation",
       "targetNamespace": "Microsoft.Warehouse.Ledger",
+      "targetObjectId": 6509,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -8781,8 +9085,10 @@
     {
       "source": "Item Journal Line",
       "sourceNamespace": "Microsoft.Inventory.Journal",
+      "sourceObjectId": 83,
       "target": "Standard Item Journal Line",
       "targetNamespace": "Microsoft.Inventory.Journal",
+      "targetObjectId": 753,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -8848,8 +9154,10 @@
     {
       "source": "Job",
       "sourceNamespace": "Microsoft.Projects.Project.Job",
+      "sourceObjectId": 167,
       "target": "Job Archive",
       "targetNamespace": "Microsoft.Projects.Project.Archive",
+      "targetObjectId": 5135,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -8915,8 +9223,10 @@
     {
       "source": "Job Archive",
       "sourceNamespace": "Microsoft.Projects.Project.Archive",
+      "sourceObjectId": 5135,
       "target": "Job",
       "targetNamespace": "Microsoft.Projects.Project.Job",
+      "targetObjectId": 167,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -8982,8 +9292,10 @@
     {
       "source": "Job Planning Line",
       "sourceNamespace": "Microsoft.Projects.Project.Planning",
+      "sourceObjectId": 1003,
       "target": "Job Planning Line Archive",
       "targetNamespace": "Microsoft.Projects.Project.Archive",
+      "targetObjectId": 5137,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -9049,8 +9361,10 @@
     {
       "source": "Job Planning Line Archive",
       "sourceNamespace": "Microsoft.Projects.Project.Archive",
+      "sourceObjectId": 5137,
       "target": "Job Planning Line",
       "targetNamespace": "Microsoft.Projects.Project.Planning",
+      "targetObjectId": 1003,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -9116,8 +9430,10 @@
     {
       "source": "Job Queue Entry",
       "sourceNamespace": "System.Threading",
+      "sourceObjectId": 472,
       "target": "Job Queue Entry Buffer",
       "targetNamespace": "System.Threading",
+      "targetObjectId": 479,
       "foundInExtensions": [
         {
           "appId": "10cb69d9-bc8a-4d27-970a-9e110e9db2a5",
@@ -9282,8 +9598,10 @@
     {
       "source": "Job Task",
       "sourceNamespace": "Microsoft.Projects.Project.Job",
+      "sourceObjectId": 1001,
       "target": "Job Task Archive",
       "targetNamespace": "Microsoft.Projects.Project.Archive",
+      "targetObjectId": 5136,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -9349,8 +9667,10 @@
     {
       "source": "Job Task Archive",
       "sourceNamespace": "Microsoft.Projects.Project.Archive",
+      "sourceObjectId": 5136,
       "target": "Job Task",
       "targetNamespace": "Microsoft.Projects.Project.Job",
+      "targetObjectId": 1001,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -9416,8 +9736,10 @@
     {
       "source": "Metadata Permission Set",
       "sourceNamespace": "System.Security.AccessControl",
+      "sourceObjectId": 2000000250,
       "target": "Tenant Permission Set",
       "targetNamespace": "System.Security.AccessControl",
+      "targetObjectId": 2000000165,
       "foundInExtensions": {
         "appId": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
         "name": "System Application",
@@ -9483,8 +9805,10 @@
     {
       "source": "Metadata Permission Set Rel.",
       "sourceNamespace": "System.Security.AccessControl",
+      "sourceObjectId": 2000000252,
       "target": "Tenant Permission Set Rel.",
       "targetNamespace": "System.Security.AccessControl",
+      "targetObjectId": 2000000253,
       "foundInExtensions": {
         "appId": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
         "name": "System Application",
@@ -9550,8 +9874,10 @@
     {
       "source": "MS - PayPal Standard Account",
       "sourceNamespace": "Microsoft.Bank.PayPal",
+      "sourceObjectId": 1070,
       "target": "Payment Service Setup",
       "targetNamespace": "Microsoft.Bank.Setup",
+      "targetObjectId": 1060,
       "foundInExtensions": {
         "appId": "d09fa965-9a2a-424d-b704-69f3b54ed0ce",
         "name": "Payment Links to PayPal",
@@ -9617,8 +9943,10 @@
     {
       "source": "MS - PayPal Standard Template",
       "sourceNamespace": "Microsoft.Bank.PayPal",
+      "sourceObjectId": 1071,
       "target": "MS - PayPal Standard Account",
       "targetNamespace": "Microsoft.Bank.PayPal",
+      "targetObjectId": 1070,
       "foundInExtensions": {
         "appId": "d09fa965-9a2a-424d-b704-69f3b54ed0ce",
         "name": "Payment Links to PayPal",
@@ -9704,8 +10032,10 @@
     {
       "source": "MS - Yodlee Bank Acc. Link",
       "sourceNamespace": "Microsoft.Bank.StatementImport.Yodlee",
+      "sourceObjectId": 1451,
       "target": "Online Bank Acc. Link",
       "targetNamespace": "Microsoft.Bank.BankAccount",
+      "targetObjectId": 777,
       "foundInExtensions": {
         "appId": "e2743298-9ccb-49cd-9d8e-4b2d1ab91d36",
         "name": "Envestnet Yodlee Bank Feeds",
@@ -9725,8 +10055,10 @@
     {
       "source": "MS - Yodlee Bank Service Setup",
       "sourceNamespace": "Microsoft.Bank.StatementImport.Yodlee",
+      "sourceObjectId": 1450,
       "target": "MS - Yodlee Bank Session",
       "targetNamespace": "Microsoft.Bank.StatementImport.Yodlee",
+      "targetObjectId": 1453,
       "foundInExtensions": {
         "appId": "e2743298-9ccb-49cd-9d8e-4b2d1ab91d36",
         "name": "Envestnet Yodlee Bank Feeds",
@@ -9746,8 +10078,10 @@
     {
       "source": "NAV App Tenant Operation",
       "sourceNamespace": "System.Apps",
+      "sourceObjectId": 2000000200,
       "target": "Extension Deployment Status",
       "targetNamespace": "System.Apps",
+      "targetObjectId": 2508,
       "foundInExtensions": {
         "appId": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
         "name": "System Application",
@@ -9813,8 +10147,10 @@
     {
       "source": "No Taxable Entry",
       "sourceNamespace": "Microsoft.Finance.VAT.Ledger",
+      "sourceObjectId": 10740,
       "target": "VAT Entry",
       "targetNamespace": "Microsoft.Finance.VAT.Ledger",
+      "targetObjectId": 254,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -9835,8 +10171,10 @@
     {
       "source": "Notification Entry",
       "sourceNamespace": "System.Environment.Configuration",
+      "sourceObjectId": 1511,
       "target": "Sent Notification Entry",
       "targetNamespace": "System.Environment.Configuration",
+      "targetObjectId": 1514,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -9902,8 +10240,10 @@
     {
       "source": "Onboarding Signal",
       "sourceNamespace": "System.Feedback",
+      "sourceObjectId": 5490,
       "target": "Onboarding Signal Buffer",
       "targetNamespace": "System.Feedback",
+      "targetObjectId": 5491,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -9969,8 +10309,10 @@
     {
       "source": "Online Bank Acc. Link",
       "sourceNamespace": "Microsoft.Bank.BankAccount",
+      "sourceObjectId": 777,
       "target": "MS - Yodlee Bank Acc. Link",
       "targetNamespace": "Microsoft.Bank.StatementImport.Yodlee",
+      "targetObjectId": 1451,
       "foundInExtensions": {
         "appId": "e2743298-9ccb-49cd-9d8e-4b2d1ab91d36",
         "name": "Envestnet Yodlee Bank Feeds",
@@ -9990,8 +10332,10 @@
     {
       "source": "Payment Application Proposal",
       "sourceNamespace": "Microsoft.Bank.Reconciliation",
+      "sourceObjectId": 1293,
       "target": "Applied Payment Entry",
       "targetNamespace": "Microsoft.Bank.Reconciliation",
+      "targetObjectId": 1294,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -10073,8 +10417,10 @@
     {
       "source": "Payment Header",
       "sourceNamespace": "Microsoft.Bank.Payment",
+      "sourceObjectId": 10865,
       "target": "Payment Header Archive",
       "targetNamespace": "Microsoft.Bank.Payment",
+      "targetObjectId": 10867,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -10091,8 +10437,10 @@
     {
       "source": "Payment Line",
       "sourceNamespace": "Microsoft.Bank.Payment",
+      "sourceObjectId": 10866,
       "target": "Payment Line Archive",
       "targetNamespace": "Microsoft.Bank.Payment",
+      "targetObjectId": 10868,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -10109,8 +10457,10 @@
     {
       "source": "Payment Order",
       "sourceNamespace": "Microsoft.Purchases.Payables",
+      "sourceObjectId": 7000020,
       "target": "Posted Payment Order",
       "targetNamespace": "Microsoft.Purchases.History",
+      "targetObjectId": 7000021,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -10127,8 +10477,10 @@
     {
       "source": "Payment Order Header CZB",
       "sourceNamespace": "Microsoft.Bank.Documents",
+      "sourceObjectId": 31256,
       "target": "Iss. Payment Order Header CZB",
       "targetNamespace": "Microsoft.Bank.Documents",
+      "targetObjectId": 31258,
       "foundInExtensions": {
         "appId": "8730dafb-13cd-42c9-987c-decb6354269d",
         "name": "Banking Documents Localization for Czech",
@@ -10145,8 +10497,10 @@
     {
       "source": "Payment Order Line CZB",
       "sourceNamespace": "Microsoft.Bank.Documents",
+      "sourceObjectId": 31257,
       "target": "Iss. Payment Order Line CZB",
       "targetNamespace": "Microsoft.Bank.Documents",
+      "targetObjectId": 31259,
       "foundInExtensions": {
         "appId": "8730dafb-13cd-42c9-987c-decb6354269d",
         "name": "Banking Documents Localization for Czech",
@@ -10163,8 +10517,10 @@
     {
       "source": "Phys. Invt. Order Header",
       "sourceNamespace": "Microsoft.Inventory.Counting.Document",
+      "sourceObjectId": 5875,
       "target": "Pstd. Phys. Invt. Order Hdr",
       "targetNamespace": "Microsoft.Inventory.Counting.History",
+      "targetObjectId": 5879,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -10230,8 +10586,10 @@
     {
       "source": "Phys. Invt. Order Line",
       "sourceNamespace": "Microsoft.Inventory.Counting.Document",
+      "sourceObjectId": 5876,
       "target": "Pstd. Phys. Invt. Order Line",
       "targetNamespace": "Microsoft.Inventory.Counting.History",
+      "targetObjectId": 5880,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -10297,8 +10655,10 @@
     {
       "source": "Phys. Invt. Record Header",
       "sourceNamespace": "Microsoft.Inventory.Counting.Recording",
+      "sourceObjectId": 5877,
       "target": "Pstd. Phys. Invt. Record Hdr",
       "targetNamespace": "Microsoft.Inventory.Counting.History",
+      "targetObjectId": 5881,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -10364,8 +10724,10 @@
     {
       "source": "Phys. Invt. Record Line",
       "sourceNamespace": "Microsoft.Inventory.Counting.Recording",
+      "sourceObjectId": 5878,
       "target": "Pstd. Phys. Invt. Record Line",
       "targetNamespace": "Microsoft.Inventory.Counting.History",
+      "targetObjectId": 5882,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -10431,8 +10793,10 @@
     {
       "source": "Posted Assembly Header",
       "sourceNamespace": "Microsoft.Assembly.History",
+      "sourceObjectId": 910,
       "target": "Assembly Header",
       "targetNamespace": "Microsoft.Assembly.Document",
+      "targetObjectId": 900,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -10510,8 +10874,10 @@
     {
       "source": "Posted Assembly Line",
       "sourceNamespace": "Microsoft.Assembly.History",
+      "sourceObjectId": 911,
       "target": "Assembly Line",
       "targetNamespace": "Microsoft.Assembly.Document",
+      "targetObjectId": 901,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -10589,8 +10955,10 @@
     {
       "source": "Posted Bill Group",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 7000006,
       "target": "Closed Bill Group",
       "targetNamespace": "Microsoft.Sales.Receivables",
+      "targetObjectId": 7000007,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -10607,8 +10975,10 @@
     {
       "source": "Posted Cartera Doc.",
       "sourceNamespace": "Microsoft.Finance.ReceivablesPayables",
+      "sourceObjectId": 7000003,
       "target": "Closed Cartera Doc.",
       "targetNamespace": "Microsoft.Finance.ReceivablesPayables",
+      "targetObjectId": 7000004,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -10629,8 +10999,10 @@
     {
       "source": "Posted Deferral Header",
       "sourceNamespace": "Microsoft.Finance.Deferral",
+      "sourceObjectId": 1704,
       "target": "Deferral Header",
       "targetNamespace": "Microsoft.Finance.Deferral",
+      "targetObjectId": 1701,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -10696,8 +11068,10 @@
     {
       "source": "Posted Deferral Line",
       "sourceNamespace": "Microsoft.Finance.Deferral",
+      "sourceObjectId": 1705,
       "target": "Deferral Line",
       "targetNamespace": "Microsoft.Finance.Deferral",
+      "targetObjectId": 1702,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -10763,8 +11137,10 @@
     {
       "source": "Posted Gen. Journal Line",
       "sourceNamespace": "Microsoft.Finance.GeneralLedger.Journal",
+      "sourceObjectId": 181,
       "target": "Gen. Journal Line",
       "targetNamespace": "Microsoft.Finance.GeneralLedger.Journal",
+      "targetObjectId": 81,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -10830,8 +11206,10 @@
     {
       "source": "Posted GST Distribution Line",
       "sourceNamespace": "Microsoft.Finance.GST.Distribution",
+      "sourceObjectId": 18208,
       "target": "GST Distribution Line",
       "targetNamespace": "Microsoft.Finance.GST.Distribution",
+      "targetObjectId": 18204,
       "foundInExtensions": {
         "appId": "db643212-b7fb-4dd4-b5a8-cb44ac714461",
         "name": "India GST",
@@ -10848,8 +11226,10 @@
     {
       "source": "Posted Payment Order",
       "sourceNamespace": "Microsoft.Purchases.History",
+      "sourceObjectId": 7000021,
       "target": "Closed Payment Order",
       "targetNamespace": "Microsoft.Purchases.Payables",
+      "targetObjectId": 7000022,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -10866,8 +11246,10 @@
     {
       "source": "Posted Payment Recon. Hdr",
       "sourceNamespace": "Microsoft.Bank.Reconciliation",
+      "sourceObjectId": 1295,
       "target": "Bank Acc. Reconciliation",
       "targetNamespace": "Microsoft.Bank.Reconciliation",
+      "targetObjectId": 273,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -10933,8 +11315,10 @@
     {
       "source": "Price List Line",
       "sourceNamespace": "Microsoft.Pricing.PriceList",
+      "sourceObjectId": 7001,
       "target": "Price Worksheet Line",
       "targetNamespace": "Microsoft.Pricing.Worksheet",
+      "targetObjectId": 7022,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -11008,8 +11392,10 @@
     {
       "source": "Price Worksheet Line",
       "sourceNamespace": "Microsoft.Pricing.Worksheet",
+      "sourceObjectId": 7022,
       "target": "Price List Line",
       "targetNamespace": "Microsoft.Pricing.PriceList",
+      "targetObjectId": 7001,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -11075,8 +11461,10 @@
     {
       "source": "Production BOM Comment Line",
       "sourceNamespace": "Microsoft.Manufacturing.ProductionBOM",
+      "sourceObjectId": 99000776,
       "target": "Prod. Order Comp. Cmt Line",
       "targetNamespace": "Microsoft.Manufacturing.Document",
+      "targetObjectId": 5416,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -11142,8 +11530,10 @@
     {
       "source": "Pstd. Phys. Invt. Order Hdr",
       "sourceNamespace": "Microsoft.Inventory.Counting.History",
+      "sourceObjectId": 5879,
       "target": "Phys. Invt. Order Header",
       "targetNamespace": "Microsoft.Inventory.Counting.Document",
+      "targetObjectId": 5875,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -11209,8 +11599,10 @@
     {
       "source": "Purch. Comment Line",
       "sourceNamespace": "Microsoft.Purchases.Comment",
+      "sourceObjectId": 43,
       "target": "Purch. Comment Line Archive",
       "targetNamespace": "Microsoft.Purchases.Archive",
+      "targetObjectId": 5125,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -11276,8 +11668,10 @@
     {
       "source": "Purch. Cr. Memo Hdr.",
       "sourceNamespace": "Microsoft.Purchases.History",
+      "sourceObjectId": 124,
       "target": "Purch. Cr. Memo Entity Buffer",
       "targetNamespace": "Microsoft.Integration.Entity",
+      "targetObjectId": 5508,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -11343,8 +11737,10 @@
     {
       "source": "Purch. Cr. Memo Hdr.",
       "sourceNamespace": "Microsoft.Purchases.History",
+      "sourceObjectId": 124,
       "target": "Purch. Tax Cr. Memo Hdr.",
       "targetNamespace": "Microsoft.Finance.WithholdingTax",
+      "targetObjectId": 28077,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -11364,8 +11760,10 @@
     {
       "source": "Purch. Cr. Memo Hdr.",
       "sourceNamespace": "Microsoft.Purchases.History",
+      "sourceObjectId": 124,
       "target": "Purch. Tax Inv. Header",
       "targetNamespace": "Microsoft.Finance.WithholdingTax",
+      "targetObjectId": 28075,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -11385,8 +11783,10 @@
     {
       "source": "Purch. Cr. Memo Hdr.",
       "sourceNamespace": "Microsoft.Purchases.History",
+      "sourceObjectId": 124,
       "target": "Purchase Header",
       "targetNamespace": "Microsoft.Purchases.Document",
+      "targetObjectId": 38,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -11468,8 +11868,10 @@
     {
       "source": "Purch. Cr. Memo Line",
       "sourceNamespace": "Microsoft.Purchases.History",
+      "sourceObjectId": 125,
       "target": "Purch. Inv. Line Aggregate",
       "targetNamespace": "Microsoft.Integration.Entity",
+      "targetObjectId": 5478,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -11535,8 +11937,10 @@
     {
       "source": "Purch. Cr. Memo Line",
       "sourceNamespace": "Microsoft.Purchases.History",
+      "sourceObjectId": 125,
       "target": "Purch. Tax Cr. Memo Line",
       "targetNamespace": "Microsoft.Finance.WithholdingTax",
+      "targetObjectId": 28078,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -11556,8 +11960,10 @@
     {
       "source": "Purch. Cr. Memo Line",
       "sourceNamespace": "Microsoft.Purchases.History",
+      "sourceObjectId": 125,
       "target": "Purch. Tax Inv. Line",
       "targetNamespace": "Microsoft.Finance.WithholdingTax",
+      "targetObjectId": 28076,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -11577,8 +11983,10 @@
     {
       "source": "Purch. Cr. Memo Line",
       "sourceNamespace": "Microsoft.Purchases.History",
+      "sourceObjectId": 125,
       "target": "Purchase Line",
       "targetNamespace": "Microsoft.Purchases.Document",
+      "targetObjectId": 39,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -11644,8 +12052,10 @@
     {
       "source": "Purch. Inv. Header",
       "sourceNamespace": "Microsoft.Purchases.History",
+      "sourceObjectId": 122,
       "target": "Purch. Inv. Entity Aggregate",
       "targetNamespace": "Microsoft.Integration.Entity",
+      "targetObjectId": 5477,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -11711,8 +12121,10 @@
     {
       "source": "Purch. Inv. Header",
       "sourceNamespace": "Microsoft.Purchases.History",
+      "sourceObjectId": 122,
       "target": "Purch. Tax Inv. Header",
       "targetNamespace": "Microsoft.Finance.WithholdingTax",
+      "targetObjectId": 28075,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -11732,8 +12144,10 @@
     {
       "source": "Purch. Inv. Header",
       "sourceNamespace": "Microsoft.Purchases.History",
+      "sourceObjectId": 122,
       "target": "Purchase Header",
       "targetNamespace": "Microsoft.Purchases.Document",
+      "targetObjectId": 38,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -11815,8 +12229,10 @@
     {
       "source": "Purch. Inv. Line",
       "sourceNamespace": "Microsoft.Purchases.History",
+      "sourceObjectId": 123,
       "target": "Purch. Inv. Line Aggregate",
       "targetNamespace": "Microsoft.Integration.Entity",
+      "targetObjectId": 5478,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -11882,8 +12298,10 @@
     {
       "source": "Purch. Inv. Line",
       "sourceNamespace": "Microsoft.Purchases.History",
+      "sourceObjectId": 123,
       "target": "Purch. Tax Inv. Line",
       "targetNamespace": "Microsoft.Finance.WithholdingTax",
+      "targetObjectId": 28076,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -11903,8 +12321,10 @@
     {
       "source": "Purch. Inv. Line",
       "sourceNamespace": "Microsoft.Purchases.History",
+      "sourceObjectId": 123,
       "target": "Purchase Line",
       "targetNamespace": "Microsoft.Purchases.Document",
+      "targetObjectId": 39,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -11970,8 +12390,10 @@
     {
       "source": "Purch. Rcpt. Header",
       "sourceNamespace": "Microsoft.Purchases.History",
+      "sourceObjectId": 120,
       "target": "Purchase Header",
       "targetNamespace": "Microsoft.Purchases.Document",
+      "targetObjectId": 38,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -12053,8 +12475,10 @@
     {
       "source": "Purch. Rcpt. Line",
       "sourceNamespace": "Microsoft.Purchases.History",
+      "sourceObjectId": 121,
       "target": "Purchase Line",
       "targetNamespace": "Microsoft.Purchases.Document",
+      "targetObjectId": 39,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -12120,8 +12544,10 @@
     {
       "source": "Purchase Header",
       "sourceNamespace": "Microsoft.Purchases.Document",
+      "sourceObjectId": 38,
       "target": "IC Outbox Purchase Header",
       "targetNamespace": "Microsoft.Intercompany.Outbox",
+      "targetObjectId": 428,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -12187,8 +12613,10 @@
     {
       "source": "Purchase Header",
       "sourceNamespace": "Microsoft.Purchases.Document",
+      "sourceObjectId": 38,
       "target": "Purch. Cr. Memo Entity Buffer",
       "targetNamespace": "Microsoft.Integration.Entity",
+      "targetObjectId": 5508,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -12254,8 +12682,10 @@
     {
       "source": "Purchase Header",
       "sourceNamespace": "Microsoft.Purchases.Document",
+      "sourceObjectId": 38,
       "target": "Purch. Cr. Memo Hdr.",
       "targetNamespace": "Microsoft.Purchases.History",
+      "targetObjectId": 124,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -12329,8 +12759,10 @@
     {
       "source": "Purchase Header",
       "sourceNamespace": "Microsoft.Purchases.Document",
+      "sourceObjectId": 38,
       "target": "Purch. Inv. Entity Aggregate",
       "targetNamespace": "Microsoft.Integration.Entity",
+      "targetObjectId": 5477,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -12396,8 +12828,10 @@
     {
       "source": "Purchase Header",
       "sourceNamespace": "Microsoft.Purchases.Document",
+      "sourceObjectId": 38,
       "target": "Purch. Inv. Header",
       "targetNamespace": "Microsoft.Purchases.History",
+      "targetObjectId": 122,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -12475,8 +12909,10 @@
     {
       "source": "Purchase Header",
       "sourceNamespace": "Microsoft.Purchases.Document",
+      "sourceObjectId": 38,
       "target": "Purch. Rcpt. Header",
       "targetNamespace": "Microsoft.Purchases.History",
+      "targetObjectId": 120,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -12550,8 +12986,10 @@
     {
       "source": "Purchase Header",
       "sourceNamespace": "Microsoft.Purchases.Document",
+      "sourceObjectId": 38,
       "target": "Purchase Header Archive",
       "targetNamespace": "Microsoft.Purchases.Archive",
+      "targetObjectId": 5109,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -12617,8 +13055,10 @@
     {
       "source": "Purchase Header",
       "sourceNamespace": "Microsoft.Purchases.Document",
+      "sourceObjectId": 38,
       "target": "Purchase Order Entity Buffer",
       "targetNamespace": "Microsoft.Integration.Entity",
+      "targetObjectId": 5496,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -12684,8 +13124,10 @@
     {
       "source": "Purchase Header",
       "sourceNamespace": "Microsoft.Purchases.Document",
+      "sourceObjectId": 38,
       "target": "Return Shipment Header",
       "targetNamespace": "Microsoft.Purchases.History",
+      "targetObjectId": 6650,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -12755,8 +13197,10 @@
     {
       "source": "Purchase Header Archive",
       "sourceNamespace": "Microsoft.Purchases.Archive",
+      "sourceObjectId": 5109,
       "target": "Purchase Header",
       "targetNamespace": "Microsoft.Purchases.Document",
+      "targetObjectId": 38,
       "foundInExtensions": [
         {
           "appId": "050f6146-bffd-40de-942c-d0dd510ec20f",
@@ -12864,8 +13308,10 @@
     {
       "source": "Purchase Line",
       "sourceNamespace": "Microsoft.Purchases.Document",
+      "sourceObjectId": 39,
       "target": "IC Outbox Purchase Line",
       "targetNamespace": "Microsoft.Intercompany.Outbox",
+      "targetObjectId": 429,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -12931,8 +13377,10 @@
     {
       "source": "Purchase Line",
       "sourceNamespace": "Microsoft.Purchases.Document",
+      "sourceObjectId": 39,
       "target": "Purch. Cr. Memo Line",
       "targetNamespace": "Microsoft.Purchases.History",
+      "targetObjectId": 125,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -12998,8 +13446,10 @@
     {
       "source": "Purchase Line",
       "sourceNamespace": "Microsoft.Purchases.Document",
+      "sourceObjectId": 39,
       "target": "Purch. Inv. Line",
       "targetNamespace": "Microsoft.Purchases.History",
+      "targetObjectId": 123,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -13065,8 +13515,10 @@
     {
       "source": "Purchase Line",
       "sourceNamespace": "Microsoft.Purchases.Document",
+      "sourceObjectId": 39,
       "target": "Purch. Inv. Line Aggregate",
       "targetNamespace": "Microsoft.Integration.Entity",
+      "targetObjectId": 5478,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -13140,8 +13592,10 @@
     {
       "source": "Purchase Line",
       "sourceNamespace": "Microsoft.Purchases.Document",
+      "sourceObjectId": 39,
       "target": "Purch. Rcpt. Line",
       "targetNamespace": "Microsoft.Purchases.History",
+      "targetObjectId": 121,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -13211,8 +13665,10 @@
     {
       "source": "Purchase Line",
       "sourceNamespace": "Microsoft.Purchases.Document",
+      "sourceObjectId": 39,
       "target": "Purchase Line Archive",
       "targetNamespace": "Microsoft.Purchases.Archive",
+      "targetObjectId": 5110,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -13278,8 +13734,10 @@
     {
       "source": "Purchase Line",
       "sourceNamespace": "Microsoft.Purchases.Document",
+      "sourceObjectId": 39,
       "target": "Return Shipment Line",
       "targetNamespace": "Microsoft.Purchases.History",
+      "targetObjectId": 6651,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -13345,8 +13803,10 @@
     {
       "source": "Purchase Line Archive",
       "sourceNamespace": "Microsoft.Purchases.Archive",
+      "sourceObjectId": 5110,
       "target": "Purchase Line",
       "targetNamespace": "Microsoft.Purchases.Document",
+      "targetObjectId": 39,
       "foundInExtensions": [
         {
           "appId": "050f6146-bffd-40de-942c-d0dd510ec20f",
@@ -13430,8 +13890,10 @@
     {
       "source": "Ref. Payment - Exported",
       "sourceNamespace": "Microsoft.Bank.Payment",
+      "sourceObjectId": 32000002,
       "target": "Ref. Payment - Exported Buffer",
       "targetNamespace": "Microsoft.Bank.Payment",
+      "targetObjectId": 32000004,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -13448,8 +13910,10 @@
     {
       "source": "Ref. Payment - Exported Buffer",
       "sourceNamespace": "Microsoft.Bank.Payment",
+      "sourceObjectId": 32000004,
       "target": "Ref. Payment - Exported",
       "targetNamespace": "Microsoft.Bank.Payment",
+      "targetObjectId": 32000002,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -13466,8 +13930,10 @@
     {
       "source": "Reminder Header",
       "sourceNamespace": "Microsoft.Sales.Reminder",
+      "sourceObjectId": 295,
       "target": "Issued Reminder Header",
       "targetNamespace": "Microsoft.Sales.Reminder",
+      "targetObjectId": 297,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -13541,8 +14007,10 @@
     {
       "source": "Reminder Line",
       "sourceNamespace": "Microsoft.Sales.Reminder",
+      "sourceObjectId": 296,
       "target": "Issued Reminder Line",
       "targetNamespace": "Microsoft.Sales.Reminder",
+      "targetObjectId": 298,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -13612,8 +14080,10 @@
     {
       "source": "Replication Record Link Buffer",
       "sourceNamespace": "Microsoft.DataMigration",
+      "sourceObjectId": 40029,
       "target": "Record Link",
       "targetNamespace": "System.Environment.Configuration",
+      "targetObjectId": 2000000068,
       "foundInExtensions": {
         "appId": "58623bfa-0559-4bc2-ae1c-0979c29fd9e0",
         "name": "Intelligent Cloud Base",
@@ -13683,8 +14153,10 @@
     {
       "source": "Reservation Entry",
       "sourceNamespace": "Microsoft.Inventory.Tracking",
+      "sourceObjectId": 337,
       "target": "Tracking Specification",
       "targetNamespace": "Microsoft.Inventory.Tracking",
+      "targetObjectId": 336,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -13782,8 +14254,10 @@
     {
       "source": "Return Receipt Header",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 6660,
       "target": "Sales Header",
       "targetNamespace": "Microsoft.Sales.Document",
+      "targetObjectId": 36,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -13865,8 +14339,10 @@
     {
       "source": "Return Receipt Line",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 6661,
       "target": "Sales Line",
       "targetNamespace": "Microsoft.Sales.Document",
+      "targetObjectId": 37,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -13932,8 +14408,10 @@
     {
       "source": "Return Shipment Header",
       "sourceNamespace": "Microsoft.Purchases.History",
+      "sourceObjectId": 6650,
       "target": "Purchase Header",
       "targetNamespace": "Microsoft.Purchases.Document",
+      "targetObjectId": 38,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -14015,8 +14493,10 @@
     {
       "source": "Return Shipment Line",
       "sourceNamespace": "Microsoft.Purchases.History",
+      "sourceObjectId": 6651,
       "target": "Purchase Line",
       "targetNamespace": "Microsoft.Purchases.Document",
+      "targetObjectId": 39,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -14082,8 +14562,10 @@
     {
       "source": "Routing Comment Line",
       "sourceNamespace": "Microsoft.Manufacturing.Routing",
+      "sourceObjectId": 99000775,
       "target": "Prod. Order Rtng Comment Line",
       "targetNamespace": "Microsoft.Manufacturing.Document",
+      "targetObjectId": 5415,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -14149,8 +14631,10 @@
     {
       "source": "Routing Personnel",
       "sourceNamespace": "Microsoft.Manufacturing.Routing",
+      "sourceObjectId": 99000803,
       "target": "Prod. Order Routing Personnel",
       "targetNamespace": "Microsoft.Manufacturing.Document",
+      "targetObjectId": 5412,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -14216,8 +14700,10 @@
     {
       "source": "Routing Quality Measure",
       "sourceNamespace": "Microsoft.Manufacturing.Routing",
+      "sourceObjectId": 99000805,
       "target": "Prod. Order Rtng Qlty Meas.",
       "targetNamespace": "Microsoft.Manufacturing.Document",
+      "targetObjectId": 5413,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -14283,8 +14769,10 @@
     {
       "source": "Routing Tool",
       "sourceNamespace": "Microsoft.Manufacturing.Routing",
+      "sourceObjectId": 99000802,
       "target": "Prod. Order Routing Tool",
       "targetNamespace": "Microsoft.Manufacturing.Document",
+      "targetObjectId": 5411,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -14350,8 +14838,10 @@
     {
       "source": "Sales Comment Line",
       "sourceNamespace": "Microsoft.Sales.Comment",
+      "sourceObjectId": 44,
       "target": "Sales Comment Line Archive",
       "targetNamespace": "Microsoft.Sales.Archive",
+      "targetObjectId": 5126,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -14417,8 +14907,10 @@
     {
       "source": "Sales Comment Line Archive",
       "sourceNamespace": "Microsoft.Sales.Archive",
+      "sourceObjectId": 5126,
       "target": "Sales Comment Line",
       "targetNamespace": "Microsoft.Sales.Comment",
+      "targetObjectId": 44,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -14484,8 +14976,10 @@
     {
       "source": "Sales Cr.Memo Header",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 114,
       "target": "Document Header",
       "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetObjectId": 10002,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -14506,8 +15000,10 @@
     {
       "source": "Sales Cr.Memo Header",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 114,
       "target": "E-Invoice Export Header",
       "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetObjectId": 10604,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -14524,8 +15020,10 @@
     {
       "source": "Sales Cr.Memo Header",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 114,
       "target": "IC Outbox Sales Header",
       "targetNamespace": "Microsoft.Intercompany.Outbox",
+      "targetObjectId": 426,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -14591,8 +15089,10 @@
     {
       "source": "Sales Cr.Memo Header",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 114,
       "target": "Sales Cr. Memo Entity Buffer",
       "targetNamespace": "Microsoft.Integration.Entity",
+      "targetObjectId": 5507,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -14658,8 +15158,10 @@
     {
       "source": "Sales Cr.Memo Header",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 114,
       "target": "Sales Header",
       "targetNamespace": "Microsoft.Sales.Document",
+      "targetObjectId": 36,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -14753,8 +15255,10 @@
     {
       "source": "Sales Cr.Memo Header",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 114,
       "target": "Sales Tax Cr.Memo Header",
       "targetNamespace": "Microsoft.Finance.WithholdingTax",
+      "targetObjectId": 28073,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -14774,8 +15278,10 @@
     {
       "source": "Sales Cr.Memo Header",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 114,
       "target": "Sales Tax Invoice Header",
       "targetNamespace": "Microsoft.Finance.WithholdingTax",
+      "targetObjectId": 28071,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -14795,8 +15301,10 @@
     {
       "source": "Sales Cr.Memo Line",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 115,
       "target": "Document Line",
       "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetObjectId": 10003,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -14825,8 +15333,10 @@
     {
       "source": "Sales Cr.Memo Line",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 115,
       "target": "E-Invoice Export Line",
       "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetObjectId": 10605,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -14843,8 +15353,10 @@
     {
       "source": "Sales Cr.Memo Line",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 115,
       "target": "IC Outbox Sales Line",
       "targetNamespace": "Microsoft.Intercompany.Outbox",
+      "targetObjectId": 427,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -14910,8 +15422,10 @@
     {
       "source": "Sales Cr.Memo Line",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 115,
       "target": "Sales Invoice Line Aggregate",
       "targetNamespace": "Microsoft.Integration.Entity",
+      "targetObjectId": 5476,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -14977,8 +15491,10 @@
     {
       "source": "Sales Cr.Memo Line",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 115,
       "target": "Sales Line",
       "targetNamespace": "Microsoft.Sales.Document",
+      "targetObjectId": 37,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -15072,8 +15588,10 @@
     {
       "source": "Sales Cr.Memo Line",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 115,
       "target": "Sales Tax Cr.Memo Line",
       "targetNamespace": "Microsoft.Finance.WithholdingTax",
+      "targetObjectId": 28074,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -15093,8 +15611,10 @@
     {
       "source": "Sales Cr.Memo Line",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 115,
       "target": "Sales Tax Invoice Line",
       "targetNamespace": "Microsoft.Finance.WithholdingTax",
+      "targetObjectId": 28072,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -15114,8 +15634,10 @@
     {
       "source": "Sales Header",
       "sourceNamespace": "Microsoft.Sales.Document",
+      "sourceObjectId": 36,
       "target": "IC Outbox Sales Header",
       "targetNamespace": "Microsoft.Intercompany.Outbox",
+      "targetObjectId": 426,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -15181,8 +15703,10 @@
     {
       "source": "Sales Header",
       "sourceNamespace": "Microsoft.Sales.Document",
+      "sourceObjectId": 36,
       "target": "Return Receipt Header",
       "targetNamespace": "Microsoft.Sales.History",
+      "targetObjectId": 6660,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -15252,8 +15776,10 @@
     {
       "source": "Sales Header",
       "sourceNamespace": "Microsoft.Sales.Document",
+      "sourceObjectId": 36,
       "target": "Sales Cr. Memo Entity Buffer",
       "targetNamespace": "Microsoft.Integration.Entity",
+      "targetObjectId": 5507,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -15319,8 +15845,10 @@
     {
       "source": "Sales Header",
       "sourceNamespace": "Microsoft.Sales.Document",
+      "sourceObjectId": 36,
       "target": "Sales Cr.Memo Header",
       "targetNamespace": "Microsoft.Sales.History",
+      "targetObjectId": 114,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -15394,8 +15922,10 @@
     {
       "source": "Sales Header",
       "sourceNamespace": "Microsoft.Sales.Document",
+      "sourceObjectId": 36,
       "target": "Sales Header Archive",
       "targetNamespace": "Microsoft.Sales.Archive",
+      "targetObjectId": 5107,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -15461,8 +15991,10 @@
     {
       "source": "Sales Header",
       "sourceNamespace": "Microsoft.Sales.Document",
+      "sourceObjectId": 36,
       "target": "Sales Invoice Entity Aggregate",
       "targetNamespace": "Microsoft.Integration.Entity",
+      "targetObjectId": 5475,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -15528,8 +16060,10 @@
     {
       "source": "Sales Header",
       "sourceNamespace": "Microsoft.Sales.Document",
+      "sourceObjectId": 36,
       "target": "Sales Invoice Header",
       "targetNamespace": "Microsoft.Sales.History",
+      "targetObjectId": 112,
       "foundInExtensions": [
         {
           "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
@@ -15670,8 +16204,10 @@
     {
       "source": "Sales Header",
       "sourceNamespace": "Microsoft.Sales.Document",
+      "sourceObjectId": 36,
       "target": "Sales Order Entity Buffer",
       "targetNamespace": "Microsoft.Integration.Entity",
+      "targetObjectId": 5495,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -15737,8 +16273,10 @@
     {
       "source": "Sales Header",
       "sourceNamespace": "Microsoft.Sales.Document",
+      "sourceObjectId": 36,
       "target": "Sales Quote Entity Buffer",
       "targetNamespace": "Microsoft.Integration.Entity",
+      "targetObjectId": 5505,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -15804,8 +16342,10 @@
     {
       "source": "Sales Header",
       "sourceNamespace": "Microsoft.Sales.Document",
+      "sourceObjectId": 36,
       "target": "Sales Shipment Header",
       "targetNamespace": "Microsoft.Sales.History",
+      "targetObjectId": 110,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -15879,8 +16419,10 @@
     {
       "source": "Sales Header Archive",
       "sourceNamespace": "Microsoft.Sales.Archive",
+      "sourceObjectId": 5107,
       "target": "Sales Header",
       "targetNamespace": "Microsoft.Sales.Document",
+      "targetObjectId": 36,
       "foundInExtensions": [
         {
           "appId": "050f6146-bffd-40de-942c-d0dd510ec20f",
@@ -16000,8 +16542,10 @@
     {
       "source": "Sales Invoice Header",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 112,
       "target": "Document Header",
       "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetObjectId": 10002,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -16022,8 +16566,10 @@
     {
       "source": "Sales Invoice Header",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 112,
       "target": "E-Invoice Export Header",
       "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetObjectId": 10604,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -16040,8 +16586,10 @@
     {
       "source": "Sales Invoice Header",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 112,
       "target": "IC Outbox Sales Header",
       "targetNamespace": "Microsoft.Intercompany.Outbox",
+      "targetObjectId": 426,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -16107,8 +16655,10 @@
     {
       "source": "Sales Invoice Header",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 112,
       "target": "Sales Header",
       "targetNamespace": "Microsoft.Sales.Document",
+      "targetObjectId": 36,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -16206,8 +16756,10 @@
     {
       "source": "Sales Invoice Header",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 112,
       "target": "Sales Invoice Entity Aggregate",
       "targetNamespace": "Microsoft.Integration.Entity",
+      "targetObjectId": 5475,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -16273,8 +16825,10 @@
     {
       "source": "Sales Invoice Header",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 112,
       "target": "Sales Tax Invoice Header",
       "targetNamespace": "Microsoft.Finance.WithholdingTax",
+      "targetObjectId": 28071,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -16302,8 +16856,10 @@
     {
       "source": "Sales Invoice Line",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 113,
       "target": "Document Line",
       "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetObjectId": 10003,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -16332,8 +16888,10 @@
     {
       "source": "Sales Invoice Line",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 113,
       "target": "E-Invoice Export Line",
       "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetObjectId": 10605,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -16350,8 +16908,10 @@
     {
       "source": "Sales Invoice Line",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 113,
       "target": "IC Outbox Sales Line",
       "targetNamespace": "Microsoft.Intercompany.Outbox",
+      "targetObjectId": 427,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -16417,8 +16977,10 @@
     {
       "source": "Sales Invoice Line",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 113,
       "target": "Sales Invoice Line Aggregate",
       "targetNamespace": "Microsoft.Integration.Entity",
+      "targetObjectId": 5476,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -16484,8 +17046,10 @@
     {
       "source": "Sales Invoice Line",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 113,
       "target": "Sales Line",
       "targetNamespace": "Microsoft.Sales.Document",
+      "targetObjectId": 37,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -16575,8 +17139,10 @@
     {
       "source": "Sales Invoice Line",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 113,
       "target": "Sales Tax Invoice Line",
       "targetNamespace": "Microsoft.Finance.WithholdingTax",
+      "targetObjectId": 28072,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -16596,8 +17162,10 @@
     {
       "source": "Sales Line",
       "sourceNamespace": "Microsoft.Sales.Document",
+      "sourceObjectId": 37,
       "target": "IC Outbox Sales Line",
       "targetNamespace": "Microsoft.Intercompany.Outbox",
+      "targetObjectId": 427,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -16663,8 +17231,10 @@
     {
       "source": "Sales Line",
       "sourceNamespace": "Microsoft.Sales.Document",
+      "sourceObjectId": 37,
       "target": "Return Receipt Line",
       "targetNamespace": "Microsoft.Sales.History",
+      "targetObjectId": 6661,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -16730,8 +17300,10 @@
     {
       "source": "Sales Line",
       "sourceNamespace": "Microsoft.Sales.Document",
+      "sourceObjectId": 37,
       "target": "Sales Cr.Memo Line",
       "targetNamespace": "Microsoft.Sales.History",
+      "targetObjectId": 115,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -16797,8 +17369,10 @@
     {
       "source": "Sales Line",
       "sourceNamespace": "Microsoft.Sales.Document",
+      "sourceObjectId": 37,
       "target": "Sales Invoice Line",
       "targetNamespace": "Microsoft.Sales.History",
+      "targetObjectId": 113,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -16864,8 +17438,10 @@
     {
       "source": "Sales Line",
       "sourceNamespace": "Microsoft.Sales.Document",
+      "sourceObjectId": 37,
       "target": "Sales Invoice Line Aggregate",
       "targetNamespace": "Microsoft.Integration.Entity",
+      "targetObjectId": 5476,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -16939,8 +17515,10 @@
     {
       "source": "Sales Line",
       "sourceNamespace": "Microsoft.Sales.Document",
+      "sourceObjectId": 37,
       "target": "Sales Line Archive",
       "targetNamespace": "Microsoft.Sales.Archive",
+      "targetObjectId": 5108,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -17006,8 +17584,10 @@
     {
       "source": "Sales Line",
       "sourceNamespace": "Microsoft.Sales.Document",
+      "sourceObjectId": 37,
       "target": "Sales Shipment Line",
       "targetNamespace": "Microsoft.Sales.History",
+      "targetObjectId": 111,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -17081,8 +17661,10 @@
     {
       "source": "Sales Line Archive",
       "sourceNamespace": "Microsoft.Sales.Archive",
+      "sourceObjectId": 5108,
       "target": "Sales Line",
       "targetNamespace": "Microsoft.Sales.Document",
+      "targetObjectId": 37,
       "foundInExtensions": [
         {
           "appId": "050f6146-bffd-40de-942c-d0dd510ec20f",
@@ -17186,8 +17768,10 @@
     {
       "source": "Sales Shipment Header",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 110,
       "target": "Document Header",
       "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetObjectId": 10002,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -17208,8 +17792,10 @@
     {
       "source": "Sales Shipment Header",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 110,
       "target": "Sales Header",
       "targetNamespace": "Microsoft.Sales.Document",
+      "targetObjectId": 36,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -17291,8 +17877,10 @@
     {
       "source": "Sales Shipment Line",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 111,
       "target": "Document Line",
       "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetObjectId": 10003,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -17313,8 +17901,10 @@
     {
       "source": "Sales Shipment Line",
       "sourceNamespace": "Microsoft.Sales.History",
+      "sourceObjectId": 111,
       "target": "Sales Line",
       "targetNamespace": "Microsoft.Sales.Document",
+      "targetObjectId": 37,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -17380,8 +17970,10 @@
     {
       "source": "Sales Sub. Line Archive",
       "sourceNamespace": "Microsoft.SubscriptionBilling",
+      "sourceObjectId": 8069,
       "target": "Sales Subscription Line",
       "targetNamespace": "Microsoft.SubscriptionBilling",
+      "targetObjectId": 8068,
       "foundInExtensions": {
         "appId": "3099ffc7-4cf7-4df6-9b96-7e4bc2bb587c",
         "name": "Subscription Billing",
@@ -17451,8 +18043,10 @@
     {
       "source": "Sales Subscription Line",
       "sourceNamespace": "Microsoft.SubscriptionBilling",
+      "sourceObjectId": 8068,
       "target": "Sales Sub. Line Archive",
       "targetNamespace": "Microsoft.SubscriptionBilling",
+      "targetObjectId": 8069,
       "foundInExtensions": {
         "appId": "3099ffc7-4cf7-4df6-9b96-7e4bc2bb587c",
         "name": "Subscription Billing",
@@ -17518,8 +18112,10 @@
     {
       "source": "SAT Payment Method",
       "sourceNamespace": "Microsoft.eServices.EDocument",
+      "sourceObjectId": 27018,
       "target": "SAT Payment Term",
       "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetObjectId": 27017,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -17540,8 +18136,10 @@
     {
       "source": "SAT Payment Term",
       "sourceNamespace": "Microsoft.eServices.EDocument",
+      "sourceObjectId": 27017,
       "target": "SAT Payment Method",
       "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetObjectId": 27018,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -17562,8 +18160,10 @@
     {
       "source": "Service Comment Line",
       "sourceNamespace": "Microsoft.Service.Comment",
+      "sourceObjectId": 5906,
       "target": "Filed Serv. Contract Cmt. Line",
       "targetNamespace": "Microsoft.Service.Contract",
+      "targetObjectId": 5974,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -17629,8 +18229,10 @@
     {
       "source": "Service Comment Line",
       "sourceNamespace": "Microsoft.Service.Comment",
+      "sourceObjectId": 5906,
       "target": "Service Comment Line Archive",
       "targetNamespace": "Microsoft.Service.Archive",
+      "targetObjectId": 6013,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -17696,8 +18298,10 @@
     {
       "source": "Service Comment Line Archive",
       "sourceNamespace": "Microsoft.Service.Archive",
+      "sourceObjectId": 6013,
       "target": "Service Comment Line",
       "targetNamespace": "Microsoft.Service.Comment",
+      "targetObjectId": 5906,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -17763,8 +18367,10 @@
     {
       "source": "Service Contract Header",
       "sourceNamespace": "Microsoft.Service.Contract",
+      "sourceObjectId": 5965,
       "target": "Filed Service Contract Header",
       "targetNamespace": "Microsoft.Service.Contract",
+      "targetObjectId": 5970,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -17830,8 +18436,10 @@
     {
       "source": "Service Contract Line",
       "sourceNamespace": "Microsoft.Service.Contract",
+      "sourceObjectId": 5964,
       "target": "Filed Contract Line",
       "targetNamespace": "Microsoft.Service.Contract",
+      "targetObjectId": 5971,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -17897,8 +18505,10 @@
     {
       "source": "Service Cr.Memo Header",
       "sourceNamespace": "Microsoft.Service.History",
+      "sourceObjectId": 5994,
       "target": "Document Header",
       "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetObjectId": 10002,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -17919,8 +18529,10 @@
     {
       "source": "Service Cr.Memo Header",
       "sourceNamespace": "Microsoft.Service.History",
+      "sourceObjectId": 5994,
       "target": "E-Invoice Export Header",
       "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetObjectId": 10604,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -17937,8 +18549,10 @@
     {
       "source": "Service Cr.Memo Header",
       "sourceNamespace": "Microsoft.Service.History",
+      "sourceObjectId": 5994,
       "target": "Service Header",
       "targetNamespace": "Microsoft.Service.Document",
+      "targetObjectId": 5900,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -17955,8 +18569,10 @@
     {
       "source": "Service Cr.Memo Line",
       "sourceNamespace": "Microsoft.Service.History",
+      "sourceObjectId": 5995,
       "target": "Document Line",
       "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetObjectId": 10003,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -17985,8 +18601,10 @@
     {
       "source": "Service Cr.Memo Line",
       "sourceNamespace": "Microsoft.Service.History",
+      "sourceObjectId": 5995,
       "target": "E-Invoice Export Line",
       "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetObjectId": 10605,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -18003,8 +18621,10 @@
     {
       "source": "Service Header",
       "sourceNamespace": "Microsoft.Service.Document",
+      "sourceObjectId": 5900,
       "target": "Service Cr.Memo Header",
       "targetNamespace": "Microsoft.Service.History",
+      "targetObjectId": 5994,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -18074,8 +18694,10 @@
     {
       "source": "Service Header",
       "sourceNamespace": "Microsoft.Service.Document",
+      "sourceObjectId": 5900,
       "target": "Service Header Archive",
       "targetNamespace": "Microsoft.Service.Archive",
+      "targetObjectId": 6010,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -18141,8 +18763,10 @@
     {
       "source": "Service Header",
       "sourceNamespace": "Microsoft.Service.Document",
+      "sourceObjectId": 5900,
       "target": "Service Invoice Header",
       "targetNamespace": "Microsoft.Service.History",
+      "targetObjectId": 5992,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -18212,8 +18836,10 @@
     {
       "source": "Service Header",
       "sourceNamespace": "Microsoft.Service.Document",
+      "sourceObjectId": 5900,
       "target": "Service Shipment Header",
       "targetNamespace": "Microsoft.Service.History",
+      "targetObjectId": 5990,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -18283,8 +18909,10 @@
     {
       "source": "Service Header Archive",
       "sourceNamespace": "Microsoft.Service.Archive",
+      "sourceObjectId": 6010,
       "target": "Service Header",
       "targetNamespace": "Microsoft.Service.Document",
+      "targetObjectId": 5900,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -18350,8 +18978,10 @@
     {
       "source": "Service Hour",
       "sourceNamespace": "Microsoft.Service.Contract",
+      "sourceObjectId": 5910,
       "target": "Filed Contract Service Hour",
       "targetNamespace": "Microsoft.Service.Contract",
+      "targetObjectId": 5975,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -18417,8 +19047,10 @@
     {
       "source": "Service Invoice Header",
       "sourceNamespace": "Microsoft.Service.History",
+      "sourceObjectId": 5992,
       "target": "Document Header",
       "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetObjectId": 10002,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -18439,8 +19071,10 @@
     {
       "source": "Service Invoice Header",
       "sourceNamespace": "Microsoft.Service.History",
+      "sourceObjectId": 5992,
       "target": "E-Invoice Export Header",
       "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetObjectId": 10604,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -18457,8 +19091,10 @@
     {
       "source": "Service Invoice Header",
       "sourceNamespace": "Microsoft.Service.History",
+      "sourceObjectId": 5992,
       "target": "Service Header",
       "targetNamespace": "Microsoft.Service.Document",
+      "targetObjectId": 5900,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -18475,8 +19111,10 @@
     {
       "source": "Service Invoice Line",
       "sourceNamespace": "Microsoft.Service.History",
+      "sourceObjectId": 5993,
       "target": "Document Line",
       "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetObjectId": 10003,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -18505,8 +19143,10 @@
     {
       "source": "Service Invoice Line",
       "sourceNamespace": "Microsoft.Service.History",
+      "sourceObjectId": 5993,
       "target": "E-Invoice Export Line",
       "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetObjectId": 10605,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -18523,8 +19163,10 @@
     {
       "source": "Service Item Line",
       "sourceNamespace": "Microsoft.Service.Document",
+      "sourceObjectId": 5901,
       "target": "Service Item Line Archive",
       "targetNamespace": "Microsoft.Service.Archive",
+      "targetObjectId": 6011,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -18590,8 +19232,10 @@
     {
       "source": "Service Item Line",
       "sourceNamespace": "Microsoft.Service.Document",
+      "sourceObjectId": 5901,
       "target": "Service Shipment Item Line",
       "targetNamespace": "Microsoft.Service.History",
+      "targetObjectId": 5989,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -18657,8 +19301,10 @@
     {
       "source": "Service Item Line Archive",
       "sourceNamespace": "Microsoft.Service.Archive",
+      "sourceObjectId": 6011,
       "target": "Service Item Line",
       "targetNamespace": "Microsoft.Service.Document",
+      "targetObjectId": 5901,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -18724,8 +19370,10 @@
     {
       "source": "Service Line",
       "sourceNamespace": "Microsoft.Service.Document",
+      "sourceObjectId": 5902,
       "target": "Service Cr.Memo Line",
       "targetNamespace": "Microsoft.Service.History",
+      "targetObjectId": 5995,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -18791,8 +19439,10 @@
     {
       "source": "Service Line",
       "sourceNamespace": "Microsoft.Service.Document",
+      "sourceObjectId": 5902,
       "target": "Service Invoice Line",
       "targetNamespace": "Microsoft.Service.History",
+      "targetObjectId": 5993,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -18858,8 +19508,10 @@
     {
       "source": "Service Line",
       "sourceNamespace": "Microsoft.Service.Document",
+      "sourceObjectId": 5902,
       "target": "Service Line Archive",
       "targetNamespace": "Microsoft.Service.Archive",
+      "targetObjectId": 6012,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -18925,8 +19577,10 @@
     {
       "source": "Service Line",
       "sourceNamespace": "Microsoft.Service.Document",
+      "sourceObjectId": 5902,
       "target": "Service Shipment Line",
       "targetNamespace": "Microsoft.Service.History",
+      "targetObjectId": 5991,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -18992,8 +19646,10 @@
     {
       "source": "Service Line Archive",
       "sourceNamespace": "Microsoft.Service.Archive",
+      "sourceObjectId": 6012,
       "target": "Service Line",
       "targetNamespace": "Microsoft.Service.Document",
+      "targetObjectId": 5902,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -19059,8 +19715,10 @@
     {
       "source": "Service Order Allocat. Archive",
       "sourceNamespace": "Microsoft.Service.Archive",
+      "sourceObjectId": 6014,
       "target": "Service Order Allocation",
       "targetNamespace": "Microsoft.Service.Document",
+      "targetObjectId": 5950,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -19126,8 +19784,10 @@
     {
       "source": "Service Order Allocation",
       "sourceNamespace": "Microsoft.Service.Document",
+      "sourceObjectId": 5950,
       "target": "Service Order Allocat. Archive",
       "targetNamespace": "Microsoft.Service.Archive",
+      "targetObjectId": 6014,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -19193,8 +19853,10 @@
     {
       "source": "Standard General Journal Line",
       "sourceNamespace": "Microsoft.Finance.GeneralLedger.Journal",
+      "sourceObjectId": 751,
       "target": "Gen. Journal Line",
       "targetNamespace": "Microsoft.Finance.GeneralLedger.Journal",
+      "targetObjectId": 81,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -19272,8 +19934,10 @@
     {
       "source": "Standard Item Journal Line",
       "sourceNamespace": "Microsoft.Inventory.Journal",
+      "sourceObjectId": 753,
       "target": "Item Journal Line",
       "targetNamespace": "Microsoft.Inventory.Journal",
+      "targetObjectId": 83,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -19343,8 +20007,10 @@
     {
       "source": "Subscription Line",
       "sourceNamespace": "Microsoft.SubscriptionBilling",
+      "sourceObjectId": 8059,
       "target": "Planned Subscription Line",
       "targetNamespace": "Microsoft.SubscriptionBilling",
+      "targetObjectId": 8002,
       "foundInExtensions": {
         "appId": "3099ffc7-4cf7-4df6-9b96-7e4bc2bb587c",
         "name": "Subscription Billing",
@@ -19418,8 +20084,10 @@
     {
       "source": "Sust. ESG Reporting Name",
       "sourceNamespace": "Microsoft.Sustainability.ESGReporting",
+      "sourceObjectId": 6229,
       "target": "Sust. Posted ESG Report Header",
       "targetNamespace": "Microsoft.Sustainability.ESGReporting",
+      "targetObjectId": 6231,
       "foundInExtensions": {
         "appId": "b3780cd9-f8f8-4a83-a4d5-0c2ad87b28af",
         "name": "Sustainability",
@@ -19485,8 +20153,10 @@
     {
       "source": "Sustainability Jnl. Line",
       "sourceNamespace": "Microsoft.Sustainability.Journal",
+      "sourceObjectId": 6214,
       "target": "Sustainability Ledger Entry",
       "targetNamespace": "Microsoft.Sustainability.Ledger",
+      "targetObjectId": 6216,
       "foundInExtensions": {
         "appId": "b3780cd9-f8f8-4a83-a4d5-0c2ad87b28af",
         "name": "Sustainability",
@@ -19552,8 +20222,10 @@
     {
       "source": "Table Information",
       "sourceNamespace": "System.Environment",
+      "sourceObjectId": 2000000028,
       "target": "Table Information Cache",
       "targetNamespace": "System.DataAdministration",
+      "targetObjectId": 8700,
       "foundInExtensions": {
         "appId": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
         "name": "System Application",
@@ -19619,8 +20291,10 @@
     {
       "source": "Tax Area",
       "sourceNamespace": "Microsoft.Finance.SalesTax",
+      "sourceObjectId": 318,
       "target": "Tax Area Buffer",
       "targetNamespace": "Microsoft.Integration.Entity",
+      "targetObjectId": 5504,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -19686,8 +20360,10 @@
     {
       "source": "Tax Area Buffer",
       "sourceNamespace": "Microsoft.Integration.Entity",
+      "sourceObjectId": 5504,
       "target": "Tax Area",
       "targetNamespace": "Microsoft.Finance.SalesTax",
+      "targetObjectId": 318,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -19753,8 +20429,10 @@
     {
       "source": "Tax Area Buffer",
       "sourceNamespace": "Microsoft.Integration.Entity",
+      "sourceObjectId": 5504,
       "target": "VAT Business Posting Group",
       "targetNamespace": "Microsoft.Finance.VAT.Setup",
+      "targetObjectId": 323,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -19820,8 +20498,10 @@
     {
       "source": "Tax Group",
       "sourceNamespace": "Microsoft.Finance.SalesTax",
+      "sourceObjectId": 321,
       "target": "Tax Group Buffer",
       "targetNamespace": "Microsoft.Integration.Entity",
+      "targetObjectId": 5480,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -19887,8 +20567,10 @@
     {
       "source": "Tax Group Buffer",
       "sourceNamespace": "Microsoft.Integration.Entity",
+      "sourceObjectId": 5480,
       "target": "Tax Group",
       "targetNamespace": "Microsoft.Finance.SalesTax",
+      "targetObjectId": 321,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -19954,8 +20636,10 @@
     {
       "source": "Tax Group Buffer",
       "sourceNamespace": "Microsoft.Integration.Entity",
+      "sourceObjectId": 5480,
       "target": "VAT Product Posting Group",
       "targetNamespace": "Microsoft.Finance.VAT.Setup",
+      "targetObjectId": 324,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -20021,8 +20705,10 @@
     {
       "source": "Tenant Web Service",
       "sourceNamespace": "System.Integration",
+      "sourceObjectId": 2000000168,
       "target": "Web Service Aggregate",
       "targetNamespace": "System.Integration",
+      "targetObjectId": 9900,
       "foundInExtensions": {
         "appId": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
         "name": "System Application",
@@ -20088,8 +20774,10 @@
     {
       "source": "Time Sheet Cmt. Line Archive",
       "sourceNamespace": "Microsoft.Projects.TimeSheet",
+      "sourceObjectId": 957,
       "target": "Time Sheet Comment Line",
       "targetNamespace": "Microsoft.Projects.TimeSheet",
+      "targetObjectId": 953,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -20155,8 +20843,10 @@
     {
       "source": "Time Sheet Comment Line",
       "sourceNamespace": "Microsoft.Projects.TimeSheet",
+      "sourceObjectId": 953,
       "target": "Time Sheet Cmt. Line Archive",
       "targetNamespace": "Microsoft.Projects.TimeSheet",
+      "targetObjectId": 957,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -20222,8 +20912,10 @@
     {
       "source": "Time Sheet Detail",
       "sourceNamespace": "Microsoft.Projects.TimeSheet",
+      "sourceObjectId": 952,
       "target": "Employee Time Reg Buffer",
       "targetNamespace": "Microsoft.Integration.Graph",
+      "targetObjectId": 5510,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -20305,8 +20997,10 @@
     {
       "source": "Time Sheet Detail",
       "sourceNamespace": "Microsoft.Projects.TimeSheet",
+      "sourceObjectId": 952,
       "target": "Time Sheet Detail Archive",
       "targetNamespace": "Microsoft.Projects.TimeSheet",
+      "targetObjectId": 956,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -20372,8 +21066,10 @@
     {
       "source": "Time Sheet Detail Archive",
       "sourceNamespace": "Microsoft.Projects.TimeSheet",
+      "sourceObjectId": 956,
       "target": "Time Sheet Detail",
       "targetNamespace": "Microsoft.Projects.TimeSheet",
+      "targetObjectId": 952,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -20439,8 +21135,10 @@
     {
       "source": "Time Sheet Header",
       "sourceNamespace": "Microsoft.Projects.TimeSheet",
+      "sourceObjectId": 950,
       "target": "Time Sheet Header Archive",
       "targetNamespace": "Microsoft.Projects.TimeSheet",
+      "targetObjectId": 954,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -20506,8 +21204,10 @@
     {
       "source": "Time Sheet Line",
       "sourceNamespace": "Microsoft.Projects.TimeSheet",
+      "sourceObjectId": 951,
       "target": "Time Sheet Line Archive",
       "targetNamespace": "Microsoft.Projects.TimeSheet",
+      "targetObjectId": 955,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -20573,8 +21273,10 @@
     {
       "source": "Time Sheet Line Archive",
       "sourceNamespace": "Microsoft.Projects.TimeSheet",
+      "sourceObjectId": 955,
       "target": "Time Sheet Line",
       "targetNamespace": "Microsoft.Projects.TimeSheet",
+      "targetObjectId": 951,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -20644,8 +21346,10 @@
     {
       "source": "Tracking Specification",
       "sourceNamespace": "Microsoft.Inventory.Tracking",
+      "sourceObjectId": 336,
       "target": "Reservation Entry",
       "targetNamespace": "Microsoft.Inventory.Tracking",
+      "targetObjectId": 337,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -20735,8 +21439,10 @@
     {
       "source": "Tracking Specification",
       "sourceNamespace": "Microsoft.Inventory.Tracking",
+      "sourceObjectId": 336,
       "target": "Whse. Item Tracking Line",
       "targetNamespace": "Microsoft.Warehouse.Tracking",
+      "targetObjectId": 6550,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -20802,8 +21508,10 @@
     {
       "source": "Translation",
       "sourceNamespace": "System.Globalization",
+      "sourceObjectId": 3712,
       "target": "Translation Buffer",
       "targetNamespace": "System.Globalization",
+      "targetObjectId": 3713,
       "foundInExtensions": {
         "appId": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
         "name": "System Application",
@@ -20869,8 +21577,10 @@
     {
       "source": "Unlinked Attachment",
       "sourceNamespace": "Microsoft.Integration.Graph",
+      "sourceObjectId": 138,
       "target": "Attachment Entity Buffer",
       "targetNamespace": "Microsoft.Integration.Graph",
+      "targetObjectId": 5509,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -20936,8 +21646,10 @@
     {
       "source": "VAT Business Posting Group",
       "sourceNamespace": "Microsoft.Finance.VAT.Setup",
+      "sourceObjectId": 323,
       "target": "Tax Area Buffer",
       "targetNamespace": "Microsoft.Integration.Entity",
+      "targetObjectId": 5504,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -21003,8 +21715,10 @@
     {
       "source": "VAT Entry",
       "sourceNamespace": "Microsoft.Finance.VAT.Ledger",
+      "sourceObjectId": 254,
       "target": "VAT Entry Posting Preview",
       "targetNamespace": "Microsoft.Finance.VAT.Ledger",
+      "targetObjectId": 1571,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -21070,8 +21784,10 @@
     {
       "source": "VAT Product Posting Group",
       "sourceNamespace": "Microsoft.Finance.VAT.Setup",
+      "sourceObjectId": 324,
       "target": "Tax Group Buffer",
       "targetNamespace": "Microsoft.Integration.Entity",
+      "targetObjectId": 5480,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -21137,8 +21853,10 @@
     {
       "source": "VAT Setup Posting Groups",
       "sourceNamespace": "Microsoft.Finance.VAT.Setup",
+      "sourceObjectId": 1877,
       "target": "VAT Posting Setup",
       "targetNamespace": "Microsoft.Finance.VAT.Setup",
+      "targetObjectId": 325,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -21204,8 +21922,10 @@
     {
       "source": "Vendor",
       "sourceNamespace": "Microsoft.Purchases.Vendor",
+      "sourceObjectId": 23,
       "target": "Contact",
       "targetNamespace": "Microsoft.CRM.Contact",
+      "targetObjectId": 5050,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -21279,8 +21999,10 @@
     {
       "source": "Vendor",
       "sourceNamespace": "Microsoft.Purchases.Vendor",
+      "sourceObjectId": 23,
       "target": "Vendor Templ.",
       "targetNamespace": "Microsoft.Purchases.Vendor",
+      "targetObjectId": 1383,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -21346,8 +22068,10 @@
     {
       "source": "Vendor Bill Header",
       "sourceNamespace": "Microsoft.Bank.Payment",
+      "sourceObjectId": 12181,
       "target": "Posted Vendor Bill Header",
       "targetNamespace": "Microsoft.Bank.Payment",
+      "targetObjectId": 12183,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -21364,8 +22088,10 @@
     {
       "source": "Vendor Bill Line",
       "sourceNamespace": "Microsoft.Bank.Payment",
+      "sourceObjectId": 12182,
       "target": "Posted Vendor Bill Line",
       "targetNamespace": "Microsoft.Bank.Payment",
+      "targetObjectId": 12184,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -21382,8 +22108,10 @@
     {
       "source": "Vendor Bill Withholding Tax",
       "sourceNamespace": "Microsoft.Bank.Payment",
+      "sourceObjectId": 12185,
       "target": "Tmp Withholding Contribution",
       "targetNamespace": "Microsoft.Finance.WithholdingTax",
+      "targetObjectId": 12113,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -21400,8 +22128,10 @@
     {
       "source": "Vendor Ledger Entry",
       "sourceNamespace": "Microsoft.Purchases.Payables",
+      "sourceObjectId": 25,
       "target": "Vendor Ledger Entry Buffer",
       "targetNamespace": "Microsoft.Purchases.Payables",
+      "targetObjectId": 2250,
       "foundInExtensions": [
         {
           "appId": "10cb69d9-bc8a-4d27-970a-9e110e9db2a5",
@@ -21530,8 +22260,10 @@
     {
       "source": "Vendor Subscription Contract",
       "sourceNamespace": "Microsoft.SubscriptionBilling",
+      "sourceObjectId": 8063,
       "target": "Purchase Header",
       "targetNamespace": "Microsoft.Purchases.Document",
+      "targetObjectId": 38,
       "foundInExtensions": {
         "appId": "3099ffc7-4cf7-4df6-9b96-7e4bc2bb587c",
         "name": "Subscription Billing",
@@ -21597,8 +22329,10 @@
     {
       "source": "Waiting Journal",
       "sourceNamespace": "Microsoft.Purchases.Payables",
+      "sourceObjectId": 15000004,
       "target": "Gen. Journal Line",
       "targetNamespace": "Microsoft.Finance.GeneralLedger.Journal",
+      "targetObjectId": 81,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -21635,8 +22369,10 @@
     {
       "source": "Warehouse Activity Header",
       "sourceNamespace": "Microsoft.Warehouse.Activity",
+      "sourceObjectId": 5766,
       "target": "Posted Invt. Pick Header",
       "targetNamespace": "Microsoft.Warehouse.InventoryDocument",
+      "targetObjectId": 7342,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -21702,8 +22438,10 @@
     {
       "source": "Warehouse Activity Header",
       "sourceNamespace": "Microsoft.Warehouse.Activity",
+      "sourceObjectId": 5766,
       "target": "Posted Invt. Put-away Header",
       "targetNamespace": "Microsoft.Warehouse.InventoryDocument",
+      "targetObjectId": 7340,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -21769,8 +22507,10 @@
     {
       "source": "Warehouse Activity Header",
       "sourceNamespace": "Microsoft.Warehouse.Activity",
+      "sourceObjectId": 5766,
       "target": "Registered Invt. Movement Hdr.",
       "targetNamespace": "Microsoft.Warehouse.InventoryDocument",
+      "targetObjectId": 7344,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -21836,8 +22576,10 @@
     {
       "source": "Warehouse Activity Header",
       "sourceNamespace": "Microsoft.Warehouse.Activity",
+      "sourceObjectId": 5766,
       "target": "Registered Whse. Activity Hdr.",
       "targetNamespace": "Microsoft.Warehouse.Activity.History",
+      "targetObjectId": 5772,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -21903,8 +22645,10 @@
     {
       "source": "Warehouse Activity Line",
       "sourceNamespace": "Microsoft.Warehouse.Activity",
+      "sourceObjectId": 5767,
       "target": "Posted Invt. Pick Line",
       "targetNamespace": "Microsoft.Warehouse.InventoryDocument",
+      "targetObjectId": 7343,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -21970,8 +22714,10 @@
     {
       "source": "Warehouse Activity Line",
       "sourceNamespace": "Microsoft.Warehouse.Activity",
+      "sourceObjectId": 5767,
       "target": "Posted Invt. Put-away Line",
       "targetNamespace": "Microsoft.Warehouse.InventoryDocument",
+      "targetObjectId": 7341,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -22037,8 +22783,10 @@
     {
       "source": "Warehouse Activity Line",
       "sourceNamespace": "Microsoft.Warehouse.Activity",
+      "sourceObjectId": 5767,
       "target": "Registered Invt. Movement Line",
       "targetNamespace": "Microsoft.Warehouse.InventoryDocument",
+      "targetObjectId": 7345,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -22104,8 +22852,10 @@
     {
       "source": "Warehouse Activity Line",
       "sourceNamespace": "Microsoft.Warehouse.Activity",
+      "sourceObjectId": 5767,
       "target": "Registered Whse. Activity Line",
       "targetNamespace": "Microsoft.Warehouse.Activity.History",
+      "targetObjectId": 5773,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -22171,8 +22921,10 @@
     {
       "source": "Warehouse Receipt Header",
       "sourceNamespace": "Microsoft.Warehouse.Document",
+      "sourceObjectId": 7316,
       "target": "Posted Whse. Receipt Header",
       "targetNamespace": "Microsoft.Warehouse.History",
+      "targetObjectId": 7318,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -22238,8 +22990,10 @@
     {
       "source": "Warehouse Receipt Line",
       "sourceNamespace": "Microsoft.Warehouse.Document",
+      "sourceObjectId": 7317,
       "target": "Posted Whse. Receipt Line",
       "targetNamespace": "Microsoft.Warehouse.History",
+      "targetObjectId": 7319,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -22305,8 +23059,10 @@
     {
       "source": "Warehouse Shipment Line",
       "sourceNamespace": "Microsoft.Warehouse.Document",
+      "sourceObjectId": 7321,
       "target": "Posted Whse. Shipment Line",
       "targetNamespace": "Microsoft.Warehouse.History",
+      "targetObjectId": 7323,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -22372,8 +23128,10 @@
     {
       "source": "Web Service",
       "sourceNamespace": "System.Integration",
+      "sourceObjectId": 2000000076,
       "target": "Web Service Aggregate",
       "targetNamespace": "System.Integration",
+      "targetObjectId": 9900,
       "foundInExtensions": {
         "appId": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
         "name": "System Application",
@@ -22439,8 +23197,10 @@
     {
       "source": "Web Service Aggregate",
       "sourceNamespace": "System.Integration",
+      "sourceObjectId": 9900,
       "target": "Tenant Web Service",
       "targetNamespace": "System.Integration",
+      "targetObjectId": 2000000168,
       "foundInExtensions": {
         "appId": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
         "name": "System Application",
@@ -22518,8 +23278,10 @@
     {
       "source": "Web Service Aggregate",
       "sourceNamespace": "System.Integration",
+      "sourceObjectId": 9900,
       "target": "Web Service",
       "targetNamespace": "System.Integration",
+      "targetObjectId": 2000000076,
       "foundInExtensions": {
         "appId": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
         "name": "System Application",
@@ -22597,8 +23359,10 @@
     {
       "source": "Whse. Item Tracking Line",
       "sourceNamespace": "Microsoft.Warehouse.Tracking",
+      "sourceObjectId": 6550,
       "target": "Reservation Entry",
       "targetNamespace": "Microsoft.Inventory.Tracking",
+      "targetObjectId": 337,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -22664,8 +23428,10 @@
     {
       "source": "Whse. Item Tracking Line",
       "sourceNamespace": "Microsoft.Warehouse.Tracking",
+      "sourceObjectId": 6550,
       "target": "Tracking Specification",
       "targetNamespace": "Microsoft.Inventory.Tracking",
+      "targetObjectId": 336,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -22735,8 +23501,10 @@
     {
       "source": "WHT Entry",
       "sourceNamespace": "Microsoft.Finance.WithholdingTax",
+      "sourceObjectId": 28044,
       "target": "Temp WHT Entry - EFiling",
       "targetNamespace": "Microsoft.Finance.WithholdingTax",
+      "targetObjectId": 16608,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -22756,8 +23524,10 @@
     {
       "source": "Word Templates Related Buffer",
       "sourceNamespace": "System.Integration.Word",
+      "sourceObjectId": 9991,
       "target": "Word Templates Related Table",
       "targetNamespace": "System.Integration.Word",
+      "targetObjectId": 9990,
       "foundInExtensions": {
         "appId": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
         "name": "System Application",
@@ -22827,8 +23597,10 @@
     {
       "source": "Word Templates Related Table",
       "sourceNamespace": "System.Integration.Word",
+      "sourceObjectId": 9990,
       "target": "Word Templates Related Buffer",
       "targetNamespace": "System.Integration.Word",
+      "targetObjectId": 9991,
       "foundInExtensions": {
         "appId": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
         "name": "System Application",
@@ -22898,8 +23670,10 @@
     {
       "source": "Workflow - Record Change",
       "sourceNamespace": "System.Automation",
+      "sourceObjectId": 1525,
       "target": "Workflow Record Change Archive",
       "targetNamespace": "System.Automation",
+      "targetObjectId": 1526,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -22965,8 +23739,10 @@
     {
       "source": "Workflow Step Argument",
       "sourceNamespace": "System.Automation",
+      "sourceObjectId": 1523,
       "target": "Workflow Step Argument Archive",
       "targetNamespace": "System.Automation",
+      "targetObjectId": 1531,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -23032,8 +23808,10 @@
     {
       "source": "Workflow Step Argument Archive",
       "sourceNamespace": "System.Automation",
+      "sourceObjectId": 1531,
       "target": "Workflow Step Argument",
       "targetNamespace": "System.Automation",
+      "targetObjectId": 1523,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
@@ -23099,8 +23877,10 @@
     {
       "source": "Workflow Step Instance",
       "sourceNamespace": "System.Automation",
+      "sourceObjectId": 1504,
       "target": "Workflow Step Instance Archive",
       "targetNamespace": "System.Automation",
+      "targetObjectId": 1530,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
         "name": "Base Application",
