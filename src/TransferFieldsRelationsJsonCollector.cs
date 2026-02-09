@@ -3,6 +3,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Microsoft.Dynamics.Nav.CodeAnalysis;
 using Microsoft.Dynamics.Nav.CodeAnalysis.Diagnostics;
+using Microsoft.Dynamics.Nav.CodeAnalysis.Utilities;
 
 namespace ALCops.PlatformCop.Analyzers;
 
@@ -67,6 +68,9 @@ public sealed class TransferFieldsRelationsJsonCollector : DiagnosticAnalyzer
         if (sourceTable is null || targetTable is null)
             return;
 
+        if (!IsExtensible(sourceTable) && !IsExtensible(targetTable))
+            return;
+
         var sourceName = sourceTable.Name;
         var sourceNamespace = GetQualifiedNamespace(sourceTable);
 
@@ -106,6 +110,31 @@ public sealed class TransferFieldsRelationsJsonCollector : DiagnosticAnalyzer
             Version: moduleInfo.Version.ToString());
 
         WriteRecord(ctx.Compilation, record);
+    }
+
+    private static bool IsExtensible(ITableTypeSymbol tableType)
+    {
+        TableTypeKind? typeProperty = tableType.GetEnumPropertyValue<TableTypeKind>(PropertyKind.TableType);
+        if (typeProperty.HasValue && !IsTableTypeExtensible(typeProperty.Value))
+        {
+            return false;
+        }
+
+        if (SystemTables.IsSystemOrVirtualTable(tableType))
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    internal static bool IsTableTypeExtensible(TableTypeKind tableType)
+    {
+        if (tableType != TableTypeKind.Normal && tableType != TableTypeKind.CRM && tableType != TableTypeKind.CDS)
+        {
+            return tableType == TableTypeKind.Temporary;
+        }
+        return true;
     }
 
     private static void WriteRecord(Compilation compilation, RelationJsonlRecord record)
