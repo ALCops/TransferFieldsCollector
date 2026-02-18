@@ -64,6 +64,22 @@ try {
         }
     }
 
+    # Check if any .al files contain TransferFields references
+    Write-Host "  Scanning for TransferFields references..."
+    $alFiles = Get-ChildItem -Path $extractFolder -Recurse -Filter "*.al" -File -ErrorAction SilentlyContinue
+    $hasTransferFields = $alFiles | Select-String -Pattern "TransferFields" -List -CaseSensitive:$false | Select-Object -First 1
+    
+    if (-not $hasTransferFields) {
+        Write-Host "  No TransferFields references found, skipping compilation"
+        return [PSCustomObject]@{
+            Success   = $true
+            JsonlRoot = $null
+            AppName   = $appFileName
+        }
+    }
+
+    Write-Host "  TransferFields reference found, proceeding with compilation"
+
     # Run AL compiler with the Analyzer as a code cop
     Write-Host "  Running AL compiler with TransferFields Analyzer..."
 
