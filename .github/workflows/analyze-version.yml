@@ -156,6 +156,7 @@ jobs:
           $country = $env:BC_COUNTRY
           
           Write-Host "Downloading artifacts for v$version $country from $artifactUrl"
+          $ProgressPreference = 'SilentlyContinue'
           $artifactPaths = Download-Artifacts -artifactUrl $artifactUrl -includePlatform
 
           $artifactPath = $artifactPaths[0]
