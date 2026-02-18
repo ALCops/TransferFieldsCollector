@@ -131,7 +131,7 @@ try {
         }
     }
 
-    Write-Host "  No TransferFields invocations found in this app"
+    Write-Warning "Text pre-scan matched 'TransferFields' but analyzer produced no output (likely comments, partial matches, or filtered calls)"
     return [PSCustomObject]@{
         Success   = $true
         JsonlRoot = $null
