@@ -1,6 +1,6 @@
 {
   "version": "25.0",
-  "totalRelations": 410,
+  "totalRelations": 407,
   "relations": [
     {
       "source": "Acc. Schedule Line",
@@ -229,79 +229,6 @@
           {
             "foundInObjectQualified": "Microsoft.Finance.Analysis.Analysis by Dim. User Param.",
             "foundInMethod": "LoadForGLBalanceByDimension"
-          }
-        ]
-      }
-    },
-    {
-      "source": "API Webhook Notification",
-      "sourceNamespace": "System.Integration",
-      "sourceObjectId": 2000000096,
-      "target": "API Webhook Notification Aggr",
-      "targetNamespace": "System.Integration",
-      "targetObjectId": 2000000098,
-      "foundInExtensions": {
-        "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
-        "name": "Base Application",
-        "publisher": "Microsoft",
-        "countries": [
-          "at",
-          "au",
-          "be",
-          "bg",
-          "br",
-          "ca",
-          "ch",
-          "co",
-          "cz",
-          "de",
-          "dk",
-          "ee",
-          "es",
-          "fi",
-          "fr",
-          "gb",
-          "gr",
-          "hk",
-          "hr",
-          "hu",
-          "ie",
-          "in",
-          "is",
-          "it",
-          "jp",
-          "kr",
-          "lt",
-          "lv",
-          "mx",
-          "nl",
-          "no",
-          "nz",
-          "pe",
-          "ph",
-          "pl",
-          "pt",
-          "ro",
-          "rs",
-          "se",
-          "si",
-          "sk",
-          "th",
-          "tr",
-          "tw",
-          "ua",
-          "us",
-          "vn",
-          "w1"
-        ],
-        "foundInObjects": [
-          {
-            "foundInObjectQualified": "Microsoft.API.Webhooks.API Webhook Notification Send",
-            "foundInMethod": "GenerateSingleAggregateNotification"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.API.Webhooks.API Webhook Notification Send",
-            "foundInMethod": "MergeAllIntoNewCollectionAggregateNotification"
           }
         ]
       }
@@ -8558,7 +8485,7 @@
     },
     {
       "source": "Incoming Document Attachment",
-      "sourceNamespace": "Microsoft.eServices.EDocument",
+      "sourceNamespace": "Microsoft.EServices.EDocument",
       "sourceObjectId": 133,
       "target": "Attachment Entity Buffer",
       "targetNamespace": "Microsoft.Integration.Graph",
@@ -8627,10 +8554,10 @@
     },
     {
       "source": "Incoming Document Attachment",
-      "sourceNamespace": "Microsoft.eServices.EDocument",
+      "sourceNamespace": "Microsoft.EServices.EDocument",
       "sourceObjectId": 133,
       "target": "Inc. Doc. Attachment Overview",
-      "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetNamespace": "Microsoft.EServices.EDocument",
       "targetObjectId": 137,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
@@ -8688,7 +8615,7 @@
         ],
         "foundInObjects": [
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.Inc. Doc. Attachment Overview",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.Inc. Doc. Attachment Overview",
             "foundInMethod": "InsertFromIncomingDocumentAttachment"
           }
         ]
@@ -9967,144 +9894,6 @@
       }
     },
     {
-      "source": "Metadata Permission Set",
-      "sourceNamespace": "System.Security.AccessControl",
-      "sourceObjectId": 2000000250,
-      "target": "Tenant Permission Set",
-      "targetNamespace": "System.Security.AccessControl",
-      "targetObjectId": 2000000165,
-      "foundInExtensions": {
-        "appId": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
-        "name": "System Application",
-        "publisher": "Microsoft",
-        "countries": [
-          "at",
-          "au",
-          "be",
-          "bg",
-          "br",
-          "ca",
-          "ch",
-          "co",
-          "cz",
-          "de",
-          "dk",
-          "ee",
-          "es",
-          "fi",
-          "fr",
-          "gb",
-          "gr",
-          "hk",
-          "hr",
-          "hu",
-          "ie",
-          "in",
-          "is",
-          "it",
-          "jp",
-          "kr",
-          "lt",
-          "lv",
-          "mx",
-          "nl",
-          "no",
-          "nz",
-          "pe",
-          "ph",
-          "pl",
-          "pt",
-          "ro",
-          "rs",
-          "se",
-          "si",
-          "sk",
-          "th",
-          "tr",
-          "tw",
-          "ua",
-          "us",
-          "vn",
-          "w1"
-        ],
-        "foundInObjects": [
-          {
-            "foundInObjectQualified": "System.Security.AccessControl.Import Permission Sets",
-            "foundInMethod": "InsertSystemPermissionSet"
-          }
-        ]
-      }
-    },
-    {
-      "source": "Metadata Permission Set Rel.",
-      "sourceNamespace": "System.Security.AccessControl",
-      "sourceObjectId": 2000000252,
-      "target": "Tenant Permission Set Rel.",
-      "targetNamespace": "System.Security.AccessControl",
-      "targetObjectId": 2000000253,
-      "foundInExtensions": {
-        "appId": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
-        "name": "System Application",
-        "publisher": "Microsoft",
-        "countries": [
-          "at",
-          "au",
-          "be",
-          "bg",
-          "br",
-          "ca",
-          "ch",
-          "co",
-          "cz",
-          "de",
-          "dk",
-          "ee",
-          "es",
-          "fi",
-          "fr",
-          "gb",
-          "gr",
-          "hk",
-          "hr",
-          "hu",
-          "ie",
-          "in",
-          "is",
-          "it",
-          "jp",
-          "kr",
-          "lt",
-          "lv",
-          "mx",
-          "nl",
-          "no",
-          "nz",
-          "pe",
-          "ph",
-          "pl",
-          "pt",
-          "ro",
-          "rs",
-          "se",
-          "si",
-          "sk",
-          "th",
-          "tr",
-          "tw",
-          "ua",
-          "us",
-          "vn",
-          "w1"
-        ],
-        "foundInObjects": [
-          {
-            "foundInObjectQualified": "System.Security.AccessControl.Import Permission Sets",
-            "foundInMethod": "InsertSystemPermissionSetRelation"
-          }
-        ]
-      }
-    },
-    {
       "source": "MS - PayPal Standard Account",
       "sourceNamespace": "Microsoft.Bank.PayPal",
       "sourceObjectId": 1070,
@@ -10477,7 +10266,7 @@
         "countries": "es",
         "foundInObjects": [
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.SII XML Creator",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.SII XML Creator",
             "foundInMethod": "MoveNonTaxableEntriesToTempVATEntryBuffer"
           },
           {
@@ -15743,7 +15532,7 @@
       "sourceNamespace": "Microsoft.Sales.History",
       "sourceObjectId": 114,
       "target": "Document Header",
-      "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetNamespace": "Microsoft.EServices.EDocument",
       "targetObjectId": 10002,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
@@ -15756,7 +15545,7 @@
         ],
         "foundInObjects": [
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.E-Invoice Mgt.",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.E-Invoice Mgt.",
             "foundInMethod": "CreateTempDocument"
           }
         ]
@@ -15767,7 +15556,7 @@
       "sourceNamespace": "Microsoft.Sales.History",
       "sourceObjectId": 114,
       "target": "E-Invoice Export Header",
-      "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetNamespace": "Microsoft.EServices.EDocument",
       "targetObjectId": 10604,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
@@ -15776,7 +15565,7 @@
         "countries": "no",
         "foundInObjects": [
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.E-Invoice Exp. Sales Cr. Memo",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.E-Invoice Exp. Sales Cr. Memo",
             "foundInMethod": "FillHeaderTableData"
           }
         ]
@@ -16131,7 +15920,7 @@
       "sourceNamespace": "Microsoft.Sales.History",
       "sourceObjectId": 115,
       "target": "Document Line",
-      "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetNamespace": "Microsoft.EServices.EDocument",
       "targetObjectId": 10003,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
@@ -16144,15 +15933,15 @@
         ],
         "foundInObjects": [
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.E-Invoice Mgt.",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.E-Invoice Mgt.",
             "foundInMethod": "CreateTempDocument"
           },
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.E-Invoice Mgt.",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.E-Invoice Mgt.",
             "foundInMethod": "GetRelatedDocumentData"
           },
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.E-Invoice Mgt.",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.E-Invoice Mgt.",
             "foundInMethod": "GetSubjectToTaxFromDocument"
           }
         ]
@@ -16163,7 +15952,7 @@
       "sourceNamespace": "Microsoft.Sales.History",
       "sourceObjectId": 115,
       "target": "E-Invoice Export Line",
-      "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetNamespace": "Microsoft.EServices.EDocument",
       "targetObjectId": 10605,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
@@ -16172,7 +15961,7 @@
         "countries": "no",
         "foundInObjects": [
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.E-Invoice Exp. Sales Cr. Memo",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.E-Invoice Exp. Sales Cr. Memo",
             "foundInMethod": "FillLineTableData"
           }
         ]
@@ -17438,7 +17227,7 @@
       "sourceNamespace": "Microsoft.Sales.History",
       "sourceObjectId": 112,
       "target": "Document Header",
-      "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetNamespace": "Microsoft.EServices.EDocument",
       "targetObjectId": 10002,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
@@ -17451,7 +17240,7 @@
         ],
         "foundInObjects": [
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.E-Invoice Mgt.",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.E-Invoice Mgt.",
             "foundInMethod": "CreateTempDocument"
           }
         ]
@@ -17462,7 +17251,7 @@
       "sourceNamespace": "Microsoft.Sales.History",
       "sourceObjectId": 112,
       "target": "E-Invoice Export Header",
-      "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetNamespace": "Microsoft.EServices.EDocument",
       "targetObjectId": 10604,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
@@ -17471,7 +17260,7 @@
         "countries": "no",
         "foundInObjects": [
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.E-Invoice Export Sales Invoice",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.E-Invoice Export Sales Invoice",
             "foundInMethod": "FillHeaderTableData"
           }
         ]
@@ -17815,7 +17604,7 @@
       "sourceNamespace": "Microsoft.Sales.History",
       "sourceObjectId": 113,
       "target": "Document Line",
-      "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetNamespace": "Microsoft.EServices.EDocument",
       "targetObjectId": 10003,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
@@ -17828,15 +17617,15 @@
         ],
         "foundInObjects": [
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.E-Invoice Mgt.",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.E-Invoice Mgt.",
             "foundInMethod": "CreateTempDocument"
           },
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.E-Invoice Mgt.",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.E-Invoice Mgt.",
             "foundInMethod": "GetRelatedDocumentData"
           },
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.E-Invoice Mgt.",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.E-Invoice Mgt.",
             "foundInMethod": "GetSubjectToTaxFromDocument"
           }
         ]
@@ -17847,7 +17636,7 @@
       "sourceNamespace": "Microsoft.Sales.History",
       "sourceObjectId": 113,
       "target": "E-Invoice Export Line",
-      "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetNamespace": "Microsoft.EServices.EDocument",
       "targetObjectId": 10605,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
@@ -17856,7 +17645,7 @@
         "countries": "no",
         "foundInObjects": [
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.E-Invoice Export Sales Invoice",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.E-Invoice Export Sales Invoice",
             "foundInMethod": "FillLineTableData"
           }
         ]
@@ -18936,7 +18725,7 @@
       "sourceNamespace": "Microsoft.Sales.History",
       "sourceObjectId": 110,
       "target": "Document Header",
-      "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetNamespace": "Microsoft.EServices.EDocument",
       "targetObjectId": 10002,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
@@ -18949,7 +18738,7 @@
         ],
         "foundInObjects": [
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.E-Invoice Mgt.",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.E-Invoice Mgt.",
             "foundInMethod": "CreateTempDocumentTransfer"
           }
         ]
@@ -19045,7 +18834,7 @@
       "sourceNamespace": "Microsoft.Sales.History",
       "sourceObjectId": 111,
       "target": "Document Line",
-      "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetNamespace": "Microsoft.EServices.EDocument",
       "targetObjectId": 10003,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
@@ -19058,7 +18847,7 @@
         ],
         "foundInObjects": [
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.E-Invoice Mgt.",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.E-Invoice Mgt.",
             "foundInMethod": "CreateTempDocumentTransfer"
           }
         ]
@@ -19135,10 +18924,10 @@
     },
     {
       "source": "SAT Payment Method",
-      "sourceNamespace": "Microsoft.eServices.EDocument",
+      "sourceNamespace": "Microsoft.EServices.EDocument",
       "sourceObjectId": 27018,
       "target": "SAT Payment Term",
-      "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetNamespace": "Microsoft.EServices.EDocument",
       "targetObjectId": 27017,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
@@ -19151,7 +18940,7 @@
         ],
         "foundInObjects": [
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.Update SAT Payment Catalogs",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.Update SAT Payment Catalogs",
             "foundInMethod": "SwapSATPaymentCatalogs"
           }
         ]
@@ -19159,10 +18948,10 @@
     },
     {
       "source": "SAT Payment Term",
-      "sourceNamespace": "Microsoft.eServices.EDocument",
+      "sourceNamespace": "Microsoft.EServices.EDocument",
       "sourceObjectId": 27017,
       "target": "SAT Payment Method",
-      "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetNamespace": "Microsoft.EServices.EDocument",
       "targetObjectId": 27018,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
@@ -19175,7 +18964,7 @@
         ],
         "foundInObjects": [
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.Update SAT Payment Catalogs",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.Update SAT Payment Catalogs",
             "foundInMethod": "SwapSATPaymentCatalogs"
           }
         ]
@@ -19608,7 +19397,7 @@
       "sourceNamespace": "Microsoft.Service.History",
       "sourceObjectId": 5994,
       "target": "Document Header",
-      "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetNamespace": "Microsoft.EServices.EDocument",
       "targetObjectId": 10002,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
@@ -19621,7 +19410,7 @@
         ],
         "foundInObjects": [
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.E-Invoice Mgt.",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.E-Invoice Mgt.",
             "foundInMethod": "CreateTempDocument"
           }
         ]
@@ -19632,7 +19421,7 @@
       "sourceNamespace": "Microsoft.Service.History",
       "sourceObjectId": 5994,
       "target": "E-Invoice Export Header",
-      "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetNamespace": "Microsoft.EServices.EDocument",
       "targetObjectId": 10604,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
@@ -19641,7 +19430,7 @@
         "countries": "no",
         "foundInObjects": [
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.E-Invoice Exp. Serv. Cr. Memo",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.E-Invoice Exp. Serv. Cr. Memo",
             "foundInMethod": "FillHeaderTableData"
           }
         ]
@@ -19672,7 +19461,7 @@
       "sourceNamespace": "Microsoft.Service.History",
       "sourceObjectId": 5995,
       "target": "Document Line",
-      "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetNamespace": "Microsoft.EServices.EDocument",
       "targetObjectId": 10003,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
@@ -19685,15 +19474,15 @@
         ],
         "foundInObjects": [
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.E-Invoice Mgt.",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.E-Invoice Mgt.",
             "foundInMethod": "CreateTempDocument"
           },
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.E-Invoice Mgt.",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.E-Invoice Mgt.",
             "foundInMethod": "GetRelatedDocumentData"
           },
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.E-Invoice Mgt.",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.E-Invoice Mgt.",
             "foundInMethod": "GetSubjectToTaxFromDocument"
           }
         ]
@@ -19704,7 +19493,7 @@
       "sourceNamespace": "Microsoft.Service.History",
       "sourceObjectId": 5995,
       "target": "E-Invoice Export Line",
-      "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetNamespace": "Microsoft.EServices.EDocument",
       "targetObjectId": 10605,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
@@ -19713,7 +19502,7 @@
         "countries": "no",
         "foundInObjects": [
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.E-Invoice Exp. Serv. Cr. Memo",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.E-Invoice Exp. Serv. Cr. Memo",
             "foundInMethod": "FillLineTableData"
           }
         ]
@@ -20150,7 +19939,7 @@
       "sourceNamespace": "Microsoft.Service.History",
       "sourceObjectId": 5992,
       "target": "Document Header",
-      "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetNamespace": "Microsoft.EServices.EDocument",
       "targetObjectId": 10002,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
@@ -20163,7 +19952,7 @@
         ],
         "foundInObjects": [
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.E-Invoice Mgt.",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.E-Invoice Mgt.",
             "foundInMethod": "CreateTempDocument"
           }
         ]
@@ -20174,7 +19963,7 @@
       "sourceNamespace": "Microsoft.Service.History",
       "sourceObjectId": 5992,
       "target": "E-Invoice Export Header",
-      "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetNamespace": "Microsoft.EServices.EDocument",
       "targetObjectId": 10604,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
@@ -20183,7 +19972,7 @@
         "countries": "no",
         "foundInObjects": [
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.E-Invoice Export Serv. Invoice",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.E-Invoice Export Serv. Invoice",
             "foundInMethod": "FillHeaderTableData"
           }
         ]
@@ -20214,7 +20003,7 @@
       "sourceNamespace": "Microsoft.Service.History",
       "sourceObjectId": 5993,
       "target": "Document Line",
-      "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetNamespace": "Microsoft.EServices.EDocument",
       "targetObjectId": 10003,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
@@ -20227,15 +20016,15 @@
         ],
         "foundInObjects": [
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.E-Invoice Mgt.",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.E-Invoice Mgt.",
             "foundInMethod": "CreateTempDocument"
           },
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.E-Invoice Mgt.",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.E-Invoice Mgt.",
             "foundInMethod": "GetRelatedDocumentData"
           },
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.E-Invoice Mgt.",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.E-Invoice Mgt.",
             "foundInMethod": "GetSubjectToTaxFromDocument"
           }
         ]
@@ -20246,7 +20035,7 @@
       "sourceNamespace": "Microsoft.Service.History",
       "sourceObjectId": 5993,
       "target": "E-Invoice Export Line",
-      "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetNamespace": "Microsoft.EServices.EDocument",
       "targetObjectId": 10605,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
@@ -20255,7 +20044,7 @@
         "countries": "no",
         "foundInObjects": [
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.E-Invoice Export Serv. Invoice",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.E-Invoice Export Serv. Invoice",
             "foundInMethod": "FillLineTableData"
           }
         ]
