@@ -39,7 +39,9 @@ param(
     [string]$TempRoot = $env:RUNNER_TEMP ?? $env:TEMP
 )
 
-Import-Module BcContainerHelper -Force -DisableNameChecking
+if (-not (Get-Module -Name BcContainerHelper)) {
+    Import-Module BcContainerHelper -Force -DisableNameChecking
+}
 
 $appFileName = Split-Path $AppFile -Leaf
 Write-Host "Processing: $appFileName"
