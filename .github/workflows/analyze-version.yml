@@ -154,10 +154,24 @@ jobs:
           $artifactUrl = $env:BC_ARTIFACT_URL
           $version = $env:BC_VERSION
           $country = $env:BC_COUNTRY
-          
+
+          # Baseline: download via Azure Front Door CDN to measure comparison
+          $cdnBasePath = Join-Path $env:RUNNER_TEMP "cdn-artifacts"
+          Write-Host "Downloading artifacts via CDN for v$version $country from $artifactUrl"
+          $swCdn = [System.Diagnostics.Stopwatch]::StartNew()
+          $cdnPaths = Download-Artifacts -artifactUrl $artifactUrl -includePlatform -basePath $cdnBasePath
+          $swCdn.Stop()
+          Write-Host "::notice::CDN download completed in $($swCdn.Elapsed.ToString('mm\:ss\.fff')) (v$version $country)"
+          Remove-Item $cdnBasePath -Recurse -Force -ErrorAction SilentlyContinue
+
+          # Bypass Azure Front Door CDN throttling by using direct blob storage URLs
+          $artifactUrl = $artifactUrl -replace '^https://(bcartifacts)[^/]*\.azurefd\.net/', 'https://$1.blob.core.windows.net/' `
+                                      -replace '^https://(bcartifacts)\.azureedge\.net/', 'https://$1.blob.core.windows.net/'
           Write-Host "Downloading artifacts for v$version $country from $artifactUrl"
-          $ProgressPreference = 'SilentlyContinue'
+          $stopwatch = [System.Diagnostics.Stopwatch]::StartNew()
           $artifactPaths = Download-Artifacts -artifactUrl $artifactUrl -includePlatform
+          $stopwatch.Stop()
+          Write-Host "::notice::Download and extract completed in $($stopwatch.Elapsed.ToString('mm\:ss\.fff')) (v$version $country)"
 
           $artifactPath = $artifactPaths[0]
           Write-Host "Artifact folder: $artifactPath"
