@@ -20,6 +20,12 @@ inputs:
   output-path:
     description: 'Path for the final output JSON file'
     required: true
+  w1-checksums-path:
+    description: 'Path to W1 checksums JSON file (optional, for reusing W1 analysis)'
+    required: false
+  w1-per-app-path:
+    description: 'Path to folder containing W1 per-app JSON files (optional, for reusing W1 analysis)'
+    required: false
 
 outputs:
   has-output:
@@ -31,6 +37,9 @@ outputs:
   per-app-folder:
     description: 'Folder containing per-app JSON files'
     value: ${{ steps.setup.outputs.collected-folder }}
+  checksums-file:
+    description: 'Path to the checksums JSON file'
+    value: ${{ steps.generate-checksums.outputs.checksums-file }}
 
 runs:
   using: 'composite'
@@ -74,13 +83,56 @@ runs:
             $searchPath = $extensionsFolder
         }
 
+        # Load W1 checksums if provided
+        $w1ChecksumsPath = "${{ inputs.w1-checksums-path }}"
+        $w1PerAppPath = "${{ inputs.w1-per-app-path }}"
+        $w1Checksums = $null
+        
+        if ($w1ChecksumsPath -and (Test-Path $w1ChecksumsPath)) {
+            Write-Host "Loading W1 checksums from: $w1ChecksumsPath"
+            $w1ChecksumsContent = Get-Content $w1ChecksumsPath -Raw | ConvertFrom-Json
+            $w1Checksums = @{}
+            foreach ($entry in $w1ChecksumsContent) {
+                $w1Checksums[$entry.sha256] = $entry
+            }
+            Write-Host "Loaded $($w1Checksums.Count) W1 checksums"
+        }
+        
         # Collect .app files but exclude packages that start with Microsoft_Tests-
         $appFiles = Get-ChildItem -Path $searchPath -Filter "*.app" -Recurse -File
         Write-Host "Processing $($appFiles.Count) app files..."
         
         $jsonCounter = 0
+        $processedApps = @()  # Track for checksums generation
         
         foreach ($appFile in $appFiles) {
+            $appFileName = $appFile.Name
+            $appChecksum = (Get-FileHash -Path $appFile.FullName -Algorithm SHA256).Hash
+            
+            # Check if this app matches W1
+            if ($w1Checksums -and $w1Checksums.ContainsKey($appChecksum)) {
+                $w1Entry = $w1Checksums[$appChecksum]
+                Write-Host "Skipped $appFileName (checksum matched W1 $($w1Entry.appFileName))"
+                
+                # Copy W1 per-app JSON
+                $w1JsonPath = Join-Path $w1PerAppPath $w1Entry.perAppJson
+                if (Test-Path $w1JsonPath) {
+                    $jsonCounter++
+                    $targetFile = Join-Path $collectedFolder "TransferFieldsRelations-$jsonCounter.json"
+                    Copy-Item -Path $w1JsonPath -Destination $targetFile -Force
+                    
+                    # Track for checksums
+                    $processedApps += @{
+                        AppFile = $appFile.FullName
+                        AppFileName = $appFileName
+                        Checksum = $appChecksum
+                        PerAppJson = "TransferFieldsRelations-$jsonCounter.json"
+                        Source = "W1"
+                    }
+                }
+                continue
+            }
+            
             # Run single app analysis
             $result = & "$scriptsPath/Invoke-SingleAppAnalysis.ps1" `
                 -AppFile $appFile.FullName `
@@ -99,6 +151,15 @@ runs:
                     $targetFile = Join-Path $collectedFolder "TransferFieldsRelations-$jsonCounter.json"
                     Move-Item -Path $perAppJson -Destination $targetFile -Force
                     Write-Host "  Saved to: $targetFile"
+                    
+                    # Track for checksums
+                    $processedApps += @{
+                        AppFile = $appFile.FullName
+                        AppFileName = $appFileName
+                        Checksum = $appChecksum
+                        PerAppJson = "TransferFieldsRelations-$jsonCounter.json"
+                        Source = "Analyzed"
+                    }
                 }
                 
                 # Cleanup JSONL root
@@ -106,8 +167,60 @@ runs:
             }
         }
         
-        Write-Host "`nProcessed $($appFiles.Count) apps, generated $jsonCounter JSON files"
+        $w1ReuseCount = ($processedApps | Where-Object { $_.Source -eq "W1" }).Count
+        $analyzedCount = ($processedApps | Where-Object { $_.Source -eq "Analyzed" }).Count
+        
+        Write-Host "\nProcessed $($appFiles.Count) apps, generated $jsonCounter JSON files"
+        if ($w1ReuseCount -gt 0) {
+            Write-Host "  Reused from W1: $w1ReuseCount apps"
+            Write-Host "  Newly analyzed: $analyzedCount apps"
+        }
+        
         "json-count=$jsonCounter" >> $env:GITHUB_OUTPUT
+        
+        # Save processed apps list for checksums generation
+        $processedAppsJson = $processedApps | ConvertTo-Json -Depth 10
+        $processedAppsPath = Join-Path $collectedFolder "processed-apps.json"
+        $processedAppsJson | Set-Content -Path $processedAppsPath
+        "processed-apps-path=$processedAppsPath" >> $env:GITHUB_OUTPUT
+
+    - name: Generate checksums file
+      id: generate-checksums
+      shell: pwsh
+      run: |
+        $collectedFolder = "${{ steps.setup.outputs.collected-folder }}"
+        $processedAppsPath = "${{ steps.analyze.outputs.processed-apps-path }}"
+        
+        if (-not (Test-Path $processedAppsPath)) {
+            Write-Host "No processed apps to generate checksums for"
+            "checksums-file=" >> $env:GITHUB_OUTPUT
+            return
+        }
+        
+        $processedApps = Get-Content $processedAppsPath -Raw | ConvertFrom-Json
+        
+        if (-not $processedApps -or $processedApps.Count -eq 0) {
+            Write-Host "No apps were processed"
+            "checksums-file=" >> $env:GITHUB_OUTPUT
+            return
+        }
+        
+        # Build checksums array
+        $checksums = @()
+        foreach ($app in $processedApps) {
+            $checksums += [PSCustomObject]@{
+                sha256 = $app.Checksum
+                appFileName = $app.AppFileName
+                perAppJson = $app.PerAppJson
+            }
+        }
+        
+        # Write checksums file
+        $checksumsPath = Join-Path $collectedFolder "checksums.json"
+        $checksums | ConvertTo-Json -Depth 10 | Set-Content -Path $checksumsPath
+        
+        Write-Host "Generated checksums file with $($checksums.Count) entries: $checksumsPath"
+        "checksums-file=$checksumsPath" >> $env:GITHUB_OUTPUT
 
     - name: Merge and finalize results
       id: finalize
