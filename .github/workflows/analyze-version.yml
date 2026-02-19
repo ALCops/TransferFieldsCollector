@@ -115,7 +115,6 @@ jobs:
   generate-w1-checksums:
     name: Generate W1 Checksums for v${{ inputs.version }}
     runs-on: ubuntu-latest
-    needs: [build-analyzer]
     steps:
       - name: Install BcContainerHelper
         shell: pwsh
@@ -146,7 +145,7 @@ jobs:
           $artifactUrl = $artifactUrl -replace '^https://(bcartifacts)[^/]*\.azurefd\.net/', 'https://$1.blob.core.windows.net/' `
                                       -replace '^https://(bcartifacts)\.azureedge\.net/', 'https://$1.blob.core.windows.net/'
           Write-Host "Downloading W1 artifacts from $artifactUrl"
-          $artifactPaths = Download-Artifacts -artifactUrl $artifactUrl
+          $artifactPaths = Download-Artifacts -artifactUrl $artifactUrl -includePlatform
 
           $artifactPath = $artifactPaths[0]
           Write-Host "Artifact folder: $artifactPath"
