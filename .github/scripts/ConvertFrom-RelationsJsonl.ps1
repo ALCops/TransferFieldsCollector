@@ -53,7 +53,11 @@ Write-Host "Reading $($jsonlFiles.Count) JSONL file(s)..."
 $rows = $jsonlFiles |
 Get-Content |
 Where-Object { $_.TrimStart().StartsWith('{') } |
-ForEach-Object { $_ | ConvertFrom-Json } |
+ForEach-Object {
+    try { $_ | ConvertFrom-Json }
+    catch { Write-Warning "Skipping malformed JSONL line: $_" }
+} |
+Where-Object { $_ } |
 ForEach-Object {
     # Flatten the nested structure: relation properties + extension properties
     [PSCustomObject]@{
