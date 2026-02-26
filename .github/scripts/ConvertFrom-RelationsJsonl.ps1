@@ -52,6 +52,7 @@ Write-Host "Reading $($jsonlFiles.Count) JSONL file(s)..."
 
 $rows = $jsonlFiles |
 Get-Content |
+Where-Object { $_.TrimStart().StartsWith('{') } |
 ForEach-Object { $_ | ConvertFrom-Json } |
 ForEach-Object {
     # Flatten the nested structure: relation properties + extension properties
