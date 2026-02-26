@@ -94,7 +94,7 @@ try {
         "/project:$extractFolder",
         "/analyzer:$AnalyzerDll",
         "/packagecachepath:$PlatformPath",
-        "/parallel-",
+        "/parallel+",
         "/generatecode-",
         "/generatereportlayout-",
         "/continuebuildonerror+"
