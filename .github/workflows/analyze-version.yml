@@ -236,10 +236,6 @@ jobs:
           $version = $env:BC_VERSION
           $country = $env:BC_COUNTRY
 
-          # Bypass Azure Front Door CDN throttling by using direct blob storage URLs
-          $artifactUrl = $artifactUrl -replace '^https://(bcartifacts)[^/]*\.azurefd\.net/', 'https://$1.blob.core.windows.net/' `
-                                      -replace '^https://(bcartifacts)\.azureedge\.net/', 'https://$1.blob.core.windows.net/'
-
           # Derive platform URL by replacing country segment with 'platform'
           $platformUrl = $artifactUrl -replace "/$country$", '/platform'
 
