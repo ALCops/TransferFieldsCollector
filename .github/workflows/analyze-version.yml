@@ -116,61 +116,63 @@ jobs:
     name: Generate W1 Checksums for v${{ inputs.version }}
     runs-on: ubuntu-latest
     steps:
-      - name: Install BcContainerHelper
-        shell: pwsh
-        run: |
-          Write-Host "Installing BcContainerHelper..."
-          Install-Module BcContainerHelper -Force -AllowClobber
+      - uses: actions/checkout@v6
+        with:
+          sparse-checkout: .github/scripts
 
-      - name: Download and Extract W1 Artifacts
-        id: download-artifacts
+      - name: Resolve W1 Artifact URL
+        id: resolve-url
         shell: pwsh
         env:
           BC_VERSION: ${{ inputs.version }}
         run: |
+          Install-Module BcContainerHelper -Force -AllowClobber
           Import-Module BcContainerHelper -Force -DisableNameChecking
-          
-          $version = $env:BC_VERSION
-          $country = "w1"
 
+          $version = $env:BC_VERSION
           Write-Host "Getting W1 artifact URL for version $version..."
-          $artifactUrl = Get-BCArtifactUrl -Type Sandbox -Country $country -Version $version -Select Latest
+          $artifactUrl = Get-BCArtifactUrl -Type Sandbox -Country w1 -Version $version -Select Latest
 
           if (-not $artifactUrl) {
               Write-Error "No W1 artifact found for version $version"
               exit 1
           }
 
-          # Bypass Azure Front Door CDN throttling by using direct blob storage URLs
-          $artifactUrl = $artifactUrl -replace '^https://(bcartifacts)[^/]*\.azurefd\.net/', 'https://$1.blob.core.windows.net/' `
-                                      -replace '^https://(bcartifacts)\.azureedge\.net/', 'https://$1.blob.core.windows.net/'
-          Write-Host "Downloading W1 artifacts from $artifactUrl"
-          $artifactPaths = Download-Artifacts -artifactUrl $artifactUrl -includePlatform
+          Write-Host "W1 artifact URL: $artifactUrl"
+          "artifact-url=$artifactUrl" >> $env:GITHUB_OUTPUT
 
-          $artifactPath = $artifactPaths[0]
-          Write-Host "Artifact folder: $artifactPath"
-          "artifact-path=$artifactPath" >> $env:GITHUB_OUTPUT
-
-      - name: Generate checksums for W1 apps
+      - name: Download and Checksum W1 Apps
+        id: download-artifacts
         shell: pwsh
+        env:
+          BC_ARTIFACT_URL: ${{ steps.resolve-url.outputs.artifact-url }}
         run: |
-          $artifactPath = "${{ steps.download-artifacts.outputs.artifact-path }}"
-          
-          # Look for Extensions folder
-          $extensionsFolder = Join-Path $artifactPath "Extensions"
-          if (-not (Test-Path $extensionsFolder)) {
-              Write-Host "Extensions folder not found at $extensionsFolder - falling back to artifact root"
-              $searchPath = $artifactPath
+          $artifactUrl = $env:BC_ARTIFACT_URL
+          $scriptsPath = "${{ github.workspace }}/.github/scripts"
+          $artifactPath = Join-Path $env:RUNNER_TEMP "w1-apps"
+
+          # Range download Extensions/*.app only
+          Write-Host "=== W1 Country Artifact ==="
+          $result = & "$scriptsPath/Download-ArtifactRange.ps1" `
+              -ArtifactUrl $artifactUrl `
+              -TargetFolderPrefix "Extensions/" `
+              -OutputPath $artifactPath
+
+          if (-not $result) {
+              Write-Host "Falling back to full download + selective extraction..."
+              $zipPath = Join-Path $env:RUNNER_TEMP "w1.zip"
+              curl -sSfL -o $zipPath $artifactUrl
+              if ($LASTEXITCODE -ne 0) { Write-Error "Failed to download W1 artifact"; exit 1 }
+              New-Item -ItemType Directory -Path $artifactPath -Force | Out-Null
+              7z e $zipPath "-o$artifactPath" '-ir!*.app' -y > $null
+              if ($LASTEXITCODE -ne 0) { Write-Error "Failed to extract W1 artifact"; exit 1 }
+              Remove-Item $zipPath -Force
           }
-          else {
-              $searchPath = $extensionsFolder
-          }
-          
-          # Collect all .app files
-          $appFiles = Get-ChildItem -Path $searchPath -Filter "*.app" -Recurse -File
-          Write-Host "Found $($appFiles.Count) app files"
-          
+
           # Generate checksums
+          $appFiles = Get-ChildItem -Path $artifactPath -Filter "*.app" -Recurse -File
+          Write-Host "Found $($appFiles.Count) app files"
+
           $checksums = @()
           foreach ($appFile in $appFiles) {
               $hash = (Get-FileHash -Path $appFile.FullName -Algorithm SHA256).Hash
@@ -178,15 +180,11 @@ jobs:
                   sha256 = $hash
                   appFileName = $appFile.Name
               }
-              Write-Host "  $($appFile.Name): $hash"
           }
-          
-          # Write checksums file
+
           $checksumsPath = Join-Path $env:RUNNER_TEMP "w1-checksums.json"
           $checksums | ConvertTo-Json -Depth 10 | Set-Content -Path $checksumsPath
-          
-          Write-Host ""
-          Write-Host "Generated checksums file with $($checksums.Count) entries: $checksumsPath"
+          Write-Host "Generated checksums for $($checksums.Count) W1 apps"
 
       - name: Upload W1 checksums
         uses: actions/upload-artifact@v6
