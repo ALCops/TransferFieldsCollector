@@ -39,10 +39,6 @@ param(
     [string]$TempRoot = $env:RUNNER_TEMP ?? $env:TEMP
 )
 
-if (-not (Get-Module -Name BcContainerHelper)) {
-    Import-Module BcContainerHelper -Force -DisableNameChecking
-}
-
 $appFileName = Split-Path $AppFile -Leaf
 Write-Host "Processing: $appFileName"
 
@@ -51,9 +47,18 @@ $extractFolder = Join-Path $TempRoot "extracted-$(New-Guid)"
 New-Item -ItemType Directory -Path $extractFolder -Force | Out-Null
 
 try {
-    # Extract app file
+    # Extract app file (NavX format: binary header + ZIP payload)
     Write-Host "  Extracting to $extractFolder..."
-    Extract-AppFileToFolder -appFilename $AppFile -appFolder $extractFolder -generateAppJson
+    $extractScript = Join-Path $PSScriptRoot "extract_navx_app.py"
+    & python3 $extractScript $AppFile $extractFolder 2>&1 | ForEach-Object { Write-Host "  $_" }
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "  Extraction failed (exit code: $LASTEXITCODE), skipping..."
+        return [PSCustomObject]@{
+            Success   = $false
+            JsonlRoot = $null
+            AppName   = $appFileName
+        }
+    }
 
     # Check if extraction succeeded
     $appJson = Join-Path $extractFolder "app.json"

@@ -56,8 +56,6 @@ runs:
       env:
         SCRIPTS_PATH: ${{ github.action_path }}/../../scripts
       run: |
-        Import-Module BcContainerHelper -Force -DisableNameChecking
-        
         $scriptsPath = $env:SCRIPTS_PATH
         $artifactPath = "${{ inputs.artifact-path }}"
         $platformPath = "${{ inputs.platform-path }}"

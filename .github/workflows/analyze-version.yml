@@ -212,12 +212,6 @@ jobs:
           Write-Host "Installing Microsoft.Dynamics.BusinessCentral.Development.Tools.Linux..."
           dotnet tool install --global Microsoft.Dynamics.BusinessCentral.Development.Tools.Linux
 
-      - name: Install BcContainerHelper
-        shell: pwsh
-        run: |
-          Write-Host "Installing BcContainerHelper..."
-          Install-Module BcContainerHelper -Force -AllowClobber
-
       - name: Download TransferFields Analyzer
         uses: actions/download-artifact@v7
         with:
@@ -238,8 +232,6 @@ jobs:
           BC_VERSION: ${{ matrix.version }}
           BC_COUNTRY: ${{ matrix.country }}
         run: |
-          Import-Module BcContainerHelper -Force -DisableNameChecking
-          
           $artifactUrl = $env:BC_ARTIFACT_URL
           $version = $env:BC_VERSION
           $country = $env:BC_COUNTRY
@@ -247,15 +239,67 @@ jobs:
           # Bypass Azure Front Door CDN throttling by using direct blob storage URLs
           $artifactUrl = $artifactUrl -replace '^https://(bcartifacts)[^/]*\.azurefd\.net/', 'https://$1.blob.core.windows.net/' `
                                       -replace '^https://(bcartifacts)\.azureedge\.net/', 'https://$1.blob.core.windows.net/'
-          Write-Host "Downloading artifacts for v$version $country from $artifactUrl"
-          $artifactPaths = Download-Artifacts -artifactUrl $artifactUrl -includePlatform
 
-          $artifactPath = $artifactPaths[0]
-          Write-Host "Artifact folder: $artifactPath"
+          # Derive platform URL by replacing country segment with 'platform'
+          $platformUrl = $artifactUrl -replace "/$country$", '/platform'
+
+          Write-Host "Downloading artifacts for v$version $country"
+          Write-Host "  Country URL:  $artifactUrl"
+          Write-Host "  Platform URL: $platformUrl"
+
+          $scriptsPath = "${{ github.workspace }}/.github/scripts"
+          $artifactPath = Join-Path $env:RUNNER_TEMP "country-apps"
+          $platformArtifactPath = Join-Path $env:RUNNER_TEMP "platform-apps"
+
+          # --- Country artifact: download Extensions/*.app via range request ---
+          Write-Host "`n=== Country Artifact ==="
+          $countryResult = & "$scriptsPath/Download-ArtifactRange.ps1" `
+              -ArtifactUrl $artifactUrl `
+              -TargetFolderPrefix "Extensions/" `
+              -OutputPath $artifactPath
+
+          if (-not $countryResult) {
+              Write-Host "Falling back to full download + selective extraction..."
+              $zipPath = Join-Path $env:RUNNER_TEMP "country.zip"
+              curl -sSfL -o $zipPath $artifactUrl
+              if ($LASTEXITCODE -ne 0) { Write-Error "Failed to download country artifact"; exit 1 }
+              New-Item -ItemType Directory -Path $artifactPath -Force | Out-Null
+              7z e $zipPath "-o$artifactPath" '-ir!*.app' -y > $null
+              if ($LASTEXITCODE -ne 0) { Write-Error "Failed to extract country artifact"; exit 1 }
+              Remove-Item $zipPath -Force
+          }
+
+          # --- Platform artifact: download applications/*.app via range request ---
+          Write-Host "`n=== Platform Artifact ==="
+          $platformResult = & "$scriptsPath/Download-ArtifactRange.ps1" `
+              -ArtifactUrl $platformUrl `
+              -TargetFolderPrefix "applications/" `
+              -OutputPath $platformArtifactPath
+
+          if ($platformResult) {
+              # Range download succeeded, also get System.app from ModernDev/
+              Write-Host "`n=== Platform System.app ==="
+              & "$scriptsPath/Download-ArtifactRange.ps1" `
+                  -ArtifactUrl $platformUrl `
+                  -TargetFolderPrefix "ModernDev/" `
+                  -OutputPath $platformArtifactPath | Out-Null
+          }
+          else {
+              Write-Host "Falling back to full download + selective extraction..."
+              $zipPath = Join-Path $env:RUNNER_TEMP "platform.zip"
+              curl -sSfL -o $zipPath $platformUrl
+              if ($LASTEXITCODE -ne 0) { Write-Error "Failed to download platform artifact"; exit 1 }
+              New-Item -ItemType Directory -Path $platformArtifactPath -Force | Out-Null
+              7z e $zipPath "-o$platformArtifactPath" '-ir!*.app' -y > $null
+              if ($LASTEXITCODE -ne 0) { Write-Error "Failed to extract platform artifact"; exit 1 }
+              Remove-Item $zipPath -Force
+          }
+
+          $countryApps = (Get-ChildItem -Path $artifactPath -Filter "*.app" -Recurse -ErrorAction SilentlyContinue).Count
+          $platformApps = (Get-ChildItem -Path $platformArtifactPath -Filter "*.app" -Recurse -ErrorAction SilentlyContinue).Count
+          Write-Host "`nExtracted: $countryApps country app(s), $platformApps platform app(s)"
+
           "artifact-path=$artifactPath" >> $env:GITHUB_OUTPUT
-
-          $platformArtifactPath = $artifactPaths[1]
-          Write-Host "Platform Artifact folder: $platformArtifactPath"
           "platform-artifact-path=$platformArtifactPath" >> $env:GITHUB_OUTPUT
 
       - name: Analyze App Files
