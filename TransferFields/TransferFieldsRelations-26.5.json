@@ -1,6 +1,6 @@
 {
   "version": "26.5",
-  "totalRelations": 393,
+  "totalRelations": 389,
   "relations": [
     {
       "source": "Acc. Schedule Line",
@@ -457,7 +457,6 @@
           "de",
           "dk",
           "es",
-          "fi",
           "fr",
           "gb",
           "in",
@@ -725,7 +724,6 @@
           "it",
           "mx",
           "nl",
-          "no",
           "nz",
           "se",
           "us"
@@ -1090,7 +1088,6 @@
         "name": "Base Application",
         "publisher": "Microsoft",
         "countries": [
-          "at",
           "au",
           "be",
           "ca",
@@ -1515,7 +1512,6 @@
           "be",
           "ca",
           "ch",
-          "cz",
           "de",
           "dk",
           "es",
@@ -1976,10 +1972,7 @@
         "appId": "237981b4-9e3c-437c-9b92-988aae978e8f",
         "name": "Dynamics SL Migration",
         "publisher": "Microsoft",
-        "countries": [
-          "ca",
-          "us"
-        ],
+        "countries": "ca",
         "foundInObjects": [
           {
             "foundInObjectQualified": "Microsoft.DataMigration.SL.SL Migration Error Handler",
@@ -3264,7 +3257,6 @@
         "countries": [
           "at",
           "au",
-          "be",
           "ca",
           "ch",
           "cz",
@@ -3272,14 +3264,11 @@
           "dk",
           "es",
           "fi",
-          "fr",
           "gb",
           "in",
           "is",
           "it",
           "mx",
-          "nl",
-          "no",
           "nz",
           "se",
           "us"
@@ -3316,26 +3305,6 @@
           {
             "foundInObjectQualified": "Microsoft.Warehouse.GateEntry.Gate Entry Subscribers",
             "foundInMethod": "AttachGateEntryOnAfterTransferRcptHdrInsert"
-          }
-        ]
-      }
-    },
-    {
-      "source": "Gate Entry Header",
-      "sourceNamespace": "Microsoft.Warehouse.GateEntry",
-      "sourceObjectId": 18603,
-      "target": "Posted Gate Entry Header",
-      "targetNamespace": "Microsoft.Warehouse.GateEntry",
-      "targetObjectId": 18606,
-      "foundInExtensions": {
-        "appId": "2dc39818-e0f0-42b6-99eb-ba29dc5f4102",
-        "name": "India Gate Entry",
-        "publisher": "Microsoft",
-        "countries": "in",
-        "foundInObjects": [
-          {
-            "foundInObjectQualified": "Microsoft.Warehouse.GateEntry.Gate Entry Post",
-            "foundInMethod": "OnRun"
           }
         ]
       }
@@ -3562,26 +3531,6 @@
           {
             "foundInObjectQualified": "Microsoft.Finance.GST.Subcontracting.Subcontracting Post GST Liab.",
             "foundInMethod": "InsertPostedGSLTLiabilityLine"
-          }
-        ]
-      }
-    },
-    {
-      "source": "GST Payment Buffer",
-      "sourceNamespace": "Microsoft.Finance.GST.Distribution",
-      "sourceObjectId": 18205,
-      "target": "Posted Settlement Entries",
-      "targetNamespace": "Microsoft.Finance.GST.Distribution",
-      "targetObjectId": 18209,
-      "foundInExtensions": {
-        "appId": "db643212-b7fb-4dd4-b5a8-cb44ac714461",
-        "name": "India GST",
-        "publisher": "Microsoft",
-        "countries": "in",
-        "foundInObjects": [
-          {
-            "foundInObjectQualified": "Microsoft.Finance.GST.ReturnSettlement.GST Settlement",
-            "foundInMethod": "InsertPostedSettlementEntries"
           }
         ]
       }
@@ -6044,10 +5993,7 @@
           "appId": "237981b4-9e3c-437c-9b92-988aae978e8f",
           "name": "Dynamics SL Migration",
           "publisher": "Microsoft",
-          "countries": [
-            "ca",
-            "us"
-          ],
+          "countries": "us",
           "foundInObjects": [
             {
               "foundInObjectQualified": "Microsoft.DataMigration.SL.SL Wizard Integration",
@@ -6209,26 +6155,17 @@
         "publisher": "Microsoft",
         "countries": [
           "at",
-          "au",
-          "be",
           "ca",
-          "ch",
           "cz",
-          "de",
-          "dk",
           "es",
           "fi",
           "fr",
           "gb",
-          "in",
-          "is",
           "it",
           "mx",
           "nl",
           "no",
-          "nz",
-          "se",
-          "us"
+          "nz"
         ],
         "foundInObjects": [
           {
@@ -6591,46 +6528,6 @@
           {
             "foundInObjectQualified": "Post Payment Order",
             "foundInMethod": "UpdateTables"
-          }
-        ]
-      }
-    },
-    {
-      "source": "Payment Order Header CZB",
-      "sourceNamespace": "Microsoft.Bank.Documents",
-      "sourceObjectId": 31256,
-      "target": "Iss. Payment Order Header CZB",
-      "targetNamespace": "Microsoft.Bank.Documents",
-      "targetObjectId": 31258,
-      "foundInExtensions": {
-        "appId": "8730dafb-13cd-42c9-987c-decb6354269d",
-        "name": "Banking Documents Localization for Czech",
-        "publisher": "Microsoft",
-        "countries": "cz",
-        "foundInObjects": [
-          {
-            "foundInObjectQualified": "Microsoft.Bank.Documents.Issue Payment Order CZB",
-            "foundInMethod": "Code"
-          }
-        ]
-      }
-    },
-    {
-      "source": "Payment Order Line CZB",
-      "sourceNamespace": "Microsoft.Bank.Documents",
-      "sourceObjectId": 31257,
-      "target": "Iss. Payment Order Line CZB",
-      "targetNamespace": "Microsoft.Bank.Documents",
-      "targetObjectId": 31259,
-      "foundInExtensions": {
-        "appId": "8730dafb-13cd-42c9-987c-decb6354269d",
-        "name": "Banking Documents Localization for Czech",
-        "publisher": "Microsoft",
-        "countries": "cz",
-        "foundInObjects": [
-          {
-            "foundInObjectQualified": "Microsoft.Bank.Documents.Issue Payment Order CZB",
-            "foundInMethod": "Code"
           }
         ]
       }
@@ -7677,13 +7574,11 @@
         "name": "Base Application",
         "publisher": "Microsoft",
         "countries": [
-          "at",
           "au",
           "be",
           "ca",
           "ch",
           "cz",
-          "de",
           "dk",
           "es",
           "fi",
@@ -10866,18 +10761,6 @@
           ]
         },
         {
-          "appId": "d6636d6f-155e-4490-9979-ec323a6b7c81",
-          "name": "Advance Payments Localization for Czech",
-          "publisher": "Microsoft",
-          "countries": "cz",
-          "foundInObjects": [
-            {
-              "foundInObjectQualified": "Microsoft.Finance.AdvancePayments.Sales Adv. Letter-Post CZZ",
-              "foundInMethod": "PostAdvancePaymentUsageForStatistics"
-            }
-          ]
-        },
-        {
           "appId": "de0dddf3-9917-430d-8d20-6e7679a08500",
           "name": "E-Document Core Demo Data",
           "publisher": "Microsoft",
@@ -12491,7 +12374,6 @@
         "countries": [
           "at",
           "au",
-          "be",
           "ca",
           "ch",
           "cz",
@@ -12505,8 +12387,6 @@
           "is",
           "it",
           "mx",
-          "nl",
-          "no",
           "nz",
           "se",
           "us"
@@ -12740,15 +12620,11 @@
           "be",
           "ca",
           "ch",
-          "cz",
           "de",
-          "dk",
           "es",
           "fi",
           "fr",
-          "gb",
           "in",
-          "is",
           "it",
           "mx",
           "nl",
@@ -12881,14 +12757,12 @@
           "fi",
           "fr",
           "gb",
-          "in",
           "is",
           "it",
           "mx",
           "nl",
           "no",
           "nz",
-          "se",
           "us"
         ],
         "foundInObjects": [
@@ -13417,7 +13291,6 @@
           "fi",
           "fr",
           "gb",
-          "in",
           "is",
           "it",
           "mx",
@@ -14977,7 +14850,6 @@
           "is",
           "it",
           "mx",
-          "nl",
           "no",
           "nz",
           "se",
