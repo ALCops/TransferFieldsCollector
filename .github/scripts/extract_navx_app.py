@@ -1,11 +1,19 @@
 #!/usr/bin/env python3
 """Extract a BC .app file (NavX format) to a folder.
 
-BC .app files consist of a binary header (containing the app manifest)
-followed by a ZIP payload (containing AL source files and typically app.json).
+BC .app files consist of a 40-byte binary header followed by a ZIP payload.
+The ZIP contains AL source files and NavxManifest.xml (the app manifest).
 
-This script finds the ZIP payload and extracts it, replacing
-BcContainerHelper's Extract-AppFileToFolder cmdlet.
+This script extracts the ZIP payload and generates app.json from the manifest,
+replacing BcContainerHelper's Extract-AppFileToFolder -generateAppJson cmdlet.
+
+NavX header layout (40 bytes):
+  - uint32 magic1 (0x5856414E)
+  - uint32 metadataSize
+  - uint32 metadataVersion
+  - byte[16] packageId (GUID)
+  - int64 contentLength
+  - uint32 magic2 (0x5856414E)
 
 Usage: extract_navx_app.py <app_file> <output_dir>
 """
@@ -15,6 +23,141 @@ import os
 import zipfile
 import io
 import json
+import xml.etree.ElementTree as ET
+
+
+def parse_navx_manifest(manifest_path):
+    """Parse NavxManifest.xml and return an app.json-compatible dict."""
+    tree = ET.parse(manifest_path)
+    root = tree.getroot()
+
+    # Handle XML namespace if present
+    ns = ''
+    if root.tag.startswith('{'):
+        ns = root.tag[:root.tag.index('}') + 1]
+
+    app_node = root.find(f'{ns}App')
+    if app_node is None:
+        app_node = root
+
+    manifest = {}
+
+    # Core metadata
+    for attr in ('Id', 'Name', 'Publisher', 'Version', 'Brief', 'Description',
+                 'Platform', 'Application', 'Runtime', 'Target',
+                 'ShowMyCode', 'ApplicationInsightsKey',
+                 'ApplicationInsightsConnectionString'):
+        val = app_node.get(attr)
+        if val is not None:
+            # Convert attribute names to camelCase for app.json
+            key = attr[0].lower() + attr[1:]
+            manifest[key] = val
+
+    # Resource exposure policy
+    rep_node = app_node.find(f'{ns}ResourceExposurePolicy')
+    if rep_node is not None:
+        policy = {}
+        for attr in ('allowDebugging', 'allowDownloadingSource',
+                     'includeSourceInSymbolFile', 'applyToDevExtension'):
+            val = rep_node.get(attr)
+            if val is not None:
+                policy[attr] = val.lower() == 'true'
+        if policy:
+            manifest['resourceExposurePolicy'] = policy
+
+    # Dependencies
+    deps_node = app_node.find(f'{ns}Dependencies')
+    if deps_node is not None:
+        deps = []
+        for dep in deps_node:
+            dep_dict = {}
+            for attr in ('id', 'Id', 'name', 'Name', 'publisher', 'Publisher',
+                         'minVersion', 'MinVersion', 'maxVersion', 'MaxVersion'):
+                val = dep.get(attr)
+                if val is not None:
+                    key = attr[0].lower() + attr[1:]
+                    dep_dict[key] = val
+            if dep_dict:
+                deps.append(dep_dict)
+        if deps:
+            manifest['dependencies'] = deps
+
+    # ID ranges
+    idranges_node = app_node.find(f'{ns}IdRanges')
+    if idranges_node is not None:
+        ranges = []
+        for r in idranges_node:
+            range_dict = {}
+            for attr in ('MinObjectId', 'MaxObjectId', 'minObjectId', 'maxObjectId',
+                         'from', 'to', 'From', 'To'):
+                val = r.get(attr)
+                if val is not None:
+                    key = attr[0].lower() + attr[1:]
+                    # Normalize to from/to
+                    if key == 'minObjectId':
+                        key = 'from'
+                    elif key == 'maxObjectId':
+                        key = 'to'
+                    try:
+                        range_dict[key] = int(val)
+                    except ValueError:
+                        range_dict[key] = val
+            if range_dict:
+                ranges.append(range_dict)
+        if ranges:
+            manifest['idRanges'] = ranges
+
+    # Features
+    features_node = app_node.find(f'{ns}Features')
+    if features_node is not None:
+        features = []
+        for f_node in features_node:
+            text = f_node.text or f_node.get('Feature') or f_node.get('Name')
+            if text:
+                features.append(text)
+        if features:
+            manifest['features'] = features
+
+    return manifest
+
+
+def generate_app_json_from_filename(app_file, output_dir):
+    """Last-resort: construct minimal app.json from the .app filename pattern.
+
+    Filenames follow: Publisher_Name_Version.app
+    e.g., Microsoft_Base Application_26.5.38752.46757.app
+    """
+    basename = os.path.splitext(os.path.basename(app_file))[0]
+    parts = basename.split('_', 2)  # Split into at most 3 parts
+    if len(parts) >= 3:
+        publisher = parts[0]
+        # Last part contains version
+        name_and_version = parts[1] if len(parts) == 2 else '_'.join(parts[1:])
+        # Try to extract version from the end
+        segments = name_and_version.rsplit('_', 1)
+        if len(segments) == 2:
+            name, version = segments
+        else:
+            name = name_and_version
+            version = "0.0.0.0"
+    else:
+        publisher = "Unknown"
+        name = basename
+        version = "0.0.0.0"
+
+    manifest = {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "name": name,
+        "publisher": publisher,
+        "version": version,
+        "runtime": "14.0"
+    }
+
+    app_json_path = os.path.join(output_dir, 'app.json')
+    with open(app_json_path, 'w', encoding='utf-8') as f:
+        json.dump(manifest, f, indent=2)
+    print(f"  Generated app.json from filename (fallback)")
+    return True
 
 
 def main():
@@ -44,24 +187,26 @@ def main():
         print(f"ERROR: Invalid ZIP payload in {os.path.basename(app_file)}")
         sys.exit(1)
 
-    # If app.json not in ZIP, try to extract manifest from NavX header
     app_json_path = os.path.join(output_dir, 'app.json')
-    if not os.path.exists(app_json_path):
-        header = data[:zip_start]
-        # The NavX header contains the app manifest as JSON between { and }
-        json_start = header.find(b'{')
-        json_end = header.rfind(b'}')
-        if json_start != -1 and json_end > json_start:
-            try:
-                candidate = header[json_start:json_end + 1].decode('utf-8')
-                manifest = json.loads(candidate)
-                # Validate it looks like an app manifest
-                if 'id' in manifest or 'name' in manifest:
-                    with open(app_json_path, 'w', encoding='utf-8') as f:
-                        json.dump(manifest, f, indent=2)
-                    print(f"  Generated app.json from NavX header")
-            except (json.JSONDecodeError, UnicodeDecodeError):
-                pass
+
+    # app.json already in ZIP — nothing to do
+    if os.path.exists(app_json_path):
+        return
+
+    # Generate app.json from NavxManifest.xml (the standard manifest location)
+    manifest_path = os.path.join(output_dir, 'NavxManifest.xml')
+    if os.path.exists(manifest_path):
+        try:
+            manifest = parse_navx_manifest(manifest_path)
+            if manifest:
+                with open(app_json_path, 'w', encoding='utf-8') as f:
+                    json.dump(manifest, f, indent=2)
+                return
+        except Exception as e:
+            print(f"  WARNING: Failed to parse NavxManifest.xml: {e}")
+
+    # Last resort: generate minimal app.json from filename
+    generate_app_json_from_filename(app_file, output_dir)
 
 
 if __name__ == '__main__':
