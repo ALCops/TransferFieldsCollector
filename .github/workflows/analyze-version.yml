@@ -126,8 +126,8 @@ jobs:
         id: install-tools
         shell: pwsh
         run: |
-          Write-Host "Installing Microsoft.Dynamics.BusinessCentral.Development.Tools..."
-          dotnet tool install --global Microsoft.Dynamics.BusinessCentral.Development.Tools
+          Write-Host "Installing Microsoft.Dynamics.BusinessCentral.Development.Tools.Linux..."
+          dotnet tool install --global Microsoft.Dynamics.BusinessCentral.Development.Tools.Linux
 
       - name: Install BcContainerHelper
         shell: pwsh
