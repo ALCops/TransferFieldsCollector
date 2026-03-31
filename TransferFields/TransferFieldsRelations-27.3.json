@@ -14951,95 +14951,158 @@
       "target": "Sales Header",
       "targetNamespace": "Microsoft.Sales.Document",
       "targetObjectId": 36,
-      "foundInExtensions": {
-        "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
-        "name": "Base Application",
-        "publisher": "Microsoft",
-        "countries": [
-          "at",
-          "au",
-          "be",
-          "bg",
-          "br",
-          "ca",
-          "ch",
-          "co",
-          "cz",
-          "de",
-          "dk",
-          "ee",
-          "es",
-          "fi",
-          "fr",
-          "gb",
-          "gr",
-          "hk",
-          "hr",
-          "hu",
-          "ie",
-          "in",
-          "is",
-          "it",
-          "jp",
-          "kr",
-          "lt",
-          "lv",
-          "mx",
-          "nl",
-          "no",
-          "nz",
-          "pe",
-          "ph",
-          "pl",
-          "pt",
-          "ro",
-          "rs",
-          "se",
-          "si",
-          "sk",
-          "th",
-          "tr",
-          "tw",
-          "ua",
-          "us",
-          "vn",
-          "w1"
-        ],
-        "foundInObjects": [
-          {
-            "foundInObjectQualified": "Microsoft.Sales.Document.Copy Sales Document",
-            "foundInMethod": "OnOpenPage"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Sales.Document.Copy Sales Document",
-            "foundInMethod": "ValidateDocNo"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Sales.Peppol.PEPPOL Management",
-            "foundInMethod": "FindNextSalesCreditMemoRec"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Sales.Peppol.PEPPOL Validation",
-            "foundInMethod": "CheckSalesCreditMemo"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
-            "foundInMethod": "CopySalesCrMemoLinesToDoc"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
-            "foundInMethod": "CopySalesDoc"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
-            "foundInMethod": "InitAndCheckSalesDocuments"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
-            "foundInMethod": "TransferFieldsFromCrMemoToInv"
-          }
-        ]
-      }
+      "foundInExtensions": [
+        {
+          "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
+          "name": "Base Application",
+          "publisher": "Microsoft",
+          "countries": [
+            "at",
+            "au",
+            "be",
+            "bg",
+            "br",
+            "ca",
+            "ch",
+            "co",
+            "cz",
+            "de",
+            "dk",
+            "ee",
+            "es",
+            "fi",
+            "fr",
+            "gb",
+            "gr",
+            "hk",
+            "hr",
+            "hu",
+            "ie",
+            "in",
+            "is",
+            "it",
+            "jp",
+            "kr",
+            "lt",
+            "lv",
+            "mx",
+            "nl",
+            "no",
+            "nz",
+            "pe",
+            "ph",
+            "pl",
+            "pt",
+            "ro",
+            "rs",
+            "se",
+            "si",
+            "sk",
+            "th",
+            "tr",
+            "tw",
+            "ua",
+            "us",
+            "vn",
+            "w1"
+          ],
+          "foundInObjects": [
+            {
+              "foundInObjectQualified": "Microsoft.Sales.Document.Copy Sales Document",
+              "foundInMethod": "OnOpenPage"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Sales.Document.Copy Sales Document",
+              "foundInMethod": "ValidateDocNo"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Sales.Peppol.PEPPOL Management",
+              "foundInMethod": "FindNextSalesCreditMemoRec"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Sales.Peppol.PEPPOL Validation",
+              "foundInMethod": "CheckSalesCreditMemo"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
+              "foundInMethod": "CopySalesCrMemoLinesToDoc"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
+              "foundInMethod": "CopySalesDoc"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
+              "foundInMethod": "InitAndCheckSalesDocuments"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
+              "foundInMethod": "TransferFieldsFromCrMemoToInv"
+            }
+          ]
+        },
+        {
+          "appId": "e1d97edc-c239-46b4-8d84-6368bdf67c8b",
+          "name": "E-Document Core",
+          "publisher": "Microsoft",
+          "countries": [
+            "at",
+            "au",
+            "be",
+            "bg",
+            "br",
+            "ca",
+            "ch",
+            "co",
+            "cz",
+            "de",
+            "dk",
+            "ee",
+            "es",
+            "fi",
+            "fr",
+            "gb",
+            "gr",
+            "hk",
+            "hr",
+            "hu",
+            "ie",
+            "in",
+            "is",
+            "it",
+            "jp",
+            "kr",
+            "lt",
+            "lv",
+            "mx",
+            "nl",
+            "no",
+            "nz",
+            "pe",
+            "ph",
+            "pl",
+            "pt",
+            "ro",
+            "rs",
+            "se",
+            "si",
+            "sk",
+            "th",
+            "tr",
+            "tw",
+            "ua",
+            "us",
+            "vn",
+            "w1"
+          ],
+          "foundInObjects": [
+            {
+              "foundInObjectQualified": "Microsoft.eServices.EDocument.IO.Peppol.E-Doc. DED PEPPOL Subscribers",
+              "foundInMethod": "PrepareHeaderAndVAT"
+            }
+          ]
+        }
+      ]
     },
     {
       "source": "Sales Cr.Memo Header",
@@ -15284,95 +15347,162 @@
       "target": "Sales Line",
       "targetNamespace": "Microsoft.Sales.Document",
       "targetObjectId": 37,
-      "foundInExtensions": {
-        "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
-        "name": "Base Application",
-        "publisher": "Microsoft",
-        "countries": [
-          "at",
-          "au",
-          "be",
-          "bg",
-          "br",
-          "ca",
-          "ch",
-          "co",
-          "cz",
-          "de",
-          "dk",
-          "ee",
-          "es",
-          "fi",
-          "fr",
-          "gb",
-          "gr",
-          "hk",
-          "hr",
-          "hu",
-          "ie",
-          "in",
-          "is",
-          "it",
-          "jp",
-          "kr",
-          "lt",
-          "lv",
-          "mx",
-          "nl",
-          "no",
-          "nz",
-          "pe",
-          "ph",
-          "pl",
-          "pt",
-          "ro",
-          "rs",
-          "se",
-          "si",
-          "sk",
-          "th",
-          "tr",
-          "tw",
-          "ua",
-          "us",
-          "vn",
-          "w1"
-        ],
-        "foundInObjects": [
-          {
-            "foundInObjectQualified": "Microsoft.Sales.Peppol.PEPPOL Management",
-            "foundInMethod": "FindNextCreditMemoLineRec"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Sales.Peppol.PEPPOL Management",
-            "foundInMethod": "FindNextSalesCreditMemoLineRec"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Sales.Peppol.PEPPOL Validation",
-            "foundInMethod": "CheckSalesCreditMemo"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Sales.Peppol.Sales Cr.Memo - PEPPOL BIS 3.0",
-            "foundInMethod": "GetTotals"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Sales.Peppol.Sales Cr.Memo - PEPPOL BIS 3.0",
-            "foundInMethod": "Initialize"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Sales.Peppol.Sales Credit Memo - PEPPOL 2.0",
-            "foundInMethod": "GetTotals"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Sales.Peppol.Sales Credit Memo - PEPPOL 2.1",
-            "foundInMethod": "GetTotals"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
-            "foundInMethod": "CopySalesCrMemoLinesToDoc"
-          }
-        ]
-      }
+      "foundInExtensions": [
+        {
+          "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
+          "name": "Base Application",
+          "publisher": "Microsoft",
+          "countries": [
+            "at",
+            "au",
+            "be",
+            "bg",
+            "br",
+            "ca",
+            "ch",
+            "co",
+            "cz",
+            "de",
+            "dk",
+            "ee",
+            "es",
+            "fi",
+            "fr",
+            "gb",
+            "gr",
+            "hk",
+            "hr",
+            "hu",
+            "ie",
+            "in",
+            "is",
+            "it",
+            "jp",
+            "kr",
+            "lt",
+            "lv",
+            "mx",
+            "nl",
+            "no",
+            "nz",
+            "pe",
+            "ph",
+            "pl",
+            "pt",
+            "ro",
+            "rs",
+            "se",
+            "si",
+            "sk",
+            "th",
+            "tr",
+            "tw",
+            "ua",
+            "us",
+            "vn",
+            "w1"
+          ],
+          "foundInObjects": [
+            {
+              "foundInObjectQualified": "Microsoft.Sales.Peppol.PEPPOL Management",
+              "foundInMethod": "FindNextCreditMemoLineRec"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Sales.Peppol.PEPPOL Management",
+              "foundInMethod": "FindNextSalesCreditMemoLineRec"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Sales.Peppol.PEPPOL Validation",
+              "foundInMethod": "CheckSalesCreditMemo"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Sales.Peppol.Sales Cr.Memo - PEPPOL BIS 3.0",
+              "foundInMethod": "GetTotals"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Sales.Peppol.Sales Cr.Memo - PEPPOL BIS 3.0",
+              "foundInMethod": "Initialize"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Sales.Peppol.Sales Credit Memo - PEPPOL 2.0",
+              "foundInMethod": "GetTotals"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Sales.Peppol.Sales Credit Memo - PEPPOL 2.1",
+              "foundInMethod": "GetTotals"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
+              "foundInMethod": "CopySalesCrMemoLinesToDoc"
+            }
+          ]
+        },
+        {
+          "appId": "e1d97edc-c239-46b4-8d84-6368bdf67c8b",
+          "name": "E-Document Core",
+          "publisher": "Microsoft",
+          "countries": [
+            "at",
+            "au",
+            "be",
+            "bg",
+            "br",
+            "ca",
+            "ch",
+            "co",
+            "cz",
+            "de",
+            "dk",
+            "ee",
+            "es",
+            "fi",
+            "fr",
+            "gb",
+            "gr",
+            "hk",
+            "hr",
+            "hu",
+            "ie",
+            "in",
+            "is",
+            "it",
+            "jp",
+            "kr",
+            "lt",
+            "lv",
+            "mx",
+            "nl",
+            "no",
+            "nz",
+            "pe",
+            "ph",
+            "pl",
+            "pt",
+            "ro",
+            "rs",
+            "se",
+            "si",
+            "sk",
+            "th",
+            "tr",
+            "tw",
+            "ua",
+            "us",
+            "vn",
+            "w1"
+          ],
+          "foundInObjects": [
+            {
+              "foundInObjectQualified": "Microsoft.eServices.EDocument.IO.Peppol.E-Doc. DED PEPPOL Subscribers",
+              "foundInMethod": "PrepareHeaderAndVAT"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.eServices.EDocument.IO.Peppol.E-Doc. DED PEPPOL Subscribers",
+              "foundInMethod": "PrepareLine"
+            }
+          ]
+        }
+      ]
     },
     {
       "source": "Sales Cr.Memo Line",
@@ -16448,99 +16578,162 @@
       "target": "Sales Header",
       "targetNamespace": "Microsoft.Sales.Document",
       "targetObjectId": 36,
-      "foundInExtensions": {
-        "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
-        "name": "Base Application",
-        "publisher": "Microsoft",
-        "countries": [
-          "at",
-          "au",
-          "be",
-          "bg",
-          "br",
-          "ca",
-          "ch",
-          "co",
-          "cz",
-          "de",
-          "dk",
-          "ee",
-          "es",
-          "fi",
-          "fr",
-          "gb",
-          "gr",
-          "hk",
-          "hr",
-          "hu",
-          "ie",
-          "in",
-          "is",
-          "it",
-          "jp",
-          "kr",
-          "lt",
-          "lv",
-          "mx",
-          "nl",
-          "no",
-          "nz",
-          "pe",
-          "ph",
-          "pl",
-          "pt",
-          "ro",
-          "rs",
-          "se",
-          "si",
-          "sk",
-          "th",
-          "tr",
-          "tw",
-          "ua",
-          "us",
-          "vn",
-          "w1"
-        ],
-        "foundInObjects": [
-          {
-            "foundInObjectQualified": "Microsoft.Sales.Document.Copy Sales Document",
-            "foundInMethod": "OnOpenPage"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Sales.Document.Copy Sales Document",
-            "foundInMethod": "ValidateDocNo"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Sales.History.Sales Invoice Header",
-            "foundInMethod": "GetLegalStatement"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Sales.Peppol.PEPPOL Management",
-            "foundInMethod": "FindNextSalesInvoiceRec"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Sales.Peppol.PEPPOL Validation",
-            "foundInMethod": "CheckSalesInvoice"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
-            "foundInMethod": "CopySalesDoc"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
-            "foundInMethod": "CopySalesHeaderFromPostedInvoice"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
-            "foundInMethod": "CopySalesInvLinesToDoc"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
-            "foundInMethod": "InitAndCheckSalesDocuments"
-          }
-        ]
-      }
+      "foundInExtensions": [
+        {
+          "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
+          "name": "Base Application",
+          "publisher": "Microsoft",
+          "countries": [
+            "at",
+            "au",
+            "be",
+            "bg",
+            "br",
+            "ca",
+            "ch",
+            "co",
+            "cz",
+            "de",
+            "dk",
+            "ee",
+            "es",
+            "fi",
+            "fr",
+            "gb",
+            "gr",
+            "hk",
+            "hr",
+            "hu",
+            "ie",
+            "in",
+            "is",
+            "it",
+            "jp",
+            "kr",
+            "lt",
+            "lv",
+            "mx",
+            "nl",
+            "no",
+            "nz",
+            "pe",
+            "ph",
+            "pl",
+            "pt",
+            "ro",
+            "rs",
+            "se",
+            "si",
+            "sk",
+            "th",
+            "tr",
+            "tw",
+            "ua",
+            "us",
+            "vn",
+            "w1"
+          ],
+          "foundInObjects": [
+            {
+              "foundInObjectQualified": "Microsoft.Sales.Document.Copy Sales Document",
+              "foundInMethod": "OnOpenPage"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Sales.Document.Copy Sales Document",
+              "foundInMethod": "ValidateDocNo"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Sales.History.Sales Invoice Header",
+              "foundInMethod": "GetLegalStatement"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Sales.Peppol.PEPPOL Management",
+              "foundInMethod": "FindNextSalesInvoiceRec"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Sales.Peppol.PEPPOL Validation",
+              "foundInMethod": "CheckSalesInvoice"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
+              "foundInMethod": "CopySalesDoc"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
+              "foundInMethod": "CopySalesHeaderFromPostedInvoice"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
+              "foundInMethod": "CopySalesInvLinesToDoc"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
+              "foundInMethod": "InitAndCheckSalesDocuments"
+            }
+          ]
+        },
+        {
+          "appId": "e1d97edc-c239-46b4-8d84-6368bdf67c8b",
+          "name": "E-Document Core",
+          "publisher": "Microsoft",
+          "countries": [
+            "at",
+            "au",
+            "be",
+            "bg",
+            "br",
+            "ca",
+            "ch",
+            "co",
+            "cz",
+            "de",
+            "dk",
+            "ee",
+            "es",
+            "fi",
+            "fr",
+            "gb",
+            "gr",
+            "hk",
+            "hr",
+            "hu",
+            "ie",
+            "in",
+            "is",
+            "it",
+            "jp",
+            "kr",
+            "lt",
+            "lv",
+            "mx",
+            "nl",
+            "no",
+            "nz",
+            "pe",
+            "ph",
+            "pl",
+            "pt",
+            "ro",
+            "rs",
+            "se",
+            "si",
+            "sk",
+            "th",
+            "tr",
+            "tw",
+            "ua",
+            "us",
+            "vn",
+            "w1"
+          ],
+          "foundInObjects": [
+            {
+              "foundInObjectQualified": "Microsoft.eServices.EDocument.IO.Peppol.E-Doc. DED PEPPOL Subscribers",
+              "foundInMethod": "PrepareHeaderAndVAT"
+            }
+          ]
+        }
+      ]
     },
     {
       "source": "Sales Invoice Header",
@@ -16839,91 +17032,158 @@
       "target": "Sales Line",
       "targetNamespace": "Microsoft.Sales.Document",
       "targetObjectId": 37,
-      "foundInExtensions": {
-        "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
-        "name": "Base Application",
-        "publisher": "Microsoft",
-        "countries": [
-          "at",
-          "au",
-          "be",
-          "bg",
-          "br",
-          "ca",
-          "ch",
-          "co",
-          "cz",
-          "de",
-          "dk",
-          "ee",
-          "es",
-          "fi",
-          "fr",
-          "gb",
-          "gr",
-          "hk",
-          "hr",
-          "hu",
-          "ie",
-          "in",
-          "is",
-          "it",
-          "jp",
-          "kr",
-          "lt",
-          "lv",
-          "mx",
-          "nl",
-          "no",
-          "nz",
-          "pe",
-          "ph",
-          "pl",
-          "pt",
-          "ro",
-          "rs",
-          "se",
-          "si",
-          "sk",
-          "th",
-          "tr",
-          "tw",
-          "ua",
-          "us",
-          "vn",
-          "w1"
-        ],
-        "foundInObjects": [
-          {
-            "foundInObjectQualified": "Microsoft.Sales.Peppol.PEPPOL Management",
-            "foundInMethod": "FindNextSalesInvoiceLineRec"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Sales.Peppol.PEPPOL Validation",
-            "foundInMethod": "CheckSalesInvoice"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Sales.Peppol.Sales Invoice - PEPPOL 2.0",
-            "foundInMethod": "GetTotals"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Sales.Peppol.Sales Invoice - PEPPOL 2.1",
-            "foundInMethod": "GetTotals"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Sales.Peppol.Sales Invoice - PEPPOL BIS 3.0",
-            "foundInMethod": "GetTotals"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Sales.Peppol.Sales Invoice - PEPPOL BIS 3.0",
-            "foundInMethod": "Initialize"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
-            "foundInMethod": "CopySalesInvLinesToDoc"
-          }
-        ]
-      }
+      "foundInExtensions": [
+        {
+          "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
+          "name": "Base Application",
+          "publisher": "Microsoft",
+          "countries": [
+            "at",
+            "au",
+            "be",
+            "bg",
+            "br",
+            "ca",
+            "ch",
+            "co",
+            "cz",
+            "de",
+            "dk",
+            "ee",
+            "es",
+            "fi",
+            "fr",
+            "gb",
+            "gr",
+            "hk",
+            "hr",
+            "hu",
+            "ie",
+            "in",
+            "is",
+            "it",
+            "jp",
+            "kr",
+            "lt",
+            "lv",
+            "mx",
+            "nl",
+            "no",
+            "nz",
+            "pe",
+            "ph",
+            "pl",
+            "pt",
+            "ro",
+            "rs",
+            "se",
+            "si",
+            "sk",
+            "th",
+            "tr",
+            "tw",
+            "ua",
+            "us",
+            "vn",
+            "w1"
+          ],
+          "foundInObjects": [
+            {
+              "foundInObjectQualified": "Microsoft.Sales.Peppol.PEPPOL Management",
+              "foundInMethod": "FindNextSalesInvoiceLineRec"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Sales.Peppol.PEPPOL Validation",
+              "foundInMethod": "CheckSalesInvoice"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Sales.Peppol.Sales Invoice - PEPPOL 2.0",
+              "foundInMethod": "GetTotals"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Sales.Peppol.Sales Invoice - PEPPOL 2.1",
+              "foundInMethod": "GetTotals"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Sales.Peppol.Sales Invoice - PEPPOL BIS 3.0",
+              "foundInMethod": "GetTotals"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Sales.Peppol.Sales Invoice - PEPPOL BIS 3.0",
+              "foundInMethod": "Initialize"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
+              "foundInMethod": "CopySalesInvLinesToDoc"
+            }
+          ]
+        },
+        {
+          "appId": "e1d97edc-c239-46b4-8d84-6368bdf67c8b",
+          "name": "E-Document Core",
+          "publisher": "Microsoft",
+          "countries": [
+            "at",
+            "au",
+            "be",
+            "bg",
+            "br",
+            "ca",
+            "ch",
+            "co",
+            "cz",
+            "de",
+            "dk",
+            "ee",
+            "es",
+            "fi",
+            "fr",
+            "gb",
+            "gr",
+            "hk",
+            "hr",
+            "hu",
+            "ie",
+            "in",
+            "is",
+            "it",
+            "jp",
+            "kr",
+            "lt",
+            "lv",
+            "mx",
+            "nl",
+            "no",
+            "nz",
+            "pe",
+            "ph",
+            "pl",
+            "pt",
+            "ro",
+            "rs",
+            "se",
+            "si",
+            "sk",
+            "th",
+            "tr",
+            "tw",
+            "ua",
+            "us",
+            "vn",
+            "w1"
+          ],
+          "foundInObjects": [
+            {
+              "foundInObjectQualified": "Microsoft.eServices.EDocument.IO.Peppol.E-Doc. DED PEPPOL Subscribers",
+              "foundInMethod": "PrepareHeaderAndVAT"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.eServices.EDocument.IO.Peppol.E-Doc. DED PEPPOL Subscribers",
+              "foundInMethod": "PrepareLine"
+            }
+          ]
+        }
+      ]
     },
     {
       "source": "Sales Invoice Line",
