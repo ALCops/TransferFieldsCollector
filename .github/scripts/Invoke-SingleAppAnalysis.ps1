@@ -97,7 +97,7 @@ try {
 
     # Resolve AL tool path
     $alTool = if ($env:HOME) {
-        Join-Path $env:HOME ".dotnet/tools/AL"
+        Join-Path $env:HOME ".dotnet/tools/al"
     }
     else {
         Join-Path $env:USERPROFILE ".dotnet/tools/al.exe"
