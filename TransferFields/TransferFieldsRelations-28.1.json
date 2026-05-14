@@ -8407,7 +8407,7 @@
     },
     {
       "source": "Incoming Document Attachment",
-      "sourceNamespace": "Microsoft.eServices.EDocument",
+      "sourceNamespace": "Microsoft.EServices.EDocument",
       "sourceObjectId": 133,
       "target": "Attachment Entity Buffer",
       "targetNamespace": "Microsoft.Integration.Graph",
@@ -8476,10 +8476,10 @@
     },
     {
       "source": "Incoming Document Attachment",
-      "sourceNamespace": "Microsoft.eServices.EDocument",
+      "sourceNamespace": "Microsoft.EServices.EDocument",
       "sourceObjectId": 133,
       "target": "Inc. Doc. Attachment Overview",
-      "targetNamespace": "Microsoft.eServices.EDocument",
+      "targetNamespace": "Microsoft.EServices.EDocument",
       "targetObjectId": 137,
       "foundInExtensions": {
         "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
@@ -8537,7 +8537,7 @@
         ],
         "foundInObjects": [
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.Inc. Doc. Attachment Overview",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.Inc. Doc. Attachment Overview",
             "foundInMethod": "InsertFromIncomingDocumentAttachment"
           }
         ]
