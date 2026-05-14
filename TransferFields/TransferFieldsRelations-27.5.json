@@ -9947,7 +9947,7 @@
         "countries": "es",
         "foundInObjects": [
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.SII XML Creator",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.SII XML Creator",
             "foundInMethod": "MoveNonTaxableEntriesToTempVATEntryBuffer"
           },
           {
