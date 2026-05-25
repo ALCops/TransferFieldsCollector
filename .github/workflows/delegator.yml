@@ -12,7 +12,7 @@ on:
       start_major:
         description: 'Starting major version (e.g., 27)'
         required: false
-        default: '27'
+        default: '28'
       start_minor:
         description: 'Starting minor version (e.g., 0)'
         required: false
