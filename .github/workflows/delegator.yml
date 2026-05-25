@@ -33,7 +33,7 @@ jobs:
           Install-Module BcContainerHelper -Force -AllowClobber
           Import-Module BcContainerHelper -Force -DisableNameChecking
           
-          $startMajor = [int]"${{ github.event.inputs.start_major || '27' }}"
+          $startMajor = [int]"${{ github.event.inputs.start_major || '28' }}"
           $startMinor = [int]"${{ github.event.inputs.start_minor || '0' }}"
           
           $currentMajor = $startMajor
