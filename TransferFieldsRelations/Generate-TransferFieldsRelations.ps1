@@ -165,7 +165,7 @@ foreach ($jsonFile in $jsonFiles) {
     Write-Host "  Added $relationCount new relations"
 }
 
-$sortedRelations = $relationsMap.Values | Sort-Object SourceNamespace, Source, TargetNamespace, Target
+$sortedRelations = $relationsMap.Values | Sort-Object { $_.SourceNamespace }, { $_.Source }, { $_.TargetNamespace }, { $_.Target }
 
 Write-Host "`nTotal unique relations: $($sortedRelations.Count)"
 Write-Host "Overall max version found: $overallMaxVersion (relations at this version will have no upper bound)"
