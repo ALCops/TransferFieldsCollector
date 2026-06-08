@@ -71,6 +71,8 @@ jobs:
     outputs:
       matrix: ${{ steps.create-matrix.outputs.matrix }}
     steps:
+      - uses: actions/checkout@v6
+
       - name: Create Matrix
         id: create-matrix
         shell: pwsh
