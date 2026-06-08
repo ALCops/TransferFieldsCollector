@@ -75,9 +75,8 @@ jobs:
         id: create-matrix
         shell: pwsh
         run: |
-          Install-Module BcContainerHelper -Force -AllowClobber
-          Import-Module BcContainerHelper -Force -DisableNameChecking
-          
+          & ./.github/scripts/Install-BcContainerHelper.ps1
+
           $version = "${{ inputs.version }}"
           $localizations = '${{ env.LOCALIZATIONS }}' | ConvertFrom-Json
           
@@ -132,8 +131,7 @@ jobs:
       - name: Install BcContainerHelper
         shell: pwsh
         run: |
-          Write-Host "Installing BcContainerHelper..."
-          Install-Module BcContainerHelper -Force -AllowClobber
+          & ./.github/scripts/Install-BcContainerHelper.ps1
 
       - name: Download TransferFields Analyzer
         uses: actions/download-artifact@v7

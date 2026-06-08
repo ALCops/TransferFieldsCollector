@@ -30,8 +30,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          Install-Module BcContainerHelper -Force -AllowClobber
-          Import-Module BcContainerHelper -Force -DisableNameChecking
+          & ./.github/scripts/Install-BcContainerHelper.ps1
           
           $startMajor = [int]"${{ github.event.inputs.start_major || '28' }}"
           $startMinor = [int]"${{ github.event.inputs.start_minor || '0' }}"
