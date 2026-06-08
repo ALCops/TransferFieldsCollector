@@ -1,6 +1,6 @@
 {
   "version": "28.0",
-  "totalRelations": 391,
+  "totalRelations": 392,
   "relations": [
     {
       "source": "Acc. Schedule Line",
@@ -21229,6 +21229,26 @@
           {
             "foundInObjectQualified": "Microsoft.Integration.Entity.Tax Group Buffer",
             "foundInMethod": "PropagateUpdate"
+          }
+        ]
+      }
+    },
+    {
+      "source": "TDS Concessional Code",
+      "sourceNamespace": "Microsoft.Finance.TDS.TDSBase",
+      "sourceObjectId": 18688,
+      "target": "TDS Concessional Code Archive",
+      "targetNamespace": "Microsoft.Finance.TDS.TDSBase",
+      "targetObjectId": 18698,
+      "foundInExtensions": {
+        "appId": "eae5779e-7797-4c4c-977e-7516652b7a65",
+        "name": "India TDS",
+        "publisher": "Microsoft",
+        "countries": "in",
+        "foundInObjects": [
+          {
+            "foundInObjectQualified": "Microsoft.Finance.TDS.TDSBase.TDS Concessional Code",
+            "foundInMethod": "ArchiveExistingCertIfAny"
           }
         ]
       }
