@@ -113,7 +113,7 @@ jobs:
 
       - name: Restore platform cache
         id: cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ${{ runner.temp }}/platform-apps
           key: ${{ steps.resolve.outputs.cache-key }}
@@ -155,7 +155,7 @@ jobs:
           path: ${{ runner.temp }}/ALCops
 
       - name: Restore platform apps
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: ${{ runner.temp }}/platform-apps
           key: ${{ needs.download-platform.outputs.cache-key }}
