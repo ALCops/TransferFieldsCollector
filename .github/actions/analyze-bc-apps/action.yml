@@ -63,7 +63,28 @@ runs:
         
         $analyzerDll = Join-Path $analyzerPath "ALCops.TransferFieldsCollector.dll"
         Write-Host "Analyzer DLL: $analyzerDll"
-        
+
+        # Load W1 fingerprints for deduplication (non-w1 countries only)
+        $w1Fingerprints = @{}
+        $country = "${{ inputs.country }}"
+
+        if ($country -ne 'w1') {
+            $fingerprintFile = Join-Path $platformPath "w1-app-fingerprints.json"
+            if (Test-Path $fingerprintFile) {
+                $manifest = Get-Content $fingerprintFile -Raw | ConvertFrom-Json
+                foreach ($prop in $manifest.fingerprints.PSObject.Properties) {
+                    $w1Fingerprints[$prop.Name] = $prop.Value
+                }
+                Write-Host "Loaded $($w1Fingerprints.Count) W1 app fingerprints for deduplication"
+            }
+            else {
+                Write-Host "No W1 fingerprint manifest found at $fingerprintFile - analyzing all apps"
+            }
+        }
+        else {
+            Write-Host "Country is w1 - analyzing all apps (this is the reference)"
+        }
+
         # Look for an "Extensions" subfolder and prefer it; fall back to artifact root if missing
         $extensionsFolder = Join-Path $artifactPath "Extensions"
         if (-not (Test-Path $extensionsFolder)) {
@@ -79,8 +100,19 @@ runs:
         Write-Host "Processing $($appFiles.Count) app files..."
         
         $jsonCounter = 0
-        
+        $skipCount = 0
+
         foreach ($appFile in $appFiles) {
+            # Check fingerprint against W1 baseline
+            if ($w1Fingerprints.Count -gt 0) {
+                $appHash = (Get-FileHash -Path $appFile.FullName -Algorithm SHA256).Hash
+                if ($w1Fingerprints.ContainsKey($appHash)) {
+                    $skipCount++
+                    Write-Host "  SKIP (w1-identical): $($appFile.Name)"
+                    continue
+                }
+            }
+
             # Run single app analysis
             $result = & "$scriptsPath/Invoke-SingleAppAnalysis.ps1" `
                 -AppFile $appFile.FullName `
@@ -106,7 +138,10 @@ runs:
             }
         }
         
-        Write-Host "`nProcessed $($appFiles.Count) apps, generated $jsonCounter JSON files"
+        if ($skipCount -gt 0) {
+            Write-Host "`nSkipped $skipCount of $($appFiles.Count) apps (identical to w1 baseline)"
+        }
+        Write-Host "Analyzed $($appFiles.Count - $skipCount) apps, generated $jsonCounter JSON files"
         "json-count=$jsonCounter" >> $env:GITHUB_OUTPUT
 
     - name: Merge and finalize results

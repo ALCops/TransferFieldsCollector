@@ -53,7 +53,9 @@ Write-Host "Artifact URL: $artifactUrl"
 # including manifest.json platformUrl overrides for older versions)
 Write-Host "Downloading artifacts (W1 + platform)..."
 $artifactPaths = Download-Artifacts -artifactUrl $artifactUrl -includePlatform
+$w1CountryPath = $artifactPaths[0]
 $platformPath = $artifactPaths[1]
+Write-Host "W1 country artifact: $w1CountryPath"
 Write-Host "Platform extracted to: $platformPath"
 
 # Create output directory
@@ -86,6 +88,35 @@ if ($systemApp) {
 }
 else {
     Write-Warning "System.app not found in platform artifacts"
+}
+
+# Compute SHA256 fingerprints for W1 Extension .app files
+$fingerprintFile = Join-Path $OutputPath "w1-app-fingerprints.json"
+$w1ExtensionsFolder = Join-Path $w1CountryPath "Extensions"
+
+if (Test-Path $w1ExtensionsFolder) {
+    $w1AppFiles = Get-ChildItem -Path $w1ExtensionsFolder -Filter "*.app" -Recurse -File
+    Write-Host "Computing fingerprints for $($w1AppFiles.Count) W1 Extension .app files..."
+
+    $fingerprints = [ordered]@{}
+    foreach ($w1App in $w1AppFiles) {
+        $hash = (Get-FileHash -Path $w1App.FullName -Algorithm SHA256).Hash
+        $fingerprints[$hash] = $w1App.Name
+    }
+
+    [ordered]@{
+        appCount     = $fingerprints.Count
+        fingerprints = $fingerprints
+    } | ConvertTo-Json -Depth 5 | Set-Content -Path $fingerprintFile
+
+    Write-Host "W1 fingerprint manifest: $fingerprintFile ($($fingerprints.Count) apps)"
+}
+else {
+    Write-Warning "W1 Extensions folder not found at $w1ExtensionsFolder - no fingerprints generated"
+    [ordered]@{
+        appCount     = 0
+        fingerprints = @{}
+    } | ConvertTo-Json -Depth 5 | Set-Content -Path $fingerprintFile
 }
 
 # Report results
