@@ -11,10 +11,6 @@ Write-Host "TLS protocols (before): $([Net.ServicePointManager]::SecurityProtoco
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Write-Host "TLS protocols (after): $([Net.ServicePointManager]::SecurityProtocol)"
 
-Write-Host "`nInstalling NuGet provider..."
-Install-PackageProvider -Name NuGet -Force -MinimumVersion 2.8.5.201 | Out-Null
-Write-Host "NuGet provider version: $((Get-PackageProvider -Name NuGet).Version)"
-
 Write-Host "`nPackage sources:"
 Get-PackageSource | Format-Table Name, Location, IsTrusted, ProviderName -AutoSize | Out-String | Write-Host
 
