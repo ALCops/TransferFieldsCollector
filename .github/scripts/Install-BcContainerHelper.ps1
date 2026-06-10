@@ -19,9 +19,18 @@ Get-PSRepository | Format-Table Name, SourceLocation, InstallationPolicy -AutoSi
 
 $gallery = Get-PSRepository -Name PSGallery -ErrorAction SilentlyContinue
 if (-not $gallery) {
-    Write-Host "PSGallery not registered — registering default repository"
-    Register-PSRepository -Default
-    Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+    Write-Host "PSGallery not registered — registering explicitly"
+    Register-PSRepository -Default -ErrorAction SilentlyContinue
+    $gallery = Get-PSRepository -Name PSGallery -ErrorAction SilentlyContinue
+    if (-not $gallery) {
+        Write-Host "Register-PSRepository -Default failed, registering with explicit URL"
+        Register-PSRepository -Name PSGallery `
+            -SourceLocation 'https://www.powershellgallery.com/api/v2' `
+            -InstallationPolicy Trusted
+    }
+    else {
+        Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+    }
 }
 elseif ($gallery.InstallationPolicy -ne 'Trusted') {
     Write-Host "PSGallery found but not trusted — setting to Trusted"
