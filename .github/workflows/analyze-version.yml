@@ -169,20 +169,23 @@ jobs:
           BC_VERSION: ${{ matrix.version }}
           BC_COUNTRY: ${{ matrix.country }}
         run: |
-          Import-Module BcContainerHelper -Force -DisableNameChecking
-
           $artifactUrl = $env:BC_ARTIFACT_URL
           $version = $env:BC_VERSION
           $country = $env:BC_COUNTRY
+          $outputPath = Join-Path $env:RUNNER_TEMP "extensions-$version-$country"
 
-          # Bypass Azure Front Door CDN throttling by using direct blob storage URLs
-          $artifactUrl = $artifactUrl -replace '^https://(bcartifacts)[^/]*\.azurefd\.net/', 'https://$1.blob.core.windows.net/' `
-                                      -replace '^https://(bcartifacts)\.azureedge\.net/', 'https://$1.blob.core.windows.net/'
-          Write-Host "Downloading country artifacts for v$version $country from $artifactUrl"
-          $artifactPath = Download-Artifacts -artifactUrl $artifactUrl
+          Write-Host "Extracting Extensions from v$version $country artifact..."
+          $result = & ./.github/scripts/Get-CountryExtensions.ps1 `
+              -ArtifactUrl $artifactUrl `
+              -OutputPath $outputPath
 
-          Write-Host "Artifact folder: $artifactPath"
-          "artifact-path=$artifactPath" >> $env:GITHUB_OUTPUT
+          Write-Host "Extracted $($result.AppCount) apps ($($result.TotalSizeMB) MB)"
+          if ($result.RangeBytes -and $result.FullZipSize) {
+              $savings = [math]::Round((1 - $result.RangeBytes / $result.FullZipSize) * 100, 1)
+              Write-Host "Bandwidth savings: ${savings}%"
+          }
+
+          "artifact-path=$outputPath" >> $env:GITHUB_OUTPUT
 
       - name: Analyze App Files
         id: analyze
