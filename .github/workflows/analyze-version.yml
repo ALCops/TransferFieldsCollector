@@ -88,10 +88,48 @@ jobs:
           Write-Host "Matrix JSON: $matrixJson"
           "matrix=$matrixJson" >> $env:GITHUB_OUTPUT
 
-  analyze-apps:
-    name: Analyze v${{ matrix.version }} - ${{ matrix.country }} 
+  download-platform:
+    name: Download Platform Apps
     runs-on: ubuntu-latest
-    needs: [build-analyzer, create-matrix]
+    outputs:
+      cache-key: ${{ steps.resolve.outputs.cache-key }}
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install BcContainerHelper
+        shell: pwsh
+        run: |
+          & ./.github/scripts/Install-BcContainerHelper.ps1
+
+      - name: Resolve platform version
+        id: resolve
+        shell: pwsh
+        run: |
+          Import-Module BcContainerHelper -Force -DisableNameChecking
+          $url = Get-BCArtifactUrl -Type Sandbox -Country w1 -Version "${{ inputs.version }}" -Select Latest
+          $fullVersion = ([Uri]$url).AbsolutePath.Split('/')[2]
+          Write-Host "Resolved full version: $fullVersion"
+          "cache-key=bc-platform-apps-$fullVersion" >> $env:GITHUB_OUTPUT
+
+      - name: Restore platform cache
+        id: cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/platform-apps
+          key: ${{ steps.resolve.outputs.cache-key }}
+
+      - name: Download platform apps
+        if: steps.cache.outputs.cache-hit != 'true'
+        shell: pwsh
+        run: |
+          & ./.github/scripts/Get-PlatformApps.ps1 `
+              -Version "${{ inputs.version }}" `
+              -OutputPath "${{ runner.temp }}/platform-apps"
+
+  analyze-apps:
+    name: Analyze v${{ matrix.version }} - ${{ matrix.country }}
+    runs-on: ubuntu-latest
+    needs: [build-analyzer, create-matrix, download-platform]
     strategy:
       fail-fast: true  # Individual failures fail entire version analysis
       matrix: ${{ fromJson(needs.create-matrix.outputs.matrix) }}
@@ -116,6 +154,13 @@ jobs:
           name: transferfieldsanalyzer
           path: ${{ runner.temp }}/ALCops
 
+      - name: Restore platform apps
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ runner.temp }}/platform-apps
+          key: ${{ needs.download-platform.outputs.cache-key }}
+          fail-on-cache-miss: true
+
       - name: Download and Extract Artifacts
         id: download-artifacts
         shell: pwsh
@@ -125,7 +170,7 @@ jobs:
           BC_COUNTRY: ${{ matrix.country }}
         run: |
           Import-Module BcContainerHelper -Force -DisableNameChecking
-          
+
           $artifactUrl = $env:BC_ARTIFACT_URL
           $version = $env:BC_VERSION
           $country = $env:BC_COUNTRY
@@ -133,23 +178,18 @@ jobs:
           # Bypass Azure Front Door CDN throttling by using direct blob storage URLs
           $artifactUrl = $artifactUrl -replace '^https://(bcartifacts)[^/]*\.azurefd\.net/', 'https://$1.blob.core.windows.net/' `
                                       -replace '^https://(bcartifacts)\.azureedge\.net/', 'https://$1.blob.core.windows.net/'
-          Write-Host "Downloading artifacts for v$version $country from $artifactUrl"
-          $artifactPaths = Download-Artifacts -artifactUrl $artifactUrl -includePlatform
+          Write-Host "Downloading country artifacts for v$version $country from $artifactUrl"
+          $artifactPath = Download-Artifacts -artifactUrl $artifactUrl
 
-          $artifactPath = $artifactPaths[0]
           Write-Host "Artifact folder: $artifactPath"
           "artifact-path=$artifactPath" >> $env:GITHUB_OUTPUT
-
-          $platformArtifactPath = $artifactPaths[1]
-          Write-Host "Platform Artifact folder: $platformArtifactPath"
-          "platform-artifact-path=$platformArtifactPath" >> $env:GITHUB_OUTPUT
 
       - name: Analyze App Files
         id: analyze
         uses: ./.github/actions/analyze-bc-apps
         with:
           artifact-path: ${{ steps.download-artifacts.outputs.artifact-path }}
-          platform-path: ${{ steps.download-artifacts.outputs.platform-artifact-path }}
+          platform-path: ${{ runner.temp }}/platform-apps
           analyzer-path: ${{ runner.temp }}/ALCops
           version: ${{ matrix.version }}
           country: ${{ matrix.country }}
