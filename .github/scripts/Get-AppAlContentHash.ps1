@@ -8,14 +8,18 @@
     metadata, and other non-AL artifacts so that apps repackaged with different
     localizations produce the same hash.
 
-    BC .app files are NavX packages with a binary header (starting with "NAVX")
-    prepended before the ZIP content. This script handles the offset automatically.
+    BC .app files are NavX packages (magic 0x5856414E). This script parses the
+    NavX header to extract the ZIP content, following the same approach as
+    BcContainerHelper's Extract-AppFileToFolder. Handles regular apps and
+    Ready-to-Run apps (which embed a nested .app inside the ZIP).
+    Runtime packages (compiled bytecode with no AL source) return $null.
 
 .PARAMETER AppFile
     Path to the .app file.
 
 .OUTPUTS
-    String — the hex SHA256 hash, or $null if the app contains no .al files.
+    String — the hex SHA256 hash, or $null if the app contains no .al files
+    (including runtime packages).
 #>
 [CmdletBinding()]
 param(
@@ -25,26 +29,7 @@ param(
 
 Add-Type -AssemblyName System.IO.Compression
 
-# BC .app files are NavX packages: a binary header followed by a standard ZIP archive.
-# .NET's ZipArchive cannot handle prepended data (offsets are relative to stream start),
-# so we locate the ZIP signature and create a stream starting from there.
-$fileBytes = [System.IO.File]::ReadAllBytes($AppFile)
-
-$zipStart = -1
-$limit = [Math]::Min($fileBytes.Length - 4, 4096)
-for ($i = 0; $i -le $limit; $i++) {
-    if ($fileBytes[$i] -eq 0x50 -and $fileBytes[$i + 1] -eq 0x4B -and
-        $fileBytes[$i + 2] -eq 0x03 -and $fileBytes[$i + 3] -eq 0x04) {
-        $zipStart = $i
-        break
-    }
-}
-
-if ($zipStart -lt 0) { return $null }
-
-$ms = [System.IO.MemoryStream]::new($fileBytes, $zipStart, $fileBytes.Length - $zipStart)
-$zip = [System.IO.Compression.ZipArchive]::new($ms, [System.IO.Compression.ZipArchiveMode]::Read)
-try {
+function Get-AlContentHashFromZip([System.IO.Compression.ZipArchive] $zip) {
     $alEntries = $zip.Entries |
         Where-Object { $_.FullName -like '*.al' } |
         Sort-Object FullName
@@ -75,6 +60,89 @@ try {
     finally {
         $sha.Dispose()
     }
+}
+
+# NavX header parsing mirrors BcContainerHelper's Extract-AppFileToFolder:
+# https://github.com/microsoft/navcontainerhelper/blob/master/AppHandling/Extract-AppFileToFolder.ps1
+function Get-ZipContentFromNavx([string] $filePath) {
+    $fileStream = [System.IO.File]::OpenRead($filePath)
+    try {
+        $reader = [System.IO.BinaryReader]::new($fileStream)
+        $magicNumber1    = $reader.ReadUInt32()
+        $metadataSize    = $reader.ReadUInt32()
+        $metadataVersion = $reader.ReadUInt32()
+        $packageId       = [Guid]::new($reader.ReadBytes(16))
+        $contentLength   = $reader.ReadInt64()
+        $magicNumber2    = $reader.ReadUInt32()
+
+        if ($magicNumber1 -ne 0x5856414E -or
+            $magicNumber2 -ne 0x5856414E -or
+            $metadataVersion -gt 2 -or
+            $fileStream.Position + $contentLength -gt $fileStream.Length) {
+            return $null
+        }
+
+        $content = $reader.ReadBytes($contentLength)
+
+        # Runtime packages (compiled bytecode) have no AL source
+        if ([BitConverter]::ToInt64($content, 0) -eq 72057595132988974) {
+            return $null
+        }
+
+        return $content
+    }
+    finally {
+        $fileStream.Dispose()
+    }
+}
+
+# Parse NavX header and extract ZIP content bytes
+$content = Get-ZipContentFromNavx $AppFile
+if ($null -eq $content) { return $null }
+
+$ms = [System.IO.MemoryStream]::new($content)
+$zip = [System.IO.Compression.ZipArchive]::new($ms, [System.IO.Compression.ZipArchiveMode]::Read)
+try {
+    # Ready-to-Run apps embed a nested .app file inside the ZIP
+    $r2rManifest = $zip.Entries | Where-Object { $_.FullName -eq 'readytorunappmanifest.json' }
+    if ($r2rManifest) {
+        $manifestStream = $r2rManifest.Open()
+        try {
+            $manifestReader = [System.IO.StreamReader]::new($manifestStream)
+            $manifestJson = $manifestReader.ReadToEnd() | ConvertFrom-Json
+            $embeddedAppName = $manifestJson.EmbeddedAppFileName
+        }
+        finally {
+            $manifestStream.Dispose()
+        }
+
+        $embeddedEntry = $zip.Entries | Where-Object { $_.FullName -eq $embeddedAppName }
+        if (-not $embeddedEntry) { return $null }
+
+        # Extract embedded .app to temp, recurse
+        $tmpFile = Join-Path ([System.IO.Path]::GetTempPath()) ([Guid]::NewGuid().ToString() + '.app')
+        try {
+            [System.IO.Compression.ZipFileExtensions]::ExtractToFile($embeddedEntry, $tmpFile)
+
+            $innerContent = Get-ZipContentFromNavx $tmpFile
+            if ($null -eq $innerContent) { return $null }
+
+            $innerMs = [System.IO.MemoryStream]::new($innerContent)
+            $innerZip = [System.IO.Compression.ZipArchive]::new($innerMs, [System.IO.Compression.ZipArchiveMode]::Read)
+            try {
+                return Get-AlContentHashFromZip $innerZip
+            }
+            finally {
+                $innerZip.Dispose()
+                $innerMs.Dispose()
+            }
+        }
+        finally {
+            Remove-Item $tmpFile -Force -ErrorAction SilentlyContinue
+        }
+    }
+
+    return Get-AlContentHashFromZip $zip
 }
 finally {
     $zip.Dispose()
