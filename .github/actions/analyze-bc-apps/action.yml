@@ -66,6 +66,7 @@ runs:
 
         # Load W1 fingerprints for deduplication (non-w1 countries only)
         $w1Fingerprints = @{}
+        $w1AlContentFingerprints = @{}
         $country = "${{ inputs.country }}"
 
         if ($country -ne 'w1') {
@@ -75,7 +76,12 @@ runs:
                 foreach ($prop in $manifest.fingerprints.PSObject.Properties) {
                     $w1Fingerprints[$prop.Name] = $prop.Value
                 }
-                Write-Host "Loaded $($w1Fingerprints.Count) W1 app fingerprints for deduplication"
+                if ($manifest.alContentFingerprints) {
+                    foreach ($prop in $manifest.alContentFingerprints.PSObject.Properties) {
+                        $w1AlContentFingerprints[$prop.Name] = $prop.Value
+                    }
+                }
+                Write-Host "Loaded $($w1Fingerprints.Count) W1 app fingerprints ($($w1AlContentFingerprints.Count) with AL content) for deduplication"
             }
             else {
                 Write-Host "No W1 fingerprint manifest found at $fingerprintFile - analyzing all apps"
@@ -110,6 +116,16 @@ runs:
                     $skipCount++
                     Write-Host "  SKIP (w1-identical): $($appFile.Name)"
                     continue
+                }
+
+                # Fallback: compare AL source content only (ignores translations/metadata)
+                if ($w1AlContentFingerprints.ContainsKey($appFile.Name)) {
+                    $alHash = & "$scriptsPath/Get-AppAlContentHash.ps1" -AppFile $appFile.FullName
+                    if ($null -ne $alHash -and $alHash -eq $w1AlContentFingerprints[$appFile.Name]) {
+                        $skipCount++
+                        Write-Host "  SKIP (w1-same-al-source): $($appFile.Name)"
+                        continue
+                    }
                 }
             }
 

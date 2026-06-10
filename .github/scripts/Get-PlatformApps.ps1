@@ -99,23 +99,33 @@ if (Test-Path $w1ExtensionsFolder) {
     Write-Host "Computing fingerprints for $($w1AppFiles.Count) W1 Extension .app files..."
 
     $fingerprints = [ordered]@{}
+    $alContentFingerprints = [ordered]@{}
+    $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+
     foreach ($w1App in $w1AppFiles) {
         $hash = (Get-FileHash -Path $w1App.FullName -Algorithm SHA256).Hash
         $fingerprints[$hash] = $w1App.Name
+
+        $alHash = & "$scriptDir/Get-AppAlContentHash.ps1" -AppFile $w1App.FullName
+        if ($null -ne $alHash) {
+            $alContentFingerprints[$w1App.Name] = $alHash
+        }
     }
 
     [ordered]@{
-        appCount     = $fingerprints.Count
-        fingerprints = $fingerprints
+        appCount              = $fingerprints.Count
+        fingerprints          = $fingerprints
+        alContentFingerprints = $alContentFingerprints
     } | ConvertTo-Json -Depth 5 | Set-Content -Path $fingerprintFile
 
-    Write-Host "W1 fingerprint manifest: $fingerprintFile ($($fingerprints.Count) apps)"
+    Write-Host "W1 fingerprint manifest: $fingerprintFile ($($fingerprints.Count) apps, $($alContentFingerprints.Count) with AL content)"
 }
 else {
     Write-Warning "W1 Extensions folder not found at $w1ExtensionsFolder - no fingerprints generated"
     [ordered]@{
-        appCount     = 0
-        fingerprints = @{}
+        appCount              = 0
+        fingerprints          = @{}
+        alContentFingerprints = @{}
     } | ConvertTo-Json -Depth 5 | Set-Content -Path $fingerprintFile
 }
 
