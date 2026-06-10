@@ -252,7 +252,7 @@ function Expand-ZipEntryFromFile {
         $totalRead += $read
     }
 
-    $outputFile = Join-Path $DestinationPath ([System.IO.Path]::GetFileName($Entry.FileName))
+    $outputFile = Join-Path $DestinationPath ([System.IO.Path]::GetFileName($Entry.FileName.Replace('\', '/')))
     $fs = [System.IO.File]::Create($outputFile)
 
     try {
@@ -324,7 +324,7 @@ function Invoke-FullDownloadFallback {
                 $normalizedName = $entry.FullName.Replace('\', '/')
                 if ($normalizedName.StartsWith($normalizedPrefix, [StringComparison]::Ordinal) -and
                     -not $normalizedName.EndsWith('/')) {
-                    $destFile = Join-Path $OutputPath ([System.IO.Path]::GetFileName($entry.FullName))
+                    $destFile = Join-Path $OutputPath ([System.IO.Path]::GetFileName($entry.FullName.Replace('\', '/')))
                     $entryStream = $entry.Open()
                     $outStream = [System.IO.File]::Create($destFile)
                     try {
