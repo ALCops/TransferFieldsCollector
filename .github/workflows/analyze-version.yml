@@ -8,9 +8,6 @@ on:
         required: true
         type: string
 
-env:
-  LOCALIZATIONS: '["at","au","be","ca","ch","cz","de","dk","ee","es","fi","fr","gb","hk","hr","is","it","jp","kr","lt","lv","mx","nl","no","nz","pl","pt","rs","se","si","th","tw","us","w1","co","hu","pe","ph","vn","sk","tr","br","ie","in","gr","ro","bg","ua"]'
-
 jobs:
   build-analyzer:
     name: Build TransferFields Collector
@@ -77,39 +74,17 @@ jobs:
         id: create-matrix
         shell: pwsh
         run: |
-          & ./.github/scripts/Install-BcContainerHelper.ps1
-
           $version = "${{ inputs.version }}"
-          $localizations = '${{ env.LOCALIZATIONS }}' | ConvertFrom-Json
-          
-          Write-Host "Creating matrix for version $version with $($localizations.Count) localizations..."
-          
-          $matrixItems = @()
-          
-          foreach ($country in $localizations) {
-              Write-Host "Checking $country..."
-              try {
-                  $url = Get-BCArtifactUrl -Type Sandbox -Country $country -Version $version -Select Latest -ErrorAction SilentlyContinue
-                  if ($url) {
-                      Write-Host "  Found: $url"
-                      $matrixItems += @{
-                          country = $country
-                          version = $version
-                          url = $url
-                      }
-                  }
-                  else {
-                      Write-Host "  No artifact found"
-                  }
-              }
-              catch {
-                  Write-Host "  Error: $_"
-              }
-          }
-          
-          $matrix = @{ include = $matrixItems }
+
+          $matrixItems = & ./.github/scripts/Get-BCArtifactCountries.ps1 `
+              -Type Sandbox `
+              -Version $version | ConvertFrom-Json
+
+          Write-Host "Found $($matrixItems.Count) countries with artifacts for version $version"
+
+          $matrix = @{ include = @($matrixItems) }
           $matrixJson = $matrix | ConvertTo-Json -Compress -Depth 10
-          
+
           Write-Host "Matrix JSON: $matrixJson"
           "matrix=$matrixJson" >> $env:GITHUB_OUTPUT
 
