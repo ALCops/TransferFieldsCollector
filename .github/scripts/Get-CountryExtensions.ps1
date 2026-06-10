@@ -364,7 +364,8 @@ Add-Type -AssemblyName System.IO.Compression.FileSystem
 if (Test-Path $OutputPath) {
     Remove-Item $OutputPath -Recurse -Force
 }
-New-Item -ItemType Directory -Path $OutputPath -Force | Out-Null
+$extensionsDir = Join-Path $OutputPath 'Extensions'
+New-Item -ItemType Directory -Path $extensionsDir -Force | Out-Null
 
 $httpClient = New-SharedHttpClient
 $tempDataFile = $null
@@ -445,7 +446,7 @@ try {
 
         try {
             foreach ($entry in $matchingEntries) {
-                $ok = Expand-ZipEntryFromFile -DataStream $dataStream -BlockStartOffset $minOffset -Entry $entry -DestinationPath $OutputPath
+                $ok = Expand-ZipEntryFromFile -DataStream $dataStream -BlockStartOffset $minOffset -Entry $entry -DestinationPath $extensionsDir
                 if ($ok) {
                     $extractedCount++
                     $extractedBytes += $entry.UncompressedSize
@@ -475,13 +476,13 @@ try {
         Write-Host "::warning::Range-based extraction failed: $_"
         Write-Host "Falling back to full download with selective extraction..."
 
-        if (Test-Path $OutputPath) {
-            Get-ChildItem $OutputPath -File | Remove-Item -Force
+        if (Test-Path $extensionsDir) {
+            Get-ChildItem $extensionsDir -File | Remove-Item -Force
         }
 
-        $fallbackResult = Invoke-FullDownloadFallback -Client $httpClient -Url $ArtifactUrl -OutputPath $OutputPath -Prefix $Prefix
+        $fallbackResult = Invoke-FullDownloadFallback -Client $httpClient -Url $ArtifactUrl -OutputPath $extensionsDir -Prefix $Prefix
 
-        $outputFiles = Get-ChildItem -Path $OutputPath -Filter "*.app" -File
+        $outputFiles = Get-ChildItem -Path $extensionsDir -Filter "*.app" -File
         $totalSizeMB = [math]::Round(($outputFiles | Measure-Object -Property Length -Sum).Sum / 1MB, 1)
 
         return [PSCustomObject]@{
