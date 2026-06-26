@@ -6255,7 +6255,7 @@
         "countries": "es",
         "foundInObjects": [
           {
-            "foundInObjectQualified": "Microsoft.eServices.EDocument.SII XML Creator",
+            "foundInObjectQualified": "Microsoft.EServices.EDocument.SII XML Creator",
             "foundInMethod": "MoveNonTaxableEntriesToTempVATEntryBuffer"
           },
           {
@@ -10089,7 +10089,7 @@
           "countries": "w1",
           "foundInObjects": [
             {
-              "foundInObjectQualified": "Microsoft.eServices.EDocument.IO.Peppol.E-Doc. DED PEPPOL Subscribers",
+              "foundInObjectQualified": "Microsoft.EServices.EDocument.IO.Peppol.E-Doc. DED PEPPOL Subscribers",
               "foundInMethod": "PrepareHeaderAndVAT"
             }
           ]
@@ -10354,11 +10354,11 @@
           "countries": "w1",
           "foundInObjects": [
             {
-              "foundInObjectQualified": "Microsoft.eServices.EDocument.IO.Peppol.E-Doc. DED PEPPOL Subscribers",
+              "foundInObjectQualified": "Microsoft.EServices.EDocument.IO.Peppol.E-Doc. DED PEPPOL Subscribers",
               "foundInMethod": "PrepareHeaderAndVAT"
             },
             {
-              "foundInObjectQualified": "Microsoft.eServices.EDocument.IO.Peppol.E-Doc. DED PEPPOL Subscribers",
+              "foundInObjectQualified": "Microsoft.EServices.EDocument.IO.Peppol.E-Doc. DED PEPPOL Subscribers",
               "foundInMethod": "PrepareLine"
             }
           ]
@@ -11153,7 +11153,7 @@
           "countries": "w1",
           "foundInObjects": [
             {
-              "foundInObjectQualified": "Microsoft.eServices.EDocument.IO.Peppol.E-Doc. DED PEPPOL Subscribers",
+              "foundInObjectQualified": "Microsoft.EServices.EDocument.IO.Peppol.E-Doc. DED PEPPOL Subscribers",
               "foundInMethod": "PrepareHeaderAndVAT"
             }
           ]
@@ -11446,11 +11446,11 @@
           "countries": "w1",
           "foundInObjects": [
             {
-              "foundInObjectQualified": "Microsoft.eServices.EDocument.IO.Peppol.E-Doc. DED PEPPOL Subscribers",
+              "foundInObjectQualified": "Microsoft.EServices.EDocument.IO.Peppol.E-Doc. DED PEPPOL Subscribers",
               "foundInMethod": "PrepareHeaderAndVAT"
             },
             {
-              "foundInObjectQualified": "Microsoft.eServices.EDocument.IO.Peppol.E-Doc. DED PEPPOL Subscribers",
+              "foundInObjectQualified": "Microsoft.EServices.EDocument.IO.Peppol.E-Doc. DED PEPPOL Subscribers",
               "foundInMethod": "PrepareLine"
             }
           ]
