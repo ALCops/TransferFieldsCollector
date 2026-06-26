@@ -49,16 +49,70 @@ if (-not $jsonFiles -or $jsonFiles.Count -eq 0) {
 
 Write-Host "Merging $($jsonFiles.Count) JSON files..."
 
+# Deterministic namespace-casing canonicalization (see NamespaceCasing.ps1).
+. "$PSScriptRoot/NamespaceCasing.ps1"
+
+# Load all file contents once so we can build the casing registry before merging.
+$allContents = [System.Collections.Generic.List[object]]::new()
+foreach ($jsonFile in $jsonFiles) {
+    Write-Host "  Reading: $($jsonFile.Name)"
+    $allContents.Add((Get-Content $jsonFile.FullName -Raw | ConvertFrom-Json))
+}
+
+# Build the casing registry from source/target namespaces. This merge runs within a single
+# country, so there is no W1 distinction here; the ordinal-min fallback makes the per-country
+# output deterministic regardless of file processing order.
+$casingRegistry = New-NamespaceCasingRegistry
+foreach ($jsonContent in $allContents) {
+    foreach ($relation in $jsonContent) {
+        Add-NamespaceObservation -Registry $casingRegistry -Namespace $relation.SourceNamespace
+        Add-NamespaceObservation -Registry $casingRegistry -Namespace $relation.TargetNamespace
+    }
+}
+$nsKeysByLen = Get-NamespaceKeysByLengthDesc -Registry $casingRegistry
+
+# Also build a registry of fully-qualified found-in object names so their casing is
+# canonicalized deterministically. This merge runs within a single country (IsW1 = false
+# everywhere), so the ordinal-min fallback is what keeps the per-country output stable
+# regardless of file processing order — including for namespaces that only appear inside
+# found-in objects and are therefore absent from the namespace registry.
+$qualifiedRegistry = New-NamespaceCasingRegistry
+foreach ($jsonContent in $allContents) {
+    foreach ($relation in $jsonContent) {
+        foreach ($extension in @($relation.FoundInExtension)) {
+            if (-not $extension) { continue }
+            foreach ($obj in @($extension.FoundInObjects)) {
+                if ($obj -and $obj.FoundInObjectQualified) {
+                    Add-QualifiedObservation -NamespaceRegistry $casingRegistry -QualifiedRegistry $qualifiedRegistry -Qualified $obj.FoundInObjectQualified -NamespaceKeysByLengthDesc $nsKeysByLen
+                }
+            }
+        }
+    }
+}
+
 # Use a hashtable for deduplication based on composite key
 # Key: "Source|SourceNamespace|Target|TargetNamespace"
 # Value: The relation object with merged FoundInExtension list
 $relationsMap = @{}
 
-foreach ($jsonFile in $jsonFiles) {
-    Write-Host "  Processing: $($jsonFile.Name)"
-    $jsonContent = Get-Content $jsonFile.FullName -Raw | ConvertFrom-Json
-
+foreach ($jsonContent in $allContents) {
     foreach ($relation in $jsonContent) {
+        # Canonicalize namespace casing deterministically before keying and merging.
+        if ($relation.SourceNamespace) {
+            $relation.SourceNamespace = Resolve-CanonicalNamespace -Registry $casingRegistry -Namespace $relation.SourceNamespace
+        }
+        if ($relation.TargetNamespace) {
+            $relation.TargetNamespace = Resolve-CanonicalNamespace -Registry $casingRegistry -Namespace $relation.TargetNamespace
+        }
+        foreach ($extension in @($relation.FoundInExtension)) {
+            if (-not $extension) { continue }
+            foreach ($obj in @($extension.FoundInObjects)) {
+                if ($obj -and $obj.FoundInObjectQualified) {
+                    $obj.FoundInObjectQualified = Resolve-CanonicalQualifiedNameStable -NamespaceRegistry $casingRegistry -QualifiedRegistry $qualifiedRegistry -Qualified $obj.FoundInObjectQualified -NamespaceKeysByLengthDesc $nsKeysByLen
+                }
+            }
+        }
+
         # Create composite key
         $key = "$($relation.Source)|$($relation.SourceNamespace)|$($relation.Target)|$($relation.TargetNamespace)"
 

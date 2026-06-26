@@ -47,6 +47,7 @@ Count unique relation pairs across all versions:
 - The analyzer uses `ConditionalWeakTable<Compilation, string>` to scope JSONL output per compilation instance.
 - Table symbol resolution filters system, virtual, and temporary tables via `TableTypeKind` checks.
 - Multi-level aggregation: JSONL → per-app JSON → per-country JSON → per-version JSON. Deduplication uses composite keys (Source|SourceNamespace|Target|TargetNamespace).
+- Namespace casing is canonicalized deterministically during merge (`NamespaceCasing.ps1`). AL namespaces are case-insensitive, but the compiler reports different literal casings across apps (e.g. `Microsoft.EServices.EDocument` vs `Microsoft.eServices.EDocument`). To avoid order-dependent flip-flop in the committed JSON, each case-insensitive namespace group is collapsed to one casing: the `w1` localization's casing leads when present, otherwise the ordinally-smallest casing wins. Both rules are order-independent, so repeated runs are stable.
 - Relations at the latest collected version get `MaxVersion = null` (assumed to persist forward).
 
 ### Data Files
@@ -58,6 +59,7 @@ Count unique relation pairs across all versions:
 Scripts in `.github/scripts/` support the CI pipeline:
 - `Invoke-SingleAppAnalysis.ps1` — extracts an .app, pre-scans for "TransferFields" text, runs the AL compiler with the analyzer
 - `ConvertFrom-RelationsJsonl.ps1` — converts JSONL output to structured JSON
+- `NamespaceCasing.ps1` — shared helper (dot-sourced) that canonicalizes namespace casing deterministically (w1-leading, ordinal-min fallback)
 - `Merge-TransferFieldsRelations.ps1` — merges per-app results with deduplication
 - `Merge-CountryResults.ps1` — aggregates per-country results, embeds country metadata
 - `Get-BCArtifactCountries.ps1` — discovers available localizations for a BC version

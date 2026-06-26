@@ -58,12 +58,22 @@ if (-not $jsonFiles -or $jsonFiles.Count -eq 0) {
     }
 }
 
+# Deterministic namespace-casing canonicalization (see NamespaceCasing.ps1).
+. "$PSScriptRoot/NamespaceCasing.ps1"
+
 # Dictionary to hold merged relations keyed by (Source, SourceNamespace, Target, TargetNamespace)
 $relationsMap = @{}
 $allCountries = @()
 
+# First pass: read every per-country file once and build the casing registry. The 'w1'
+# localization leads: if a namespace casing was seen in w1, it wins; otherwise the
+# ordinally-smallest casing is used. Both rules are order-independent, so the merged output
+# is stable across workflow runs regardless of artifact download/processing order.
+$countryContents = [System.Collections.Generic.List[object]]::new()
+$casingRegistry = New-NamespaceCasingRegistry
+
 foreach ($jsonFile in $jsonFiles) {
-    Write-Host "Processing: $($jsonFile.FullName)"
+    Write-Host "Reading: $($jsonFile.FullName)"
     $content = Get-Content $jsonFile.FullName -Raw | ConvertFrom-Json
     $country = $content.country
 
@@ -71,6 +81,44 @@ foreach ($jsonFile in $jsonFiles) {
         Write-Warning "  No country field found, skipping file"
         continue
     }
+
+    $countryContents.Add([PSCustomObject]@{ Country = $country; Content = $content })
+
+    $isW1 = ($country -ieq 'w1')
+    foreach ($relation in @($content.relations)) {
+        Add-NamespaceObservation -Registry $casingRegistry -Namespace $relation.SourceNamespace -IsW1:$isW1
+        Add-NamespaceObservation -Registry $casingRegistry -Namespace $relation.TargetNamespace -IsW1:$isW1
+    }
+}
+
+$nsKeysByLen = Get-NamespaceKeysByLengthDesc -Registry $casingRegistry
+
+# Build a registry of fully-qualified found-in object names so their casing is also
+# canonicalized deterministically. A found-in object's namespace is frequently NOT a table
+# Source/Target namespace, so it is absent from the namespace registry above; without this
+# its casing would still flip-flop with artifact download/processing order.
+$qualifiedRegistry = New-NamespaceCasingRegistry
+foreach ($entry in $countryContents) {
+    $isW1 = ($entry.Country -ieq 'w1')
+    foreach ($relation in @($entry.Content.relations)) {
+        $exts = $relation.FoundInExtension
+        if (-not $exts) { $exts = $relation.FoundInExtensions }
+        foreach ($ext in @($exts)) {
+            if (-not $ext) { continue }
+            foreach ($obj in @($ext.FoundInObjects)) {
+                if ($obj -and $obj.foundInObjectQualified) {
+                    Add-QualifiedObservation -NamespaceRegistry $casingRegistry -QualifiedRegistry $qualifiedRegistry -Qualified $obj.foundInObjectQualified -NamespaceKeysByLengthDesc $nsKeysByLen -IsW1:$isW1
+                }
+            }
+        }
+    }
+}
+
+# Second pass: canonicalize casings, then merge.
+foreach ($entry in $countryContents) {
+    $country = $entry.Country
+    $content = $entry.Content
+    Write-Host "Processing: $country"
 
     $allCountries += $country
 
@@ -81,6 +129,14 @@ foreach ($jsonFile in $jsonFiles) {
     }
 
     foreach ($relation in $relations) {
+        # Canonicalize namespace casing deterministically before keying and merging.
+        if ($relation.SourceNamespace) {
+            $relation.SourceNamespace = Resolve-CanonicalNamespace -Registry $casingRegistry -Namespace $relation.SourceNamespace
+        }
+        if ($relation.TargetNamespace) {
+            $relation.TargetNamespace = Resolve-CanonicalNamespace -Registry $casingRegistry -Namespace $relation.TargetNamespace
+        }
+
         # Create composite key for the relation
         $relationKey = "$($relation.Source)|$($relation.SourceNamespace)|$($relation.Target)|$($relation.TargetNamespace)"
 
@@ -126,6 +182,11 @@ foreach ($jsonFile in $jsonFiles) {
 
             # Concatenate FoundInObjects (no deduplication per user requirement)
             if ($ext.FoundInObjects) {
+                foreach ($obj in @($ext.FoundInObjects)) {
+                    if ($obj -and $obj.foundInObjectQualified) {
+                        $obj.foundInObjectQualified = Resolve-CanonicalQualifiedNameStable -NamespaceRegistry $casingRegistry -QualifiedRegistry $qualifiedRegistry -Qualified $obj.foundInObjectQualified -NamespaceKeysByLengthDesc $nsKeysByLen
+                    }
+                }
                 $extEntry.FoundInObjects += $ext.FoundInObjects
             }
         }
