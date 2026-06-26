@@ -9861,7 +9861,7 @@
           "countries": "w1",
           "foundInObjects": [
             {
-              "foundInObjectQualified": "Microsoft.eServices.EDocument.IO.Peppol.E-Doc. DED PEPPOL Subscribers",
+              "foundInObjectQualified": "Microsoft.EServices.EDocument.IO.Peppol.E-Doc. DED PEPPOL Subscribers",
               "foundInMethod": "PrepareHeaderAndVAT"
             }
           ]
@@ -9885,7 +9885,7 @@
           "countries": "de",
           "foundInObjects": [
             {
-              "foundInObjectQualified": "Microsoft.eServices.EDocument.Formats.Export XRechnung Document",
+              "foundInObjectQualified": "Microsoft.EServices.EDocument.Formats.Export XRechnung Document",
               "foundInMethod": "InsertEmbeddedDocument"
             }
           ]
@@ -10166,11 +10166,11 @@
           "countries": "w1",
           "foundInObjects": [
             {
-              "foundInObjectQualified": "Microsoft.eServices.EDocument.IO.Peppol.E-Doc. DED PEPPOL Subscribers",
+              "foundInObjectQualified": "Microsoft.EServices.EDocument.IO.Peppol.E-Doc. DED PEPPOL Subscribers",
               "foundInMethod": "PrepareHeaderAndVAT"
             },
             {
-              "foundInObjectQualified": "Microsoft.eServices.EDocument.IO.Peppol.E-Doc. DED PEPPOL Subscribers",
+              "foundInObjectQualified": "Microsoft.EServices.EDocument.IO.Peppol.E-Doc. DED PEPPOL Subscribers",
               "foundInMethod": "PrepareLine"
             }
           ]
@@ -10555,7 +10555,7 @@
           "countries": "w1",
           "foundInObjects": [
             {
-              "foundInObjectQualified": "Microsoft.eServices.EDocument.DemoData.Create E-Document Transactions",
+              "foundInObjectQualified": "Microsoft.EServices.EDocument.DemoData.Create E-Document Transactions",
               "foundInMethod": "CreateSalesInvoicesAndExportToBlobList"
             }
           ]
@@ -10981,7 +10981,7 @@
           "countries": "w1",
           "foundInObjects": [
             {
-              "foundInObjectQualified": "Microsoft.eServices.EDocument.IO.Peppol.E-Doc. DED PEPPOL Subscribers",
+              "foundInObjectQualified": "Microsoft.EServices.EDocument.IO.Peppol.E-Doc. DED PEPPOL Subscribers",
               "foundInMethod": "PrepareHeaderAndVAT"
             }
           ]
@@ -11005,7 +11005,7 @@
           "countries": "de",
           "foundInObjects": [
             {
-              "foundInObjectQualified": "Microsoft.eServices.EDocument.Formats.Export XRechnung Document",
+              "foundInObjectQualified": "Microsoft.EServices.EDocument.Formats.Export XRechnung Document",
               "foundInMethod": "InsertEmbeddedDocument"
             }
           ]
@@ -11314,11 +11314,11 @@
           "countries": "w1",
           "foundInObjects": [
             {
-              "foundInObjectQualified": "Microsoft.eServices.EDocument.IO.Peppol.E-Doc. DED PEPPOL Subscribers",
+              "foundInObjectQualified": "Microsoft.EServices.EDocument.IO.Peppol.E-Doc. DED PEPPOL Subscribers",
               "foundInMethod": "PrepareHeaderAndVAT"
             },
             {
-              "foundInObjectQualified": "Microsoft.eServices.EDocument.IO.Peppol.E-Doc. DED PEPPOL Subscribers",
+              "foundInObjectQualified": "Microsoft.EServices.EDocument.IO.Peppol.E-Doc. DED PEPPOL Subscribers",
               "foundInMethod": "PrepareLine"
             }
           ]
