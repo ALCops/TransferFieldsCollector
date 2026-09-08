@@ -9894,6 +9894,18 @@
           ]
         },
         {
+          "appId": "44469049-4bb4-4a32-82ab-f6c34d0204d3",
+          "name": "E-Reporting FR",
+          "publisher": "Microsoft",
+          "countries": "fr",
+          "foundInObjects": [
+            {
+              "foundInObjectQualified": "Microsoft.eServices.EDocument.Formats.PEPPOL30 FR Sales Validation",
+              "foundInMethod": "CheckSalesCreditMemo"
+            }
+          ]
+        },
+        {
           "appId": "e1966889-b5fb-4fda-a84c-ea71b590e1a9",
           "name": "PEPPOL",
           "publisher": "Microsoft",
@@ -10195,6 +10207,18 @@
             {
               "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
               "foundInMethod": "CopySalesCrMemoLinesToDoc"
+            }
+          ]
+        },
+        {
+          "appId": "44469049-4bb4-4a32-82ab-f6c34d0204d3",
+          "name": "E-Reporting FR",
+          "publisher": "Microsoft",
+          "countries": "fr",
+          "foundInObjects": [
+            {
+              "foundInObjectQualified": "Microsoft.eServices.EDocument.Formats.PEPPOL30 FR Sales Validation",
+              "foundInMethod": "CheckSalesCreditMemo"
             }
           ]
         },
@@ -11014,6 +11038,18 @@
           ]
         },
         {
+          "appId": "44469049-4bb4-4a32-82ab-f6c34d0204d3",
+          "name": "E-Reporting FR",
+          "publisher": "Microsoft",
+          "countries": "fr",
+          "foundInObjects": [
+            {
+              "foundInObjectQualified": "Microsoft.eServices.EDocument.Formats.PEPPOL30 FR Sales Validation",
+              "foundInMethod": "CheckSalesInvoice"
+            }
+          ]
+        },
+        {
           "appId": "e1966889-b5fb-4fda-a84c-ea71b590e1a9",
           "name": "PEPPOL",
           "publisher": "Microsoft",
@@ -11343,6 +11379,18 @@
             {
               "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
               "foundInMethod": "CopySalesInvLinesToDoc"
+            }
+          ]
+        },
+        {
+          "appId": "44469049-4bb4-4a32-82ab-f6c34d0204d3",
+          "name": "E-Reporting FR",
+          "publisher": "Microsoft",
+          "countries": "fr",
+          "foundInObjects": [
+            {
+              "foundInObjectQualified": "Microsoft.eServices.EDocument.Formats.PEPPOL30 FR Sales Validation",
+              "foundInMethod": "CheckSalesInvoice"
             }
           ]
         },
