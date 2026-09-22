@@ -63,9 +63,12 @@ public sealed class TransferFieldsRelationsJsonCollector : DiagnosticAnalyzer
         var sourceTable = TryResolveSymbolFromArgument(invocation) as ITableTypeSymbol;
         var targetTable =
             invocation.Instance?.Type.OriginalDefinition as ITableTypeSymbol
-            ?? ctx.ContainingSymbol.GetContainingApplicationObjectTypeSymbol()?.OriginalDefinition as ITableTypeSymbol;
+            ?? GetContainingTableType(ctx.ContainingSymbol);
 
         if (sourceTable is null || targetTable is null)
+            return;
+
+        if (IsRemoved(sourceTable) || IsRemoved(targetTable))
             return;
 
         if (!IsExtensible(sourceTable) && !IsExtensible(targetTable))
@@ -111,6 +114,20 @@ public sealed class TransferFieldsRelationsJsonCollector : DiagnosticAnalyzer
 
         WriteRecord(ctx.Compilation, record);
     }
+
+    private static ITableTypeSymbol? GetContainingTableType(ISymbol containingSymbol)
+    {
+        var obj = containingSymbol.GetContainingApplicationObjectTypeSymbol();
+        return obj switch
+        {
+            ITableTypeSymbol table => table,
+            IApplicationObjectExtensionTypeSymbol { Target: ITableTypeSymbol target } => target,
+            _ => null
+        };
+    }
+
+    private static bool IsRemoved(ISymbol symbol)
+        => symbol.IsObsoleteRemoved || symbol.IsObsoleteMoved;
 
     private static bool IsExtensible(ITableTypeSymbol tableType)
     {
