@@ -1,6 +1,6 @@
 {
   "version": "22.5",
-  "totalRelations": 382,
+  "totalRelations": 380,
   "relations": [
     {
       "source": "Acc. Schedule Line",
@@ -1179,49 +1179,6 @@
           {
             "foundInObjectQualified": "Compensation - Post CZC",
             "foundInMethod": "OnRun"
-          }
-        ]
-      }
-    },
-    {
-      "source": "Config. Field Mapping",
-      "sourceNamespace": null,
-      "sourceObjectId": 8628,
-      "target": "Config. Field Map",
-      "targetNamespace": null,
-      "targetObjectId": 8629,
-      "foundInExtensions": {
-        "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
-        "name": "Base Application",
-        "publisher": "Microsoft",
-        "countries": [
-          "at",
-          "au",
-          "be",
-          "ca",
-          "ch",
-          "cz",
-          "de",
-          "dk",
-          "es",
-          "fi",
-          "fr",
-          "gb",
-          "in",
-          "is",
-          "it",
-          "mx",
-          "nl",
-          "no",
-          "nz",
-          "se",
-          "us",
-          "w1"
-        ],
-        "foundInObjects": [
-          {
-            "foundInObjectQualified": "Upgrade Config. Field Map",
-            "foundInMethod": "UpgradeConfigFieldMap"
           }
         ]
       }
@@ -2638,26 +2595,6 @@
           {
             "foundInObjectQualified": "Email Dispatcher",
             "foundInMethod": "InsertToSentEmail"
-          }
-        ]
-      }
-    },
-    {
-      "source": "Employee",
-      "sourceNamespace": null,
-      "sourceObjectId": 5200,
-      "target": "Company Officials",
-      "targetNamespace": null,
-      "targetObjectId": 11792,
-      "foundInExtensions": {
-        "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
-        "name": "Base Application",
-        "publisher": "Microsoft",
-        "countries": "cz",
-        "foundInObjects": [
-          {
-            "foundInObjectQualified": "Company Officials",
-            "foundInMethod": "OnValidate"
           }
         ]
       }
