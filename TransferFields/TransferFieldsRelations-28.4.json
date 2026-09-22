@@ -1,6 +1,6 @@
 {
   "version": "28.4",
-  "totalRelations": 399,
+  "totalRelations": 397,
   "relations": [
     {
       "source": "Acc. Schedule Line",
@@ -2736,26 +2736,6 @@
       }
     },
     {
-      "source": "E-Commerce Merchant",
-      "sourceNamespace": "Microsoft.Finance.GST.Base",
-      "sourceObjectId": 18015,
-      "target": "E-Comm. Merchant",
-      "targetNamespace": "Microsoft.Finance.GST.Base",
-      "targetObjectId": 18017,
-      "foundInExtensions": {
-        "appId": "db643212-b7fb-4dd4-b5a8-cb44ac714461",
-        "name": "India GST",
-        "publisher": "Microsoft",
-        "countries": "in",
-        "foundInObjects": [
-          {
-            "foundInObjectQualified": "Microsoft.Finance.GST.Base.Migrate Ecom Merchant Data",
-            "foundInMethod": "MoveECommerceData"
-          }
-        ]
-      }
-    },
-    {
       "source": "EFT Export",
       "sourceNamespace": "Microsoft.Bank.ElectronicFundsTransfer",
       "sourceObjectId": 10810,
@@ -3167,26 +3147,6 @@
           {
             "foundInObjectQualified": "Microsoft.Sales.Peppol.PEPPOL Management",
             "foundInMethod": "CopyFinCharge"
-          }
-        ]
-      }
-    },
-    {
-      "source": "FS Connection Setup",
-      "sourceNamespace": "Microsoft.Integration.FieldService",
-      "sourceObjectId": 6418,
-      "target": "FS Connection Setup",
-      "targetNamespace": "Microsoft.Integration.DynamicsFieldService",
-      "targetObjectId": 6623,
-      "foundInExtensions": {
-        "appId": "1ba1031e-eae9-4f20-b9d2-d19b6d1e3f29",
-        "name": "Field Service Integration",
-        "publisher": "Microsoft",
-        "countries": "w1",
-        "foundInObjects": [
-          {
-            "foundInObjectQualified": "Microsoft.Integration.DynamicsFieldService.FS Install",
-            "foundInMethod": "UpgradeConnectionSetup"
           }
         ]
       }
