@@ -17,10 +17,10 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: Setup .NET 8.0
+      - name: Setup .NET 10.0
         uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: '10.0.x'
 
       - name: Install BC Development Tools
         id: install-tools
@@ -60,7 +60,7 @@ jobs:
         uses: actions/upload-artifact@v6
         with:
           name: transferfieldsanalyzer
-          path: src/bin/Release/net8.0/
+          path: src/bin/Release/net10.0/
 
   create-matrix:
     name: Create Matrix for localizations
