@@ -7714,57 +7714,71 @@
       "target": "Purchase Header",
       "targetNamespace": "Microsoft.Purchases.Document",
       "targetObjectId": 38,
-      "foundInExtensions": {
-        "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
-        "name": "Base Application",
-        "publisher": "Microsoft",
-        "countries": [
-          "at",
-          "au",
-          "be",
-          "ca",
-          "ch",
-          "cz",
-          "de",
-          "dk",
-          "es",
-          "fi",
-          "fr",
-          "gb",
-          "in",
-          "is",
-          "it",
-          "mx",
-          "nl",
-          "no",
-          "nz",
-          "se",
-          "us",
-          "w1"
-        ],
-        "foundInObjects": [
-          {
-            "foundInObjectQualified": "Microsoft.Purchases.Document.Copy Purchase Document",
-            "foundInMethod": "OnOpenPage"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Purchases.Document.Copy Purchase Document",
-            "foundInMethod": "ValidateDocNo"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
-            "foundInMethod": "CopyPurchCrMemoLinesToDoc"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
-            "foundInMethod": "CopyPurchDoc"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
-            "foundInMethod": "CopyPurchHeaderFromPostedCreditMemo"
-          }
-        ]
-      }
+      "foundInExtensions": [
+        {
+          "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
+          "name": "Base Application",
+          "publisher": "Microsoft",
+          "countries": [
+            "at",
+            "au",
+            "be",
+            "ca",
+            "ch",
+            "cz",
+            "de",
+            "dk",
+            "es",
+            "fi",
+            "fr",
+            "gb",
+            "in",
+            "is",
+            "it",
+            "mx",
+            "nl",
+            "no",
+            "nz",
+            "se",
+            "us",
+            "w1"
+          ],
+          "foundInObjects": [
+            {
+              "foundInObjectQualified": "Microsoft.Purchases.Document.Copy Purchase Document",
+              "foundInMethod": "OnOpenPage"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Purchases.Document.Copy Purchase Document",
+              "foundInMethod": "ValidateDocNo"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
+              "foundInMethod": "CopyPurchCrMemoLinesToDoc"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
+              "foundInMethod": "CopyPurchDoc"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
+              "foundInMethod": "CopyPurchHeaderFromPostedCreditMemo"
+            }
+          ]
+        },
+        {
+          "appId": "e1966889-b5fb-4fda-a84c-ea71b590e1a9",
+          "name": "PEPPOL",
+          "publisher": "Microsoft",
+          "countries": "w1",
+          "foundInObjects": [
+            {
+              "foundInObjectQualified": "Microsoft.Peppol.PEPPOL30 Common",
+              "foundInMethod": "ConvertPostedHeaderToPurchaseHeader"
+            }
+          ]
+        }
+      ]
     },
     {
       "source": "Purch. Cr. Memo Line",
@@ -7862,41 +7876,55 @@
       "target": "Purchase Line",
       "targetNamespace": "Microsoft.Purchases.Document",
       "targetObjectId": 39,
-      "foundInExtensions": {
-        "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
-        "name": "Base Application",
-        "publisher": "Microsoft",
-        "countries": [
-          "at",
-          "au",
-          "be",
-          "ca",
-          "ch",
-          "cz",
-          "de",
-          "dk",
-          "es",
-          "fi",
-          "fr",
-          "gb",
-          "in",
-          "is",
-          "it",
-          "mx",
-          "nl",
-          "no",
-          "nz",
-          "se",
-          "us",
-          "w1"
-        ],
-        "foundInObjects": [
-          {
-            "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
-            "foundInMethod": "CopyPurchCrMemoLinesToDoc"
-          }
-        ]
-      }
+      "foundInExtensions": [
+        {
+          "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
+          "name": "Base Application",
+          "publisher": "Microsoft",
+          "countries": [
+            "at",
+            "au",
+            "be",
+            "ca",
+            "ch",
+            "cz",
+            "de",
+            "dk",
+            "es",
+            "fi",
+            "fr",
+            "gb",
+            "in",
+            "is",
+            "it",
+            "mx",
+            "nl",
+            "no",
+            "nz",
+            "se",
+            "us",
+            "w1"
+          ],
+          "foundInObjects": [
+            {
+              "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
+              "foundInMethod": "CopyPurchCrMemoLinesToDoc"
+            }
+          ]
+        },
+        {
+          "appId": "e1966889-b5fb-4fda-a84c-ea71b590e1a9",
+          "name": "PEPPOL",
+          "publisher": "Microsoft",
+          "countries": "w1",
+          "foundInObjects": [
+            {
+              "foundInObjectQualified": "Microsoft.Peppol.PEPPOL30 Common",
+              "foundInMethod": "ConvertPostedLineToPurchaseLine"
+            }
+          ]
+        }
+      ]
     },
     {
       "source": "Purch. Inv. Header",
@@ -7971,57 +7999,71 @@
       "target": "Purchase Header",
       "targetNamespace": "Microsoft.Purchases.Document",
       "targetObjectId": 38,
-      "foundInExtensions": {
-        "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
-        "name": "Base Application",
-        "publisher": "Microsoft",
-        "countries": [
-          "at",
-          "au",
-          "be",
-          "ca",
-          "ch",
-          "cz",
-          "de",
-          "dk",
-          "es",
-          "fi",
-          "fr",
-          "gb",
-          "in",
-          "is",
-          "it",
-          "mx",
-          "nl",
-          "no",
-          "nz",
-          "se",
-          "us",
-          "w1"
-        ],
-        "foundInObjects": [
-          {
-            "foundInObjectQualified": "Microsoft.Purchases.Document.Copy Purchase Document",
-            "foundInMethod": "OnOpenPage"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Purchases.Document.Copy Purchase Document",
-            "foundInMethod": "ValidateDocNo"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
-            "foundInMethod": "CopyPurchDoc"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
-            "foundInMethod": "CopyPurchHeaderFromPostedInvoice"
-          },
-          {
-            "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
-            "foundInMethod": "CopyPurchInvLinesToDoc"
-          }
-        ]
-      }
+      "foundInExtensions": [
+        {
+          "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
+          "name": "Base Application",
+          "publisher": "Microsoft",
+          "countries": [
+            "at",
+            "au",
+            "be",
+            "ca",
+            "ch",
+            "cz",
+            "de",
+            "dk",
+            "es",
+            "fi",
+            "fr",
+            "gb",
+            "in",
+            "is",
+            "it",
+            "mx",
+            "nl",
+            "no",
+            "nz",
+            "se",
+            "us",
+            "w1"
+          ],
+          "foundInObjects": [
+            {
+              "foundInObjectQualified": "Microsoft.Purchases.Document.Copy Purchase Document",
+              "foundInMethod": "OnOpenPage"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Purchases.Document.Copy Purchase Document",
+              "foundInMethod": "ValidateDocNo"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
+              "foundInMethod": "CopyPurchDoc"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
+              "foundInMethod": "CopyPurchHeaderFromPostedInvoice"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
+              "foundInMethod": "CopyPurchInvLinesToDoc"
+            }
+          ]
+        },
+        {
+          "appId": "e1966889-b5fb-4fda-a84c-ea71b590e1a9",
+          "name": "PEPPOL",
+          "publisher": "Microsoft",
+          "countries": "w1",
+          "foundInObjects": [
+            {
+              "foundInObjectQualified": "Microsoft.Peppol.PEPPOL30 Common",
+              "foundInMethod": "ConvertPostedHeaderToPurchaseHeader"
+            }
+          ]
+        }
+      ]
     },
     {
       "source": "Purch. Inv. Line",
@@ -8096,41 +8138,55 @@
       "target": "Purchase Line",
       "targetNamespace": "Microsoft.Purchases.Document",
       "targetObjectId": 39,
-      "foundInExtensions": {
-        "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
-        "name": "Base Application",
-        "publisher": "Microsoft",
-        "countries": [
-          "at",
-          "au",
-          "be",
-          "ca",
-          "ch",
-          "cz",
-          "de",
-          "dk",
-          "es",
-          "fi",
-          "fr",
-          "gb",
-          "in",
-          "is",
-          "it",
-          "mx",
-          "nl",
-          "no",
-          "nz",
-          "se",
-          "us",
-          "w1"
-        ],
-        "foundInObjects": [
-          {
-            "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
-            "foundInMethod": "CopyPurchInvLinesToDoc"
-          }
-        ]
-      }
+      "foundInExtensions": [
+        {
+          "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
+          "name": "Base Application",
+          "publisher": "Microsoft",
+          "countries": [
+            "at",
+            "au",
+            "be",
+            "ca",
+            "ch",
+            "cz",
+            "de",
+            "dk",
+            "es",
+            "fi",
+            "fr",
+            "gb",
+            "in",
+            "is",
+            "it",
+            "mx",
+            "nl",
+            "no",
+            "nz",
+            "se",
+            "us",
+            "w1"
+          ],
+          "foundInObjects": [
+            {
+              "foundInObjectQualified": "Microsoft.Utilities.Copy Document Mgt.",
+              "foundInMethod": "CopyPurchInvLinesToDoc"
+            }
+          ]
+        },
+        {
+          "appId": "e1966889-b5fb-4fda-a84c-ea71b590e1a9",
+          "name": "PEPPOL",
+          "publisher": "Microsoft",
+          "countries": "w1",
+          "foundInObjects": [
+            {
+              "foundInObjectQualified": "Microsoft.Peppol.PEPPOL30 Common",
+              "foundInMethod": "ConvertPostedLineToPurchaseLine"
+            }
+          ]
+        }
+      ]
     },
     {
       "source": "Purch. Rcpt. Header",
