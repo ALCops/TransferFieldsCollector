@@ -9874,18 +9874,6 @@
           ]
         },
         {
-          "appId": "68d26ce3-10e9-4890-875c-b53dfea85767",
-          "name": "PEPPOL DE",
-          "publisher": "Microsoft",
-          "countries": "de",
-          "foundInObjects": [
-            {
-              "foundInObjectQualified": "Microsoft.Peppol.DE.PEPPOL30 DE Sales Validation",
-              "foundInMethod": "ValidatePostedDocument"
-            }
-          ]
-        },
-        {
           "appId": "e1966889-b5fb-4fda-a84c-ea71b590e1a9",
           "name": "PEPPOL",
           "publisher": "Microsoft",
@@ -9934,6 +9922,10 @@
             {
               "foundInObjectQualified": "Microsoft.eServices.EDocument.Formats.Export XRechnung Document",
               "foundInMethod": "InsertEmbeddedDocument"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.eServices.EDocument.IO.Peppol.EDoc PEPPOL Validation DE",
+              "foundInMethod": "GetSalesHeader"
             }
           ]
         }
@@ -10199,18 +10191,6 @@
             {
               "foundInObjectQualified": "Microsoft.eServices.EDocument.Formats.PEPPOL30 FR Sales Validation",
               "foundInMethod": "CheckSalesCreditMemo"
-            }
-          ]
-        },
-        {
-          "appId": "68d26ce3-10e9-4890-875c-b53dfea85767",
-          "name": "PEPPOL DE",
-          "publisher": "Microsoft",
-          "countries": "de",
-          "foundInObjects": [
-            {
-              "foundInObjectQualified": "Microsoft.Peppol.DE.PEPPOL30 DE Sales Validation",
-              "foundInMethod": "ValidatePostedDocument"
             }
           ]
         },
@@ -11042,18 +11022,6 @@
           ]
         },
         {
-          "appId": "68d26ce3-10e9-4890-875c-b53dfea85767",
-          "name": "PEPPOL DE",
-          "publisher": "Microsoft",
-          "countries": "de",
-          "foundInObjects": [
-            {
-              "foundInObjectQualified": "Microsoft.Peppol.DE.PEPPOL30 DE Sales Validation",
-              "foundInMethod": "ValidatePostedDocument"
-            }
-          ]
-        },
-        {
           "appId": "e1966889-b5fb-4fda-a84c-ea71b590e1a9",
           "name": "PEPPOL",
           "publisher": "Microsoft",
@@ -11102,6 +11070,10 @@
             {
               "foundInObjectQualified": "Microsoft.eServices.EDocument.Formats.Export XRechnung Document",
               "foundInMethod": "InsertEmbeddedDocument"
+            },
+            {
+              "foundInObjectQualified": "Microsoft.eServices.EDocument.IO.Peppol.EDoc PEPPOL Validation DE",
+              "foundInMethod": "GetSalesHeader"
             }
           ]
         }
@@ -11395,18 +11367,6 @@
             {
               "foundInObjectQualified": "Microsoft.eServices.EDocument.Formats.PEPPOL30 FR Sales Validation",
               "foundInMethod": "CheckSalesInvoice"
-            }
-          ]
-        },
-        {
-          "appId": "68d26ce3-10e9-4890-875c-b53dfea85767",
-          "name": "PEPPOL DE",
-          "publisher": "Microsoft",
-          "countries": "de",
-          "foundInObjects": [
-            {
-              "foundInObjectQualified": "Microsoft.Peppol.DE.PEPPOL30 DE Sales Validation",
-              "foundInMethod": "ValidatePostedDocument"
             }
           ]
         },
